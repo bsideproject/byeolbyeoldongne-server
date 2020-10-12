@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-starter-reactor-netty:2.4.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-reactor-netty/2.4.0-SNAPSHOT/d185c4b7a291252f00f148adbcf068aba845f04e/spring-boot-starter-reactor-netty-2.4.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-reactor-netty/2.4.0-SNAPSHOT/322e3121e26de28fc1825af14b19b981610e50b3/spring-boot-starter-reactor-netty-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-reactor-netty/2.4.0-SNAPSHOT/6306aab0e782e2ac74f2feaad2e28773a11c40b0/spring-boot-starter-reactor-netty-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-reactor-netty/2.4.0-SNAPSHOT/8839c7bb7e19b55db8d75acc0f31b81b9df5e283/spring-boot-starter-reactor-netty-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-reactor-netty/2.4.0-SNAPSHOT/8d0e92b61c64daf153ebadd6cab02393cfe80c37/spring-boot-starter-reactor-netty-2.4.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

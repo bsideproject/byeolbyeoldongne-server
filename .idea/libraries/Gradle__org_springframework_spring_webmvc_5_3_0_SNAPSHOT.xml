@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework:spring-webmvc:5.3.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.0-SNAPSHOT/e69414e369dc01d21f9b5ae8fa85a51b31f14a1b/spring-webmvc-5.3.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.0-SNAPSHOT/a652a9c374aee6a6c9bb14bb532720785f5b0b7e/spring-webmvc-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.0-SNAPSHOT/7b4c664723092e88f8d962650a46e37a3d6bb1d5/spring-webmvc-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.0-SNAPSHOT/ac96fbb3932c581f1bb4c7e0295827d0dae2cd62/spring-webmvc-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.0-SNAPSHOT/b67b15f34cf3767e5af85ac46127598e281bc537/spring-webmvc-5.3.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

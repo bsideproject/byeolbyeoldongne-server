@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-starter-web:2.4.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/fc4b1fa1d5c54d3f55296a7d1df419c3aaad344a/spring-boot-starter-web-2.4.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/881c81bb8b2a4d5cdce573127b9268df6a34325e/spring-boot-starter-web-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/28cc82ef5d6db4677a095020ce3e4c3ce66ff165/spring-boot-starter-web-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/2a04fae192cea5e56b2986e9ed471f9a40aa916d/spring-boot-starter-web-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/4422afb934790e7b9031965b05a3ed34c2667190/spring-boot-starter-web-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/45819537fbff388b3190d7ed6eb8e7e4cc08d2d/spring-boot-starter-web-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/5542f54f6ae98c29c44a7e36a672d41c40a0810c/spring-boot-starter-web-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/6394016597bb5734e47dce1db6c58fe20252f91d/spring-boot-starter-web-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/8525b675197ebce6b581e2223773bc43c7d0df4c/spring-boot-starter-web-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.4.0-SNAPSHOT/cfa7b1b633cdbf3ddb06002b604acba88c857835/spring-boot-starter-web-2.4.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

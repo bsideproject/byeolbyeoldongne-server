@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.4.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/d875646ceccc916beffdd10710cf72118228f840/spring-boot-starter-tomcat-2.4.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/d875646ceccc916beffdd10710cf72118228f840/spring-boot-starter-tomcat-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/1601f0d028bd6faee98409654b151bb8fd9e2318/spring-boot-starter-tomcat-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/a0f6ede7924195f644d6dc40566992055a601ff2/spring-boot-starter-tomcat-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/c4b5e0ebe4692e93551671fb3dc35dcd1861cef3/spring-boot-starter-tomcat-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/d762ba78c6d4080d845e18e40e7c74bca5c4fc67/spring-boot-starter-tomcat-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/dbfc123d2d97436b1fc52c1b3fb989e4c35198e2/spring-boot-starter-tomcat-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/eb05607c2f30e1bd4f56c161ca4c7075ea849691/spring-boot-starter-tomcat-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/f9dfbd47b494aef4b4ee8ce022ccd26501090ec0/spring-boot-starter-tomcat-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.4.0-SNAPSHOT/faffd6747eb98e4f6781743fd78fb6f75047f18c/spring-boot-starter-tomcat-2.4.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

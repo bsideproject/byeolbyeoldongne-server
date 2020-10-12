@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework:spring-jcl:5.3.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.0-SNAPSHOT/89be273be40f5533ae5796a414c676432ab74d26/spring-jcl-5.3.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.0-SNAPSHOT/1951a29efce143137522a8cedb6dd199c5639258/spring-jcl-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.0-SNAPSHOT/79fab72ec4ebcfaf07b39170e67f46d0e1f4e62f/spring-jcl-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.0-SNAPSHOT/ab83266eb68655633e7e8cc2e779e0697fa20024/spring-jcl-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.0-SNAPSHOT/ffce519629b90d48b24b8bfe0da97b62226e9c6e/spring-jcl-5.3.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

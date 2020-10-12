@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-starter-test:2.4.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.4.0-SNAPSHOT/1789cdf00bff412d1238e3706ae86cb10da07f44/spring-boot-starter-test-2.4.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.4.0-SNAPSHOT/cda3a43fd58c51661e51dfcf5506d3afb939a0f1/spring-boot-starter-test-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.4.0-SNAPSHOT/1898553dc89f0e4af35607cc7fcf01d859b3cb35/spring-boot-starter-test-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.4.0-SNAPSHOT/190b4633f30c22375c26e7418869bef0e7009f32/spring-boot-starter-test-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.4.0-SNAPSHOT/346d97b373d64b910c4910d4e41a0c11d2baec9b/spring-boot-starter-test-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.4.0-SNAPSHOT/5a43f78dd2a91f5a8cd33469c86e6a261244adf5/spring-boot-starter-test-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.4.0-SNAPSHOT/6791f2aab5984810c6b57e12ff08f84642e634a0/spring-boot-starter-test-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.4.0-SNAPSHOT/ee1acfce213b06e3166b5a4e1a89aef1da48e23f/spring-boot-starter-test-2.4.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

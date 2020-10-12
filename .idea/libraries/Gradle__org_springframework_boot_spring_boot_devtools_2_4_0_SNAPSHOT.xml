@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-devtools:2.4.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0-SNAPSHOT/4fe4ca297a710397afe7922e9ceaa017e2284928/spring-boot-devtools-2.4.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0-SNAPSHOT/88322fd328eadd7bf774f9a4c1122a296d182276/spring-boot-devtools-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0-SNAPSHOT/43231942c10235ed2a8f6a8672740f32b76354af/spring-boot-devtools-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0-SNAPSHOT/66ba0c9385dd8c4e1905577da4fd44fa3fb3a567/spring-boot-devtools-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0-SNAPSHOT/ad5b7e55331a7e815dbf7b6634e9c73b71243673/spring-boot-devtools-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0-SNAPSHOT/d4d4d479992719680c846ef6c6e241e04046367/spring-boot-devtools-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0-SNAPSHOT/db6906b0c47e64101318ad1a5dd9b06cb399948a/spring-boot-devtools-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0-SNAPSHOT/f2ae3925ce45f05c1909f103b424dcd3ab821f25/spring-boot-devtools-2.4.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework:spring-orm:5.3.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/5.3.0-SNAPSHOT/ab1e47599214def04f579b572bd00ecefb6f5367/spring-orm-5.3.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/5.3.0-SNAPSHOT/6462780e25074f3aacfed14d1baf1c45470a1dfc/spring-orm-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/5.3.0-SNAPSHOT/c3c29d9965cb94992abd322aa043d1c02c5cf9d4/spring-orm-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/5.3.0-SNAPSHOT/d0943350ea397c040743eba2eeaed4c7d4f042c2/spring-orm-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/5.3.0-SNAPSHOT/d480314208ff25a12b4c998180befa6d82f307ca/spring-orm-5.3.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

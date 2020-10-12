@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework:spring-tx:5.3.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.0-SNAPSHOT/9740643753f3e7cf48df3427d8301b5fa9eb0872/spring-tx-5.3.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.0-SNAPSHOT/30bfe4e240a68cb0d1635befdcb4dbea74a4f8a3/spring-tx-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.0-SNAPSHOT/361d9c0e1f70394e72d788d4e7a1601797a574db/spring-tx-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.0-SNAPSHOT/e0c0704c897fe937b664afaa3b2ffc9440a378a0/spring-tx-5.3.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.0-SNAPSHOT/f5a7d38ad1e29fc4fbf46e2bcb0b8e7f37758fb7/spring-tx-5.3.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
