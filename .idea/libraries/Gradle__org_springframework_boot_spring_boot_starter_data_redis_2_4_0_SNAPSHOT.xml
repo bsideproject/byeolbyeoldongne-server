@@ -1,12 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: org.springframework.boot:spring-boot-starter-data-redis:2.4.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis/2.4.0-SNAPSHOT/93f28d4e53e56be2380c1a860d92590a1d049950/spring-boot-starter-data-redis-2.4.0-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis/2.4.0-SNAPSHOT/14f146921a5fa05681c9edfee298f344729c7a80/spring-boot-starter-data-redis-2.4.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis/2.4.0-SNAPSHOT/a03ce6b2e805183ba5086883e683a55be2d0ab46/spring-boot-starter-data-redis-2.4.0-SNAPSHOT-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis/2.4.0-SNAPSHOT/b5b2a43e626adb03a08f6e639fcf0f4e9ad36616/spring-boot-starter-data-redis-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis/2.4.0-SNAPSHOT/235da7a17f36024419c525b09d0dac9442385a83/spring-boot-starter-data-redis-2.4.0-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

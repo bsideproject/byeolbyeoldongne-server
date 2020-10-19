@@ -1,7 +1,7 @@
 com/chdlsp/datapractice/repository/UserRepository.java
  com.chdlsp.datapractice.repository.UserRepository
-com/chdlsp/datapractice/handler/GlobalExceptionHandler.java
- com.chdlsp.datapractice.handler.GlobalExceptionHandler
+com/chdlsp/datapractice/application/runner/RedisRepositoryRunner.java
+ com.chdlsp.datapractice.application.runner.RedisRepositoryRunner
 com/chdlsp/datapractice/service/TransactionDemoService.java
  com.chdlsp.datapractice.service.TransactionDemoService
 com/chdlsp/datapractice/domain/entity/UserEntity.java
@@ -28,5 +28,5 @@ com/chdlsp/datapractice/DataPracticeApplication.java
  com.chdlsp.datapractice.DataPracticeApplication$1
 com/chdlsp/datapractice/application/controller/TransactionWebDemoController.java
  com.chdlsp.datapractice.application.controller.TransactionWebDemoController
-com/chdlsp/datapractice/application/runner/RedisRepositoryRunner.java
- com.chdlsp.datapractice.application.runner.RedisRepositoryRunner
+com/chdlsp/datapractice/handler/GlobalExceptionHandler.java
+ com.chdlsp.datapractice.handler.GlobalExceptionHandler

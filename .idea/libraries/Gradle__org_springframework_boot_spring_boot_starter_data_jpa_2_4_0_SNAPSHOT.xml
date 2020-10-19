@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.springframework.boot:spring-boot-starter-data-jpa:2.4.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/2.4.0-SNAPSHOT/328f2dedc34a7339e461a3b64efe8d855bf957b1/spring-boot-starter-data-jpa-2.4.0-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/2.4.0-SNAPSHOT/66432212019555d268f0dddcd150756ffd3fabc7/spring-boot-starter-data-jpa-2.4.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -13,6 +13,7 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/2.4.0-SNAPSHOT/86552965db2b8d63fd3830b0fec3ef8a6fc4607f/spring-boot-starter-data-jpa-2.4.0-SNAPSHOT-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/2.4.0-SNAPSHOT/a5f1c113368f3800cffef44415d8281651ed5c13/spring-boot-starter-data-jpa-2.4.0-SNAPSHOT-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/2.4.0-SNAPSHOT/c65c7fb45324c8d87aba1d834a3a070c91b013d9/spring-boot-starter-data-jpa-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/2.4.0-SNAPSHOT/e57b9c5aaa62c6c43cc0f73f8b01a2e57b35118a/spring-boot-starter-data-jpa-2.4.0-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

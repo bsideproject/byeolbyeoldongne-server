@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.springframework.boot:spring-boot-starter-logging:2.4.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.4.0-SNAPSHOT/615269db7e83b2460706fcc4e2ab27f6f214e29e/spring-boot-starter-logging-2.4.0-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.4.0-SNAPSHOT/ccaba8bfb0b8513ab5800c983eebecb782a5e9e0/spring-boot-starter-logging-2.4.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -14,6 +14,7 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.4.0-SNAPSHOT/85cdebd8eac77bbd88bc8fa603780c085fb5868c/spring-boot-starter-logging-2.4.0-SNAPSHOT-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.4.0-SNAPSHOT/cd53089b0bb64e2ae52e7aa5a8b2a6390dd9fd7a/spring-boot-starter-logging-2.4.0-SNAPSHOT-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.4.0-SNAPSHOT/fa6f7a3f51dc1c626e3329ac6aff74014fb7e172/spring-boot-starter-logging-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.4.0-SNAPSHOT/ccaba8bfb0b8513ab5800c983eebecb782a5e9e0/spring-boot-starter-logging-2.4.0-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

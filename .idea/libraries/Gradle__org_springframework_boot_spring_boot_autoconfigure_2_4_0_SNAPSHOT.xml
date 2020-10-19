@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.4.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.4.0-SNAPSHOT/2165a0d6da85c16d8494df83ba71505339ee7487/spring-boot-autoconfigure-2.4.0-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.4.0-SNAPSHOT/caecb9ca8bdb49cf71fcc7293d042b39990ac041/spring-boot-autoconfigure-2.4.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -14,6 +14,7 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.4.0-SNAPSHOT/8c564cb5187439dae1f9378f892f2202943df8f2/spring-boot-autoconfigure-2.4.0-SNAPSHOT-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.4.0-SNAPSHOT/d003ac2dd5f4e52844df8358dc99f8bf3bab8827/spring-boot-autoconfigure-2.4.0-SNAPSHOT-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.4.0-SNAPSHOT/da538f517482f26958430992c2ad1ac83d5e16c9/spring-boot-autoconfigure-2.4.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.4.0-SNAPSHOT/8b5cc6d70957e24b7cc902d07843af74a2a74e90/spring-boot-autoconfigure-2.4.0-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
