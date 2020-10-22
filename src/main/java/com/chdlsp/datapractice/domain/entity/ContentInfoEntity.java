@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Accessors(chain = true)
-public class ContentEntity {
+public class ContentInfoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,6 +29,8 @@ public class ContentEntity {
     String zoneNo; // zone 번호
     String reviewSequence; //리뷰 일련번호
 
+    String deleteYn; // 삭제 여부 TODO: Enum 으로 변경?
+
     String reviewMainContent; // 리뷰 개요
     String reviewGoodContent; // 장점 리뷰 내용
     String reviewBadContent; // 단점 리뷰 내용
@@ -37,6 +39,8 @@ public class ContentEntity {
     double conveniencePoint; // 편의성 점수
     double noisePoint; // 소음 점수
     double safetyPoint; // 치안 점수
+
+    int reportCount; // 신고 횟수
 
     @CreatedBy
     private String createdBy;

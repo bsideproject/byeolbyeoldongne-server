@@ -29,6 +29,8 @@ public class CommentReplyEntity {
 
     String commentReplySequence; // 대댓글 일련번호
 
+    String deleteYn; // 삭제 여부 TODO: Enum 으로 변경?
+
     String commentSequence; // 댓글 일련번호
     String roadName; // 도로명
     String mainBuildingNo; // 건물본번
@@ -38,6 +40,8 @@ public class CommentReplyEntity {
 
     String replyContent; // 대댓글 내용
     Long likeCount; // 좋아요 수
+
+    int reportCount; // 신고 횟수
 
     @CreatedBy
     private String createdBy;

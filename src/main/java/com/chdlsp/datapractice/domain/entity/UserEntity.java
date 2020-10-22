@@ -10,7 +10,6 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.data.redis.core.RedisHash;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -54,5 +53,5 @@ public class UserEntity {
 
     // UserEntity 1 : N ContentEntity
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "userEntity")
-    private List<ContentEntity> contentEntityList;
+    private List<ContentInfoEntity> contentEntityList;
 }

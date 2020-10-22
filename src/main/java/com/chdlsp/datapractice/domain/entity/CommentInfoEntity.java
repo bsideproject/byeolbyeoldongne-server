@@ -21,13 +21,15 @@ import java.time.LocalDateTime;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Accessors(chain = true)
-public class CommentEntity {
+public class CommentInfoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     String commentSequence; // 댓글 일련번호
+
+    String deleteYn; // 삭제 여부 TODO: Enum 으로 변경?
 
     String roadName; // 도로명
     String mainBuildingNo; // 건물본번
@@ -37,6 +39,8 @@ public class CommentEntity {
 
     String commentContent; // 댓글 내용
     Long likeCount; // 좋아요 수
+
+    int reportCount; // 신고 횟수
 
     @CreatedBy
     private String createdBy;
