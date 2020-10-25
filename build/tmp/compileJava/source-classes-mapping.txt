@@ -7,9 +7,9 @@ com/chdlsp/datapractice/service/TransactionDemoService.java
 com/chdlsp/datapractice/domain/entity/UserEntity.java
  com.chdlsp.datapractice.domain.entity.UserEntity
  com.chdlsp.datapractice.domain.entity.UserEntity$UserEntityBuilder
-com/chdlsp/datapractice/domain/entity/ContentEntity.java
- com.chdlsp.datapractice.domain.entity.ContentEntity
- com.chdlsp.datapractice.domain.entity.ContentEntity$ContentEntityBuilder
+com/chdlsp/datapractice/domain/entity/CommentInfoEntity.java
+ com.chdlsp.datapractice.domain.entity.CommentInfoEntity
+ com.chdlsp.datapractice.domain.entity.CommentInfoEntity$CommentInfoEntityBuilder
 com/chdlsp/datapractice/domain/interfaces/request/CreateUserInfoRequestVO.java
  com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequestVO
  com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequestVO$CreateUserInfoRequestVOBuilder
@@ -21,8 +21,14 @@ com/chdlsp/datapractice/domain/interfaces/vo/User.java
  com.chdlsp.datapractice.domain.interfaces.vo.User$UserBuilder
 com/chdlsp/datapractice/application/runner/TransactionDemoRunner.java
  com.chdlsp.datapractice.application.runner.TransactionDemoRunner
+com/chdlsp/datapractice/domain/entity/CommentReplyEntity.java
+ com.chdlsp.datapractice.domain.entity.CommentReplyEntity
+ com.chdlsp.datapractice.domain.entity.CommentReplyEntity$CommentReplyEntityBuilder
 com/chdlsp/datapractice/application/controller/TransactionRestDemoController.java
  com.chdlsp.datapractice.application.controller.TransactionRestDemoController
+com/chdlsp/datapractice/domain/entity/ContentInfoEntity.java
+ com.chdlsp.datapractice.domain.entity.ContentInfoEntity
+ com.chdlsp.datapractice.domain.entity.ContentInfoEntity$ContentInfoEntityBuilder
 com/chdlsp/datapractice/DataPracticeApplication.java
  com.chdlsp.datapractice.DataPracticeApplication
  com.chdlsp.datapractice.DataPracticeApplication$1
