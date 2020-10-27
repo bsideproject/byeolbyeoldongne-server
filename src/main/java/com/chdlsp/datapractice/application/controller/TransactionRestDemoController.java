@@ -1,12 +1,11 @@
 package com.chdlsp.datapractice.application.controller;
 
 import com.chdlsp.datapractice.domain.entity.UserEntity;
-import com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequestVO;
+import com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequest;
 import com.chdlsp.datapractice.service.TransactionDemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 // @Controller : view return
@@ -42,11 +41,11 @@ public class TransactionRestDemoController {
     // http://localhost:8080/users
 
     @PostMapping("")
-    public ResponseEntity saveNewUserInfo(@RequestBody CreateUserInfoRequestVO createUserInfoRequestVO) {
+    public ResponseEntity saveNewUserInfo(@RequestBody CreateUserInfoRequest createUserInfoRequest) {
 
-        log.info("createUserInfoRequestVO : " + createUserInfoRequestVO.toString());
+        log.info("createUserInfoRequestVO : " + createUserInfoRequest.toString());
 
-        UserEntity userEntity = transactionDemoService.saveNewUserInfoWithDefault(createUserInfoRequestVO);
+        UserEntity userEntity = transactionDemoService.saveNewUserInfoWithDefault(createUserInfoRequest);
 
         log.info("saveNewUserInfoWithDefault : " + userEntity);
 
@@ -71,11 +70,11 @@ public class TransactionRestDemoController {
 
 
     @PutMapping("/")
-    public ResponseEntity putUserInfo(@RequestBody CreateUserInfoRequestVO createUserInfoRequestVO) {
+    public ResponseEntity putUserInfo(@RequestBody CreateUserInfoRequest createUserInfoRequest) {
 
-        log.info("putUserInfo : " + createUserInfoRequestVO.toString());
+        log.info("putUserInfo : " + createUserInfoRequest.toString());
 
-        UserEntity userEntity = transactionDemoService.putUserInfo(createUserInfoRequestVO);
+        UserEntity userEntity = transactionDemoService.putUserInfo(createUserInfoRequest);
 
         log.info("putUserInfo : " + userEntity.toString());
 
@@ -97,9 +96,9 @@ public class TransactionRestDemoController {
 
 
     @PostMapping("/failure")
-    public ResponseEntity saveNewUserInfoWithReadOnly(@RequestBody CreateUserInfoRequestVO createUserInfoRequestVO) {
+    public ResponseEntity saveNewUserInfoWithReadOnly(@RequestBody CreateUserInfoRequest createUserInfoRequest) {
 
-        UserEntity userEntity = transactionDemoService.saveNewUserInfoWithReadOnlyTrue(createUserInfoRequestVO);
+        UserEntity userEntity = transactionDemoService.saveNewUserInfoWithReadOnlyTrue(createUserInfoRequest);
 
         log.info("saveNewUserInfoWithReadOnly : " + userEntity.toString());
 

@@ -1,7 +1,7 @@
 package com.chdlsp.datapractice.service;
 
 import com.chdlsp.datapractice.domain.entity.UserEntity;
-import com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequestVO;
+import com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequest;
 import com.chdlsp.datapractice.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,7 +24,7 @@ class TransactionDemoServiceTests {
     @Mock
     private UserRepository userRepository;
     private UserEntity userEntity;
-    private CreateUserInfoRequestVO createUserInfoRequestVO;
+    private CreateUserInfoRequest createUserInfoRequest;
 
     @BeforeEach
     public void setUp() {
@@ -32,7 +32,7 @@ class TransactionDemoServiceTests {
                 .email("tester@example.com")
                 .password("1234qwer").build();
 
-        createUserInfoRequestVO = CreateUserInfoRequestVO.builder()
+        createUserInfoRequest = CreateUserInfoRequest.builder()
                 .email(userEntity.getEmail())
                 .password(userEntity.getPassword())
                 .build();
@@ -46,12 +46,12 @@ class TransactionDemoServiceTests {
         given(userRepository.save(any())).willReturn(userEntity);
 
         // when
-        final UserEntity userEntity = transactionDemoService.saveNewUserInfoWithDefault(createUserInfoRequestVO);
+        final UserEntity userEntity = transactionDemoService.saveNewUserInfoWithDefault(createUserInfoRequest);
 
         // then
         assertThat(userEntity).isNotNull();
-        assertThat(userEntity.getEmail()).isEqualTo(createUserInfoRequestVO.getEmail());
-        assertThat(userEntity.getPassword()).isEqualTo(createUserInfoRequestVO.getPassword());
+        assertThat(userEntity.getEmail()).isEqualTo(createUserInfoRequest.getEmail());
+        assertThat(userEntity.getPassword()).isEqualTo(createUserInfoRequest.getPassword());
 
     }
 
@@ -65,12 +65,12 @@ class TransactionDemoServiceTests {
         given(userRepository.save(any())).willReturn(userEntity);
 
         // when
-        final UserEntity userEntity = transactionDemoService.saveNewUserInfoWithReadOnlyTrue(createUserInfoRequestVO);
+        final UserEntity userEntity = transactionDemoService.saveNewUserInfoWithReadOnlyTrue(createUserInfoRequest);
 
         //then
         assertThat(userEntity).isNotNull();
-        assertThat(userEntity.getEmail()).isEqualTo(createUserInfoRequestVO.getEmail());
-        assertThat(userEntity.getPassword()).isEqualTo(createUserInfoRequestVO.getPassword());
+        assertThat(userEntity.getEmail()).isEqualTo(createUserInfoRequest.getEmail());
+        assertThat(userEntity.getPassword()).isEqualTo(createUserInfoRequest.getPassword());
 
     }
 }

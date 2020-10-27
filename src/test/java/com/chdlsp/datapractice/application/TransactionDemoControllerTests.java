@@ -1,15 +1,9 @@
 package com.chdlsp.datapractice.application;
 
 import com.chdlsp.datapractice.domain.entity.UserEntity;
-import com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequestVO;
-import com.chdlsp.datapractice.repository.UserRepository;
-import com.chdlsp.datapractice.service.TransactionDemoService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;

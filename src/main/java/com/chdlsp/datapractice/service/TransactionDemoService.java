@@ -1,11 +1,10 @@
 package com.chdlsp.datapractice.service;
 
 import com.chdlsp.datapractice.domain.entity.UserEntity;
-import com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequestVO;
+import com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequest;
 import com.chdlsp.datapractice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
@@ -24,7 +23,7 @@ public class TransactionDemoService {
     UserRepository userRepository;
 
     @Transactional
-    public UserEntity saveNewUserInfoWithDefault(CreateUserInfoRequestVO requestVO) {
+    public UserEntity saveNewUserInfoWithDefault(CreateUserInfoRequest requestVO) {
 
         UserEntity saveInfo = UserEntity.builder()
                 .email(requestVO.getEmail())
@@ -35,7 +34,7 @@ public class TransactionDemoService {
     }
 
     @Transactional(readOnly = true)
-    public UserEntity saveNewUserInfoWithReadOnlyTrue(CreateUserInfoRequestVO requestVO) {
+    public UserEntity saveNewUserInfoWithReadOnlyTrue(CreateUserInfoRequest requestVO) {
 
         UserEntity saveInfo = UserEntity.builder()
                 .email(requestVO.getEmail())
@@ -59,7 +58,7 @@ public class TransactionDemoService {
     }
 
     // TODO: 구현 필요
-    public UserEntity putUserInfo(CreateUserInfoRequestVO createUserInfoRequestVO) {
+    public UserEntity putUserInfo(CreateUserInfoRequest createUserInfoRequest) {
         return null;
     }
 
