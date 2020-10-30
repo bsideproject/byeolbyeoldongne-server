@@ -1,5 +1,7 @@
 package com.chdlsp.datapractice.domain.enums;
 
+import lombok.Builder;
+
 public enum KakaoCategoryGroupEnums {
 
     MT1("대형마트"),

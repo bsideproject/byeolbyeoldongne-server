@@ -31,7 +31,6 @@ public class KakaoMapClient implements KakaoMapRest {
         } catch (HttpClientErrorException | HttpServerErrorException e) {
             throw new KakaoMapClientException(e.getMessage());
         }
-
     }
 
     private RequestBuilder createRequestBuilder(QueryParameterDTO queryParameterDTO) {

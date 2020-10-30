@@ -3,14 +3,17 @@ package com.chdlsp.datapractice.domain.interfaces.dto;
 import com.chdlsp.datapractice.domain.enums.KakaoCategoryGroupEnums;
 import com.chdlsp.datapractice.handler.exception.BadRequestException;
 import java.util.Objects;
-import lombok.Getter;
-import lombok.ToString;
+
+import lombok.*;
 
 @ToString
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class QueryParameterDTO {
 
-  private final String query;
+  private String query;
   private KakaoCategoryGroupEnums kakaoCategoryGroupEnums;
   private Double x;
   private Double y;
@@ -18,7 +21,6 @@ public class QueryParameterDTO {
   private String rect;
   private Integer page;
   private Integer size;
-//  private SortKey sort;
 
   public QueryParameterDTO(String query) {
     Objects.requireNonNull(query, "질의어는 필수 입니다.");

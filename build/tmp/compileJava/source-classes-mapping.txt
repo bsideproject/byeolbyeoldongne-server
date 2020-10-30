@@ -1,69 +1,86 @@
-com/chdlsp/datapractice/repository/UserRepository.java
- com.chdlsp.datapractice.repository.UserRepository
-com/chdlsp/datapractice/application/runner/TransactionDemoRunner.java
- com.chdlsp.datapractice.application.runner.TransactionDemoRunner
-com/chdlsp/datapractice/domain/entity/ContentInfoEntity.java
- com.chdlsp.datapractice.domain.entity.ContentInfoEntity
- com.chdlsp.datapractice.domain.entity.ContentInfoEntity$ContentInfoEntityBuilder
-com/chdlsp/datapractice/domain/entity/UserEntity.java
- com.chdlsp.datapractice.domain.entity.UserEntity
- com.chdlsp.datapractice.domain.entity.UserEntity$UserEntityBuilder
-com/chdlsp/datapractice/domain/entity/CommentInfoEntity.java
- com.chdlsp.datapractice.domain.entity.CommentInfoEntity
- com.chdlsp.datapractice.domain.entity.CommentInfoEntity$CommentInfoEntityBuilder
-com/chdlsp/datapractice/handler/GlobalExceptionHandler.java
- com.chdlsp.datapractice.handler.GlobalExceptionHandler
-com/chdlsp/datapractice/domain/entity/CommentReplyEntity.java
- com.chdlsp.datapractice.domain.entity.CommentReplyEntity
- com.chdlsp.datapractice.domain.entity.CommentReplyEntity$CommentReplyEntityBuilder
-com/chdlsp/datapractice/DataPracticeApplication.java
- com.chdlsp.datapractice.DataPracticeApplication
- com.chdlsp.datapractice.DataPracticeApplication$1
+com/chdlsp/datapractice/domain/interfaces/response/CreateUserInfoResponse.java
+ com.chdlsp.datapractice.domain.interfaces.response.CreateUserInfoResponse
+ com.chdlsp.datapractice.domain.interfaces.response.CreateUserInfoResponse$CreateUserInfoResponseBuilder
 com/chdlsp/datapractice/handler/exception/KakaoMapClientException.java
  com.chdlsp.datapractice.handler.exception.KakaoMapClientException
 com/chdlsp/datapractice/domain/interfaces/request/CreateUserInfoRequest.java
  com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequest
  com.chdlsp.datapractice.domain.interfaces.request.CreateUserInfoRequest$CreateUserInfoRequestBuilder
+com/chdlsp/datapractice/domain/interfaces/request/SearchPlaceRequest.java
+ com.chdlsp.datapractice.domain.interfaces.request.SearchPlaceRequest
+ com.chdlsp.datapractice.domain.interfaces.request.SearchPlaceRequest$SearchPlaceRequestBuilder
+com/chdlsp/datapractice/domain/enums/ErrorCodeEnums.java
+ com.chdlsp.datapractice.domain.enums.ErrorCodeEnums
 com/chdlsp/datapractice/service/TransactionDemoService.java
  com.chdlsp.datapractice.service.TransactionDemoService
+com/chdlsp/datapractice/domain/entity/UserEntity.java
+ com.chdlsp.datapractice.domain.entity.UserEntity
+ com.chdlsp.datapractice.domain.entity.UserEntity$UserEntityBuilder
 com/chdlsp/datapractice/handler/exception/BadRequestException.java
  com.chdlsp.datapractice.handler.exception.BadRequestException
 com/chdlsp/datapractice/repository/CommentReplyRepository.java
  com.chdlsp.datapractice.repository.CommentReplyRepository
 com/chdlsp/datapractice/application/common/client/AdapterRestClient.java
  com.chdlsp.datapractice.application.common.client.AdapterRestClient
-com/chdlsp/datapractice/application/common/client/HttpMethod.java
- com.chdlsp.datapractice.application.common.client.HttpMethod
-com/chdlsp/datapractice/domain/interfaces/KakaoMapRest.java
- com.chdlsp.datapractice.domain.interfaces.KakaoMapRest
+com/chdlsp/datapractice/application/constant/ErrorConstant.java
+ com.chdlsp.datapractice.application.constant.ErrorConstant
+com/chdlsp/datapractice/repository/CommentInfoRepository.java
+ com.chdlsp.datapractice.repository.CommentInfoRepository
 com/chdlsp/datapractice/domain/entity/UserConcernInfoEntity.java
  com.chdlsp.datapractice.domain.entity.UserConcernInfoEntity
  com.chdlsp.datapractice.domain.entity.UserConcernInfoEntity$UserConcernInfoEntityBuilder
+com/chdlsp/datapractice/domain/entity/CommentInfoEntity.java
+ com.chdlsp.datapractice.domain.entity.CommentInfoEntity
+ com.chdlsp.datapractice.domain.entity.CommentInfoEntity$CommentInfoEntityBuilder
 com/chdlsp/datapractice/repository/ContentInfoRepository.java
  com.chdlsp.datapractice.repository.ContentInfoRepository
 com/chdlsp/datapractice/repository/UserConcernRepository.java
  com.chdlsp.datapractice.repository.UserConcernRepository
-com/chdlsp/datapractice/domain/interfaces/vo/RegionInfoVO.java
- com.chdlsp.datapractice.domain.interfaces.vo.RegionInfoVO
+com/chdlsp/datapractice/handler/exception/BadSearchRequestException.java
+ com.chdlsp.datapractice.handler.exception.BadSearchRequestException
+com/chdlsp/datapractice/domain/interfaces/resolver/QueryStringResolver.java
+ com.chdlsp.datapractice.domain.interfaces.resolver.QueryStringResolver
+com/chdlsp/datapractice/domain/interfaces/vo/UserVO.java
+ com.chdlsp.datapractice.domain.interfaces.vo.UserVO
+ com.chdlsp.datapractice.domain.interfaces.vo.UserVO$UserVOBuilder
+com/chdlsp/datapractice/application/runner/TransactionDemoRunner.java
+ com.chdlsp.datapractice.application.runner.TransactionDemoRunner
+com/chdlsp/datapractice/domain/entity/CommentReplyEntity.java
+ com.chdlsp.datapractice.domain.entity.CommentReplyEntity
+ com.chdlsp.datapractice.domain.entity.CommentReplyEntity$CommentReplyEntityBuilder
 com/chdlsp/datapractice/application/controller/TransactionRestDemoController.java
  com.chdlsp.datapractice.application.controller.TransactionRestDemoController
-com/chdlsp/datapractice/domain/interfaces/dto/QueryParameterDTO.java
- com.chdlsp.datapractice.domain.interfaces.dto.QueryParameterDTO
+com/chdlsp/datapractice/domain/entity/ContentInfoEntity.java
+ com.chdlsp.datapractice.domain.entity.ContentInfoEntity
+ com.chdlsp.datapractice.domain.entity.ContentInfoEntity$ContentInfoEntityBuilder
+com/chdlsp/datapractice/domain/interfaces/vo/RegionInfoVO.java
+ com.chdlsp.datapractice.domain.interfaces.vo.RegionInfoVO
+ com.chdlsp.datapractice.domain.interfaces.vo.RegionInfoVO$RegionInfoVOBuilder
+com/chdlsp/datapractice/DataPracticeApplication.java
+ com.chdlsp.datapractice.DataPracticeApplication
+ com.chdlsp.datapractice.DataPracticeApplication$1
 com/chdlsp/datapractice/application/controller/TransactionWebDemoController.java
  com.chdlsp.datapractice.application.controller.TransactionWebDemoController
-com/chdlsp/datapractice/domain/interfaces/vo/KakaoPlaceVO.java
- com.chdlsp.datapractice.domain.interfaces.vo.KakaoPlaceVO
+com/chdlsp/datapractice/handler/GlobalExceptionHandler.java
+ com.chdlsp.datapractice.handler.GlobalExceptionHandler
+com/chdlsp/datapractice/application/common/client/RequestBuilder.java
+ com.chdlsp.datapractice.application.common.client.RequestBuilder
 com/chdlsp/datapractice/domain/entity/AddressLoadInfoEntity.java
  com.chdlsp.datapractice.domain.entity.AddressLoadInfoEntity
  com.chdlsp.datapractice.domain.entity.AddressLoadInfoEntity$AddressLoadInfoEntityBuilder
-com/chdlsp/datapractice/service/KakaoPlaceService.java
- com.chdlsp.datapractice.service.KakaoPlaceService
+com/chdlsp/datapractice/domain/interfaces/vo/DocumentVO.java
+ com.chdlsp.datapractice.domain.interfaces.vo.DocumentVO
+com/chdlsp/datapractice/repository/UserRepository.java
+ com.chdlsp.datapractice.repository.UserRepository
+com/chdlsp/datapractice/domain/interfaces/dto/PaginationDTO.java
+ com.chdlsp.datapractice.domain.interfaces.dto.PaginationDTO
+ com.chdlsp.datapractice.domain.interfaces.dto.PaginationDTO$PaginationDTOBuilder
 com/chdlsp/datapractice/application/runner/RedisRepositoryRunner.java
  com.chdlsp.datapractice.application.runner.RedisRepositoryRunner
 com/chdlsp/datapractice/domain/enums/PlaceServiceTypeEnums.java
  com.chdlsp.datapractice.domain.enums.PlaceServiceTypeEnums
-com/chdlsp/datapractice/domain/interfaces/KakaoMapClient.java
- com.chdlsp.datapractice.domain.interfaces.KakaoMapClient
+com/chdlsp/datapractice/domain/enums/KakaoMapRestUrlEnums.java
+ com.chdlsp.datapractice.domain.enums.KakaoMapRestUrlEnums
 com/chdlsp/datapractice/repository/AddressLoadInfoRepository.java
  com.chdlsp.datapractice.repository.AddressLoadInfoRepository
 com/chdlsp/datapractice/application/common/client/AdapterRestUrl.java
@@ -73,19 +90,40 @@ com/chdlsp/datapractice/domain/enums/KakaoCategoryGroupEnums.java
 com/chdlsp/datapractice/application/common/SpringWebRestClient.java
  com.chdlsp.datapractice.application.common.SpringWebRestClient
  com.chdlsp.datapractice.application.common.SpringWebRestClient$1
-com/chdlsp/datapractice/repository/CommentInfoRepository.java
- com.chdlsp.datapractice.repository.CommentInfoRepository
-com/chdlsp/datapractice/domain/interfaces/vo/UserVO.java
- com.chdlsp.datapractice.domain.interfaces.vo.UserVO
- com.chdlsp.datapractice.domain.interfaces.vo.UserVO$UserVOBuilder
-com/chdlsp/datapractice/domain/enums/KakaoMapRestUrlEnums.java
- com.chdlsp.datapractice.domain.enums.KakaoMapRestUrlEnums
+com/chdlsp/datapractice/domain/interfaces/spec/Place.java
+ com.chdlsp.datapractice.domain.interfaces.spec.Place
+com/chdlsp/datapractice/domain/interfaces/vo/KakaoPlaceVO.java
+ com.chdlsp.datapractice.domain.interfaces.vo.KakaoPlaceVO
+com/chdlsp/datapractice/domain/interfaces/spec/SearchQueryParameter.java
+ com.chdlsp.datapractice.domain.interfaces.spec.SearchQueryParameter
 com/chdlsp/datapractice/domain/interfaces/vo/MetaVO.java
  com.chdlsp.datapractice.domain.interfaces.vo.MetaVO
-com/chdlsp/datapractice/domain/interfaces/vo/DocumentVO.java
- com.chdlsp.datapractice.domain.interfaces.vo.DocumentVO
-com/chdlsp/datapractice/application/common/client/RequestBuilder.java
- com.chdlsp.datapractice.application.common.client.RequestBuilder
-com/chdlsp/datapractice/domain/interfaces/response/CreateUserInfoResponse.java
- com.chdlsp.datapractice.domain.interfaces.response.CreateUserInfoResponse
- com.chdlsp.datapractice.domain.interfaces.response.CreateUserInfoResponse$CreateUserInfoResponseBuilder
+com/chdlsp/datapractice/domain/interfaces/vo/DefaultPlace.java
+ com.chdlsp.datapractice.domain.interfaces.vo.DefaultPlace
+ com.chdlsp.datapractice.domain.interfaces.vo.DefaultPlace$DefaultPlaceBuilder
+com/chdlsp/datapractice/domain/interfaces/response/SearchPlaceResult.java
+ com.chdlsp.datapractice.domain.interfaces.response.SearchPlaceResult
+ com.chdlsp.datapractice.domain.interfaces.response.SearchPlaceResult$SearchPlaceResultBuilder
+com/chdlsp/datapractice/domain/interfaces/vo/CategoryVO.java
+ com.chdlsp.datapractice.domain.interfaces.vo.CategoryVO
+ com.chdlsp.datapractice.domain.interfaces.vo.CategoryVO$CategoryVOBuilder
+com/chdlsp/datapractice/domain/interfaces/response/SearchPlaceResponse.java
+ com.chdlsp.datapractice.domain.interfaces.response.SearchPlaceResponse
+ com.chdlsp.datapractice.domain.interfaces.response.SearchPlaceResponse$SearchPlaceResponseBuilder
+com/chdlsp/datapractice/domain/interfaces/vo/Pagination.java
+ com.chdlsp.datapractice.domain.interfaces.vo.Pagination
+ com.chdlsp.datapractice.domain.interfaces.vo.Pagination$PaginationBuilder
+com/chdlsp/datapractice/domain/interfaces/vo/CategoryGroupVO.java
+ com.chdlsp.datapractice.domain.interfaces.vo.CategoryGroupVO
+ com.chdlsp.datapractice.domain.interfaces.vo.CategoryGroupVO$CategoryGroupVOBuilder
+com/chdlsp/datapractice/domain/interfaces/dto/QueryParameterDTO.java
+ com.chdlsp.datapractice.domain.interfaces.dto.QueryParameterDTO
+ com.chdlsp.datapractice.domain.interfaces.dto.QueryParameterDTO$QueryParameterDTOBuilder
+com/chdlsp/datapractice/domain/interfaces/KakaoMapRest.java
+ com.chdlsp.datapractice.domain.interfaces.KakaoMapRest
+com/chdlsp/datapractice/domain/interfaces/KakaoMapClient.java
+ com.chdlsp.datapractice.domain.interfaces.KakaoMapClient
+com/chdlsp/datapractice/application/controller/LocationController.java
+ com.chdlsp.datapractice.application.controller.LocationController
+com/chdlsp/datapractice/service/KakaoPlaceService.java
+ com.chdlsp.datapractice.service.KakaoPlaceService
