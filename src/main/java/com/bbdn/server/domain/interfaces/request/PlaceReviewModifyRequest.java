@@ -5,13 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
 public class PlaceReviewModifyRequest {
 
-    private String id; // 장소ID
+    private long id; // 장소ID
     private String addressName; // 전체도로명주소
     private String roadAddress; // 도로명주소
     private Long x; // x좌표
@@ -25,6 +27,8 @@ public class PlaceReviewModifyRequest {
     private int conveniencePoint; // 편의성 점수
     private int noisePoint; // 소음 점수
     private int safetyPoint; // 치안 점수
-    private String createdBy; // 작성자
+
+    @Email
+    private String email; // 작성자
 
 }

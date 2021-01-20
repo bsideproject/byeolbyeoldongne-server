@@ -129,3 +129,39 @@ com/bbdn/server/service/FormatTransformService.java
 com/bbdn/server/domain/interfaces/response/SearchPlaceResponse.java
  com.bbdn.server.domain.interfaces.response.SearchPlaceResponse
  com.bbdn.server.domain.interfaces.response.SearchPlaceResponse$SearchPlaceResponseBuilder
+com/bbdn/server/domain/interfaces/response/PlaceCommentReplyListResponse.java
+ com.bbdn.server.domain.interfaces.response.PlaceCommentReplyListResponse
+ com.bbdn.server.domain.interfaces.response.PlaceCommentReplyListResponse$PlaceCommentReplyListResponseBuilder
+com/bbdn/server/domain/interfaces/request/PlaceCommentUploadRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceCommentUploadRequest
+ com.bbdn.server.domain.interfaces.request.PlaceCommentUploadRequest$PlaceCommentUploadRequestBuilder
+com/bbdn/server/domain/interfaces/request/PlaceReviewListRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewListRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewListRequest$PlaceReviewListRequestBuilder
+com/bbdn/server/domain/interfaces/response/PlaceReviewListResponse.java
+ com.bbdn.server.domain.interfaces.response.PlaceReviewListResponse
+ com.bbdn.server.domain.interfaces.response.PlaceReviewListResponse$PlaceReviewListResponseBuilder
+com/bbdn/server/domain/interfaces/response/CommonPlaceReviewResponse.java
+ com.bbdn.server.domain.interfaces.response.CommonPlaceReviewResponse
+ com.bbdn.server.domain.interfaces.response.CommonPlaceReviewResponse$CommonPlaceReviewResponseBuilder
+com/bbdn/server/domain/interfaces/request/PlaceCommentReplyUploadRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceCommentReplyUploadRequest
+ com.bbdn.server.domain.interfaces.request.PlaceCommentReplyUploadRequest$PlaceCommentReplyUploadRequestBuilder
+com/bbdn/server/domain/interfaces/response/PlaceCommentListResponse.java
+ com.bbdn.server.domain.interfaces.response.PlaceCommentListResponse
+ com.bbdn.server.domain.interfaces.response.PlaceCommentListResponse$PlaceCommentListResponseBuilder
+com/bbdn/server/domain/interfaces/request/PlaceCommentReplyListRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceCommentReplyListRequest
+ com.bbdn.server.domain.interfaces.request.PlaceCommentReplyListRequest$PlaceCommentReplyListRequestBuilder
+com/bbdn/server/domain/interfaces/request/PlaceReviewDeleteRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest$PlaceReviewDeleteRequestBuilder
+com/bbdn/server/domain/interfaces/request/PlaceCommentListRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceCommentListRequest
+ com.bbdn.server.domain.interfaces.request.PlaceCommentListRequest$PlaceCommentListRequestBuilder
+com/bbdn/server/domain/interfaces/request/PlaceReviewUploadRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewUploadRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewUploadRequest$PlaceReviewUploadRequestBuilder
+com/bbdn/server/domain/interfaces/request/PlaceReviewModifyRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest$PlaceReviewModifyRequestBuilder

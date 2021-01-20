@@ -39,7 +39,6 @@ public class KakaoPlaceService {
 
         try {
 
-            // searchPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_ADDRESS_BY_QUERY_V2);
             searchPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_PLACE_BY_KEYWORD_V2);
 
             KakaoPlaceVO kakaoPlaceVO = this.kakaoMapClient.searchPlaceByKeyword(this.initiateQueryParameter(searchPlaceRequest));
