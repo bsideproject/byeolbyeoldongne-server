@@ -24,7 +24,6 @@ public class ReviewService {
     public CommonNotificationResponse postLocationReview(PlaceReviewModifyRequest placeReviewModifyRequest) {
 
         ReviewInfoEntity reviewInfoEntity = ReviewInfoEntity.builder()
-                .id(placeReviewModifyRequest.getId())
                 .addressName((placeReviewModifyRequest.getAddressName()))
                 .roadAddress(placeReviewModifyRequest.getRoadAddress())
                 .x(placeReviewModifyRequest.getX())
@@ -52,7 +51,40 @@ public class ReviewService {
             commonNotificationResponse.setMessage("저장에 실패했습니다.");
         }
 
+        return commonNotificationResponse;
+    }
+
+    public CommonNotificationResponse putLocationReview(PlaceReviewModifyRequest placeReviewModifyRequest) {
+
+        ReviewInfoEntity reviewInfoEntity = ReviewInfoEntity.builder()
+                .addressName((placeReviewModifyRequest.getAddressName()))
+                .roadAddress(placeReviewModifyRequest.getRoadAddress())
+                .x(placeReviewModifyRequest.getX())
+                .y(placeReviewModifyRequest.getY())
+                .reviewMainContent(placeReviewModifyRequest.getReviewMainContent())
+                .reviewGoodContent(placeReviewModifyRequest.getReviewGoodContent())
+                .reviewBadContent(placeReviewModifyRequest.getReviewBadContent())
+                .trafficPoint(placeReviewModifyRequest.getTrafficPoint())
+                .conveniencePoint(placeReviewModifyRequest.getConveniencePoint())
+                .noisePoint(placeReviewModifyRequest.getNoisePoint())
+                .safetyPoint(placeReviewModifyRequest.getSafetyPoint())
+                .email(placeReviewModifyRequest.getEmail())
+                .modifiedBy(placeReviewModifyRequest.getEmail())
+                .modifiedAt(LocalDateTime.now())
+                .build();
+
+        CommonNotificationResponse commonNotificationResponse = new CommonNotificationResponse();
+
+        try {
+            reviewInfoRepository.save(reviewInfoEntity);
+            commonNotificationResponse.setCode("0000");
+            commonNotificationResponse.setMessage("성공적으로 수정되었습니다.");
+        } catch (Exception e) {
+            commonNotificationResponse.setCode("1000");
+            commonNotificationResponse.setMessage("수정에 실패했습니다.");
+        }
 
         return commonNotificationResponse;
+
     }
 }
