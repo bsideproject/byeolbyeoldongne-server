@@ -2,11 +2,14 @@ plugins {
 	id 'org.springframework.boot' version '2.2.6.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
+	id 'war'
 }
 
 group = 'com.bbdn'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+
 
 configurations {
 	compileOnly {
@@ -46,4 +49,9 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+bootJar {
+	archiveBaseName = 'bbdn'
+	archiveVersion = "0.0"
 }
