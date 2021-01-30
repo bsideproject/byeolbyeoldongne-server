@@ -3,7 +3,7 @@ package com.bbdn.server.domain.interfaces;
 import com.bbdn.server.application.common.SpringWebRestClient;
 import com.bbdn.server.application.common.client.RequestBuilder;
 import com.bbdn.server.domain.enums.KakaoMapRestUrlEnums;
-import com.bbdn.server.domain.interfaces.vo.KakaoPlaceVO;
+import com.bbdn.server.domain.interfaces.vo.kakao.KakaoPlaceVO;
 import com.bbdn.server.handler.exception.KakaoMapClientException;
 import com.bbdn.server.domain.interfaces.dto.QueryParameterDTO;
 import lombok.extern.slf4j.Slf4j;

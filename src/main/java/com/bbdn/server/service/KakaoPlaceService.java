@@ -7,7 +7,7 @@ import com.bbdn.server.domain.enums.PlaceServiceTypeEnums;
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
 import com.bbdn.server.domain.interfaces.request.SearchPlaceRequest;
 import com.bbdn.server.domain.interfaces.spec.Place;
-import com.bbdn.server.domain.interfaces.vo.*;
+import com.bbdn.server.domain.interfaces.vo.kakao.*;
 import com.bbdn.server.handler.exception.BadSearchRequestException;
 import com.bbdn.server.handler.exception.KakaoMapClientException;
 import com.bbdn.server.domain.enums.KakaoCategoryGroupEnums;

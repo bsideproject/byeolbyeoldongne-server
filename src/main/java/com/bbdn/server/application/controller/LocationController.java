@@ -2,8 +2,9 @@ package com.bbdn.server.application.controller;
 
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
 import com.bbdn.server.domain.interfaces.request.SearchPlaceRequest;
-import com.bbdn.server.domain.interfaces.response.SearchPlaceResponse;
+import com.bbdn.server.domain.interfaces.response.bbdn.SearchPlaceResponse;
 import com.bbdn.server.service.FormatTransformService;
+import com.bbdn.server.service.GooglePlaceService;
 import com.bbdn.server.service.KakaoPlaceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -17,14 +18,31 @@ import java.util.List;
 public class LocationController {
 
     final KakaoPlaceService kakaoPlaceService;
+    final GooglePlaceService googlePlaceService;
     final FormatTransformService formatTransformService;
 
-    public LocationController(KakaoPlaceService kakaoPlaceService, FormatTransformService formatTransformService) {
+    public LocationController(KakaoPlaceService kakaoPlaceService, GooglePlaceService googlePlaceService, FormatTransformService formatTransformService) {
         this.kakaoPlaceService = kakaoPlaceService;
+        this.googlePlaceService = googlePlaceService;
         this.formatTransformService = formatTransformService;
     }
 
-    @GetMapping("/list/{query}")
+    @GetMapping("/list")
+    public ResponseEntity getLoadListByQuery(@RequestParam("query") String query) {
+
+        log.info("getLoadListByQuery query : " + query);
+
+        SearchPlaceRequest searchPlaceRequest = SearchPlaceRequest
+                .builder()
+                .query(query)
+                .build();
+
+        SearchPlaceResponse searchPlaceResponse = googlePlaceService.searchPlaceByQueryParameter(searchPlaceRequest);
+        return ResponseEntity.ok(searchPlaceResponse);
+    }
+
+    // kakao usage depreciated
+/*    @GetMapping("/list/{query}")
     public ResponseEntity getLoadListByQuery(@PathVariable("query") String query) {
 
         log.info("getLoadListByQuery query : " + query);
@@ -37,5 +55,5 @@ public class LocationController {
         List<SearchPlaceResponse> responseEntity = formatTransformService.retrieveLocationListByQuery(searchPlaceResultDTO);
 
         return ResponseEntity.ok(responseEntity);
-    }
+    }*/
 }

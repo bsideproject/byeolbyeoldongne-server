@@ -1,7 +1,7 @@
 package com.bbdn.server.application.controller;
 
 import com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest;
-import com.bbdn.server.domain.interfaces.response.CommonNotificationResponse;
+import com.bbdn.server.domain.interfaces.response.bbdn.CommonNotificationResponse;
 import com.bbdn.server.handler.exception.IdNotFoundException;
 import com.bbdn.server.service.FormatTransformService;
 import com.bbdn.server.service.KakaoPlaceService;

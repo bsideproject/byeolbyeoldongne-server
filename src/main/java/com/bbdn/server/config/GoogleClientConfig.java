@@ -21,12 +21,12 @@ public class GoogleClientConfig {
                 .build();
     }
 
-    @Bean
-    public RestTemplate GoogleMapsApiTemplate() {
-        return restTemplateBuilder.rootUri("http://xxxx")
-                .additionalInterceptors(new RestTemplateClientHttpRequestInterceptor())
-                .errorHandler(new RestTemplateErrorHandler())
-                .setConnectTimeout(Duration.ofMinutes(3))
-                .build();
-    }
+//    @Bean
+//    public RestTemplate GoogleMapsApiTemplate() {
+//        return restTemplateBuilder.rootUri("http://localhost:8080")
+//                .additionalInterceptors(new RestTemplateClientHttpRequestInterceptor())
+//                .errorHandler(new RestTemplateErrorHandler())
+//                .setConnectTimeout(Duration.ofMinutes(3))
+//                .build();
+//    }
 }

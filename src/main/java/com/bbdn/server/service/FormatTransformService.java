@@ -1,7 +1,7 @@
 package com.bbdn.server.service;
 
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
-import com.bbdn.server.domain.interfaces.response.SearchPlaceResponse;
+import com.bbdn.server.domain.interfaces.response.bbdn.SearchPlaceResponse;
 import com.bbdn.server.domain.interfaces.spec.Place;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

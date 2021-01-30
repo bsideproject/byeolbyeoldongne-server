@@ -32,7 +32,7 @@ public class RestTemplateClientHttpRequestInterceptor implements ClientHttpReque
         log.info("Headers: {}", request.getHeaders());
         log.info("Request Method: {}", request.getMethod());
         log.info("Request URI: {}", request.getURI());
-        log.info("Request body: {}",
+        log.info("Request body:Request body: {}",
                 body.length == 0 ? null : new String(body, StandardCharsets.UTF_8));
         log.info("=====Request======");
     }

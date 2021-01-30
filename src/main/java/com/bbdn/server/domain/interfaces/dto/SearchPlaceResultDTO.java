@@ -2,8 +2,8 @@ package com.bbdn.server.domain.interfaces.dto;
 
 
 import com.bbdn.server.domain.interfaces.spec.Place;
-import com.bbdn.server.domain.interfaces.vo.PaginationVO;
-import com.bbdn.server.domain.interfaces.vo.RegionInfoVO;
+import com.bbdn.server.domain.interfaces.vo.kakao.PaginationVO;
+import com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
