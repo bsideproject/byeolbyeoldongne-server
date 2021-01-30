@@ -1,7 +1,7 @@
 com/bbdn/server/service/TransactionDemoService.java
  com.bbdn.server.service.TransactionDemoService
-com/bbdn/server/application/controller/HelloController.java
- com.bbdn.server.application.controller.HelloController
+com/bbdn/server/application/runner/TransactionDemoRunner.java
+ com.bbdn.server.application.runner.TransactionDemoRunner
 com/bbdn/server/service/ReviewService.java
  com.bbdn.server.service.ReviewService
 com/bbdn/server/domain/interfaces/dto/SearchPlaceResultDTO.java
@@ -165,6 +165,8 @@ com/bbdn/server/application/controller/LocationController.java
 com/bbdn/server/application/common/SpringWebRestClient.java
  com.bbdn.server.application.common.SpringWebRestClient
  com.bbdn.server.application.common.SpringWebRestClient$1
+com/bbdn/server/application/controller/HelloController.java
+ com.bbdn.server.application.controller.HelloController
 com/bbdn/server/domain/interfaces/response/CommonNotificationResponse.java
  com.bbdn.server.domain.interfaces.response.CommonNotificationResponse
  com.bbdn.server.domain.interfaces.response.CommonNotificationResponse$CommonNotificationResponseBuilder
@@ -176,5 +178,3 @@ com/bbdn/server/domain/interfaces/request/PlaceReviewDeleteRequest.java
  com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest$PlaceReviewDeleteRequestBuilder
 com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
  com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
-com/bbdn/server/application/runner/TransactionDemoRunner.java
- com.bbdn.server.application.runner.TransactionDemoRunner

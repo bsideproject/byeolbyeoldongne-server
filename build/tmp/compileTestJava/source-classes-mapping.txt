@@ -1,8 +1,0 @@
-com/bbdn/server/application/TransactionDemoControllerTests.java
- com.bbdn.server.application.TransactionDemoControllerTests
-com/bbdn/server/repository/UserVORepositoryTests.java
- com.bbdn.server.repository.UserVORepositoryTests
-com/bbdn/server/service/TransactionDemoServiceTests.java
- com.bbdn.server.service.TransactionDemoServiceTests
-com/bbdn/server/BbdnServerApplicationTests.java
- com.bbdn.server.BbdnServerApplicationTests

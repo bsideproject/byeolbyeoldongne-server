@@ -32,10 +32,10 @@ public class TransactionDemoRunner implements ApplicationRunner {
         StopWatch stopWatchForRest = new StopWatch();
         stopWatchForRest.start();
 
-        String forObjectSuccess = restTemplate.getForObject("http://localhost/web/success", String.class);
+        String forObjectSuccess = restTemplate.getForObject("http://localhost:8080/web/success", String.class);
         log.info(forObjectSuccess);
 
-        String forObjectFailure = restTemplate.getForObject("http://localhost/web/failure", String.class);
+        String forObjectFailure = restTemplate.getForObject("http://localhost:8080/web/failure", String.class);
         log.info(forObjectFailure);
 
         stopWatchForRest.stop();
@@ -47,7 +47,7 @@ public class TransactionDemoRunner implements ApplicationRunner {
 
         // WebClient 은 비동기 방식으로 수행 됨 (NonBlocking IO 기반)
         WebClient webClient = webClientBuilder
-                .baseUrl("http://localhost/web")
+                .baseUrl("http://localhost:8080/web")
                 .build();
 
         StopWatch stopWatchForWeb = new StopWatch();
