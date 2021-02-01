@@ -37,8 +37,8 @@ public class LocationController {
                 .query(query)
                 .build();
 
-        SearchPlaceResponse searchPlaceResponse = googlePlaceService.searchPlaceByQueryParameter(searchPlaceRequest);
-        return ResponseEntity.ok(searchPlaceResponse);
+        List<SearchPlaceResponse> searchPlaceResponseList = googlePlaceService.searchPlaceByQueryParameter(searchPlaceRequest);
+        return ResponseEntity.ok(searchPlaceResponseList);
     }
 
     // kakao usage depreciated

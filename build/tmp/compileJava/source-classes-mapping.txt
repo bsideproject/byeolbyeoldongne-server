@@ -6,10 +6,6 @@ com/bbdn/server/domain/interfaces/vo/kakao/CategoryVO.java
 com/bbdn/server/domain/interfaces/vo/kakao/RegionInfoVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO
  com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO$RegionInfoVOBuilder
-com/bbdn/server/application/runner/TransactionDemoRunner.java
- com.bbdn.server.application.runner.TransactionDemoRunner
-com/bbdn/server/domain/interfaces/vo/google/LocationDTO.java
- com.bbdn.server.domain.interfaces.vo.google.LocationDTO
 com/bbdn/server/domain/interfaces/response/bbdn/SearchPlaceResponse.java
  com.bbdn.server.domain.interfaces.response.bbdn.SearchPlaceResponse
  com.bbdn.server.domain.interfaces.response.bbdn.SearchPlaceResponse$SearchPlaceResponseBuilder
@@ -118,13 +114,6 @@ com/bbdn/server/service/FormatTransformService.java
 com/bbdn/server/domain/interfaces/request/CreateUserInfoRequest.java
  com.bbdn.server.domain.interfaces.request.CreateUserInfoRequest
  com.bbdn.server.domain.interfaces.request.CreateUserInfoRequest$CreateUserInfoRequestBuilder
-com/bbdn/server/domain/interfaces/vo/google/GeocodeDTO.java
- com.bbdn.server.domain.interfaces.vo.google.GAddressComponent
- com.bbdn.server.domain.interfaces.vo.google.GCoordinates
- com.bbdn.server.domain.interfaces.vo.google.GGeometry
- com.bbdn.server.domain.interfaces.vo.google.GResult
- com.bbdn.server.domain.interfaces.vo.google.GViewport
- com.bbdn.server.domain.interfaces.vo.google.GeocodeDTO
 com/bbdn/server/domain/interfaces/vo/kakao/PaginationVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.PaginationVO
  com.bbdn.server.domain.interfaces.vo.kakao.PaginationVO$PaginationVOBuilder
@@ -141,8 +130,6 @@ com/bbdn/server/repository/AddressLoadInfoRepository.java
  com.bbdn.server.repository.AddressLoadInfoRepository
 com/bbdn/server/domain/interfaces/spec/SearchQueryParameter.java
  com.bbdn.server.domain.interfaces.spec.SearchQueryParameter
-com/bbdn/server/domain/interfaces/vo/google/GeocodeResponse.java
- com.bbdn.server.domain.interfaces.vo.google.GeocodeResponse
 com/bbdn/server/handler/GlobalExceptionHandler.java
  com.bbdn.server.handler.GlobalExceptionHandler
 com/bbdn/server/domain/interfaces/KakaoMapRest.java
@@ -153,8 +140,6 @@ com/bbdn/server/repository/ContentInfoRepository.java
  com.bbdn.server.repository.ContentInfoRepository
 com/bbdn/server/repository/UserRepository.java
  com.bbdn.server.repository.UserRepository
-com/bbdn/server/application/runner/RedisRepositoryRunner.java
- com.bbdn.server.application.runner.RedisRepositoryRunner
 com/bbdn/server/domain/entity/CommentReplyEntity.java
  com.bbdn.server.domain.entity.CommentReplyEntity
  com.bbdn.server.domain.entity.CommentReplyEntity$CommentReplyEntityBuilder
@@ -181,23 +166,31 @@ com/bbdn/server/domain/interfaces/request/PlaceReviewUploadRequest.java
 com/bbdn/server/domain/interfaces/response/bbdn/PlaceCommentListResponse.java
  com.bbdn.server.domain.interfaces.response.bbdn.PlaceCommentListResponse
  com.bbdn.server.domain.interfaces.response.bbdn.PlaceCommentListResponse$PlaceCommentListResponseBuilder
+com/bbdn/server/domain/interfaces/vo/google/GoogleGeoCodeVO.java
+ com.bbdn.server.domain.interfaces.vo.google.GoogleGeoCodeVO
+com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
+ com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
 com/bbdn/server/domain/entity/CommentInfoEntity.java
  com.bbdn.server.domain.entity.CommentInfoEntity
  com.bbdn.server.domain.entity.CommentInfoEntity$CommentInfoEntityBuilder
-com/bbdn/server/application/controller/LocationController.java
- com.bbdn.server.application.controller.LocationController
+com/bbdn/server/domain/interfaces/request/PlaceReviewDeleteRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest$PlaceReviewDeleteRequestBuilder
 com/bbdn/server/application/common/SpringWebRestClient.java
  com.bbdn.server.application.common.SpringWebRestClient
  com.bbdn.server.application.common.SpringWebRestClient$1
 com/bbdn/server/application/controller/HelloController.java
  com.bbdn.server.application.controller.HelloController
-com/bbdn/server/service/GooglePlaceService.java
- com.bbdn.server.service.GooglePlaceService
 com/bbdn/server/domain/interfaces/dto/QueryParameterDTO.java
  com.bbdn.server.domain.interfaces.dto.QueryParameterDTO
  com.bbdn.server.domain.interfaces.dto.QueryParameterDTO$QueryParameterDTOBuilder
-com/bbdn/server/domain/interfaces/request/PlaceReviewDeleteRequest.java
- com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest
- com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest$PlaceReviewDeleteRequestBuilder
-com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
- com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
+com/bbdn/server/domain/interfaces/vo/google/GooglePlaceVO.java
+ com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO
+ com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$AddressComponent
+ com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$Bounds
+ com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$Geometry
+ com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$Location
+com/bbdn/server/application/controller/LocationController.java
+ com.bbdn.server.application.controller.LocationController
+com/bbdn/server/service/GooglePlaceService.java
+ com.bbdn.server.service.GooglePlaceService

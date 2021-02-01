@@ -1,12 +1,15 @@
 package com.bbdn.server.service;
 
 import com.bbdn.server.application.client.GoogleClient;
-import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
 import com.bbdn.server.domain.interfaces.request.SearchPlaceRequest;
 import com.bbdn.server.domain.interfaces.response.bbdn.SearchPlaceResponse;
-import com.bbdn.server.domain.interfaces.vo.google.GeocodeResponse;
+import com.bbdn.server.domain.interfaces.vo.google.GoogleGeoCodeVO;
+import com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -18,20 +21,23 @@ public class GooglePlaceService {
         this.googleClient = googleClient;
     }
 
-    public SearchPlaceResponse searchPlaceByQueryParameter(SearchPlaceRequest searchPlaceRequest) {
+    public List<SearchPlaceResponse> searchPlaceByQueryParameter(SearchPlaceRequest searchPlaceRequest) {
 
-        log.info("searchPlaceRequest : "  +  searchPlaceRequest);
+        List<GooglePlaceVO> googlePlaceVOList = googleClient.getGoogleGeocodeApi(searchPlaceRequest);
+        List<SearchPlaceResponse> searchPlaceResponseList = new ArrayList<>();
 
-        GeocodeResponse geocodeResponse = googleClient.getGoogleGeocodeApi(searchPlaceRequest);
+        log.info("googlePlaceVOList : " + googlePlaceVOList);
+        for(GooglePlaceVO googlePlaceVO : googlePlaceVOList) {
+            SearchPlaceResponse searchPlaceResponse = SearchPlaceResponse.builder()
+                    .addressName(googlePlaceVO.getFormatted_address())
+                    .id(googlePlaceVO.getPlace_id())
+                    .x(googlePlaceVO.getGeometry().location.lat)
+                    .y(googlePlaceVO.getGeometry().location.lng)
+                    .roadAddress(googlePlaceVO.getFormatted_address())
+                    .build();
 
-        SearchPlaceResponse searchPlaceResponse = SearchPlaceResponse.builder()
-                .addressName(geocodeResponse.getFormattedAddress())
-                .id(geocodeResponse.getFormattedAddress())
-                .x(geocodeResponse.getLatitude())
-                .y(geocodeResponse.getLongitude())
-                .roadAddress(geocodeResponse.getFormattedAddress())
-                .build();
-
-        return searchPlaceResponse;
+            searchPlaceResponseList.add(searchPlaceResponse);
+        }
+        return searchPlaceResponseList;
     }
 }
