@@ -1,4 +1,4 @@
-package com.bbdn.server.domain.interfaces.response.bbdn;
+package com.bbdn.server.domain.interfaces.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

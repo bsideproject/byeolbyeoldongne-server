@@ -2,7 +2,7 @@ package com.bbdn.server.application.controller;
 
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
 import com.bbdn.server.domain.interfaces.request.SearchPlaceRequest;
-import com.bbdn.server.domain.interfaces.response.bbdn.SearchPlaceResponse;
+import com.bbdn.server.domain.interfaces.response.SearchPlaceResponse;
 import com.bbdn.server.service.FormatTransformService;
 import com.bbdn.server.service.GooglePlaceService;
 import com.bbdn.server.service.KakaoPlaceService;

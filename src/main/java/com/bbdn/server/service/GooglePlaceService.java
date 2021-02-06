@@ -2,8 +2,7 @@ package com.bbdn.server.service;
 
 import com.bbdn.server.application.client.GoogleClient;
 import com.bbdn.server.domain.interfaces.request.SearchPlaceRequest;
-import com.bbdn.server.domain.interfaces.response.bbdn.SearchPlaceResponse;
-import com.bbdn.server.domain.interfaces.vo.google.GoogleGeoCodeVO;
+import com.bbdn.server.domain.interfaces.response.SearchPlaceResponse;
 import com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

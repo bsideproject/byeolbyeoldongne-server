@@ -2,7 +2,7 @@ package com.bbdn.server.service;
 
 import com.bbdn.server.domain.entity.ReviewInfoEntity;
 import com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest;
-import com.bbdn.server.domain.interfaces.response.bbdn.CommonNotificationResponse;
+import com.bbdn.server.domain.interfaces.response.CommonNotificationResponse;
 import com.bbdn.server.repository.ReviewInfoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
