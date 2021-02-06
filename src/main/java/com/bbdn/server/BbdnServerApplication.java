@@ -18,13 +18,10 @@ public class BbdnServerApplication extends SpringBootServletInitializer {
 
 	@Bean
 	public RestTemplateCustomizer restTemplateCustomizer() {
-		return new RestTemplateCustomizer() {
-			@Override
-			public void customize(RestTemplate restTemplate) {
-				// PSA - portable service abstraction
-				// HttpComponentsClientHttpRequestFactory 선언 시 Apache 의 httpClient 를 사용하게 됨
-				restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
-			}
+		return restTemplate -> {
+			// PSA - portable service abstraction
+			// HttpComponentsClientHttpRequestFactory 선언 시 Apache 의 httpClient 를 사용하게 됨
+			restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
 		};
 	}
 

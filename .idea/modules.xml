@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data-practice.iml" filepath="$PROJECT_DIR$/.idea/modules/data-practice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data-practice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/data-practice.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data-practice.test.iml" filepath="$PROJECT_DIR$/.idea/modules/data-practice.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bbdn-server.iml" filepath="$PROJECT_DIR$/.idea/modules/bbdn-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bbdn-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/bbdn-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bbdn-server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/bbdn-server.test.iml" />
     </modules>
   </component>
 </project>

@@ -2,10 +2,12 @@ package com.bbdn.server.domain.interfaces.vo.kakao;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
 import java.beans.ConstructorProperties;
 
 @Getter
+@ToString
 public class PaginationVO {
     private final boolean end;
     private final int pageableCount;

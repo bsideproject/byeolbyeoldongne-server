@@ -15,6 +15,8 @@ public class SearchPlaceResponse {
     private String addressName;
     private String roadAddress;
 
+    private String placeName;
+
     private Double x;
     private Double y;
 }

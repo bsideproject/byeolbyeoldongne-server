@@ -23,6 +23,7 @@ public class FormatTransformService {
             String id = place.getId();
             String addressName = place.getAddressName();
             String roadAddressName = place.getRoadAddressName();
+            String placeName = place.getPlaceName();
             Double x = place.getX();
             Double y = place.getY();
 
@@ -30,6 +31,7 @@ public class FormatTransformService {
                     .id(id)
                     .addressName(addressName)
                     .roadAddress(roadAddressName)
+                    .placeName(placeName)
                     .x(x)
                     .y(y)
                     .build());
