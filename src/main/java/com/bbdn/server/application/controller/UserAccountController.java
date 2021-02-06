@@ -1,12 +1,15 @@
 package com.bbdn.server.application.controller;
 
 import com.bbdn.server.domain.entity.UserEntity;
+import com.bbdn.server.domain.interfaces.request.UserAccountNickNameRequest;
+import com.bbdn.server.domain.interfaces.response.CommonNotificationResponse;
 import com.bbdn.server.service.UserAccountService;
 import com.bbdn.server.domain.interfaces.request.UserAccountGoogleRequest;
 import com.bbdn.server.domain.interfaces.response.UserAccountExistsResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,4 +48,29 @@ public class UserAccountController {
 
         return userAccountExistsResponse;
     }
+
+    @PutMapping("/account/nickname")
+    public CommonNotificationResponse modifyUserAccountNickName(UserAccountNickNameRequest userAccountNickNameRequest) {
+
+        String email = userAccountNickNameRequest.getEmail();
+        String nickName = userAccountNickNameRequest.getNickName();
+
+        UserEntity userEntity = userAccountService.modifyUserAccountNickName(email, nickName);
+
+        CommonNotificationResponse commonNotificationResponse = new CommonNotificationResponse();
+
+        if(userEntity.getNickname().equals(nickName)) {
+            commonNotificationResponse.setCode("01");
+            commonNotificationResponse.setMessage("닉네임 수정에 성공했습니다.");
+        } else {
+            commonNotificationResponse.setCode("99");
+            commonNotificationResponse.setMessage("닉네임 수정에 실패했습니다.");
+        }
+        
+        return commonNotificationResponse;
+    }
+
+
+
+
 }
