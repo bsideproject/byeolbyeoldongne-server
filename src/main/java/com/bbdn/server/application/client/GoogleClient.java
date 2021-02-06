@@ -39,7 +39,6 @@ public class GoogleClient {
                 .queryParam("address", searchPlaceRequest.getQuery())
                 .queryParam("language", "ko")
                 .queryParam("region", "ko")
-
                 .build()
                 .toUri();
 

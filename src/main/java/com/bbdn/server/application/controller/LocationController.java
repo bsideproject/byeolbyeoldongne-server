@@ -27,8 +27,8 @@ public class LocationController {
         this.formatTransformService = formatTransformService;
     }
 
-    @GetMapping("/list")
-    public ResponseEntity getLoadListByQuery(@RequestParam("query") String query) {
+    @GetMapping("/list/google")
+    public ResponseEntity getGoogleLoadListByQuery(@RequestParam("query") String query) {
 
         log.info("getLoadListByQuery query : " + query);
 
@@ -42,8 +42,8 @@ public class LocationController {
     }
 
     // kakao usage depreciated
-/*    @GetMapping("/list/{query}")
-    public ResponseEntity getLoadListByQuery(@PathVariable("query") String query) {
+    @GetMapping("/list/kakao")
+    public ResponseEntity getKakaoLoadListByQuery(@RequestParam("query") String query) {
 
         log.info("getLoadListByQuery query : " + query);
 
@@ -55,5 +55,5 @@ public class LocationController {
         List<SearchPlaceResponse> responseEntity = formatTransformService.retrieveLocationListByQuery(searchPlaceResultDTO);
 
         return ResponseEntity.ok(responseEntity);
-    }*/
+    }
 }
