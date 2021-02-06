@@ -2,13 +2,15 @@ package com.bbdn.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.client.RestTemplateCustomizer;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class BbdnServerApplication {
+public class BbdnServerApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BbdnServerApplication.class, args);
@@ -24,5 +26,10 @@ public class BbdnServerApplication {
 				restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
 			}
 		};
+	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(BbdnServerApplication.class);
 	}
 }

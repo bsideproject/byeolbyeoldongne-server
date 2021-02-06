@@ -66,11 +66,6 @@ public class UserAccountController {
             commonNotificationResponse.setCode("99");
             commonNotificationResponse.setMessage("닉네임 수정에 실패했습니다.");
         }
-        
         return commonNotificationResponse;
     }
-
-
-
-
 }
