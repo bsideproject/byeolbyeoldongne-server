@@ -16,5 +16,5 @@ public class UserAccountGoogleRequest {
     String idToken;
     String serverAuthCode;
     List<String> scopes;
-    GoogleUserInfoVO googleUserInfoVO;
+    GoogleUserInfoVO user;
 }

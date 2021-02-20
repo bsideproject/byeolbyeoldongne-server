@@ -6,28 +6,28 @@ import com.bbdn.server.domain.interfaces.response.CommonNotificationResponse;
 import com.bbdn.server.service.UserAccountService;
 import com.bbdn.server.domain.interfaces.request.UserAccountGoogleRequest;
 import com.bbdn.server.domain.interfaces.response.UserAccountExistsResponse;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
 @Slf4j
 @RequestMapping("/users")
-@RequiredArgsConstructor
 public class UserAccountController {
 
     private UserAccountService userAccountService;
 
-    @PostMapping("/account/google")
-    public UserAccountExistsResponse processUserAccountInfo(UserAccountGoogleRequest userAccountGoogleRequest) {
+    public UserAccountController(UserAccountService userAccountService) {
+        this.userAccountService = userAccountService;
+    }
 
+    @PostMapping("/account/google")
+    public UserAccountExistsResponse processUserAccountInfo(@RequestBody UserAccountGoogleRequest userAccountGoogleRequest) {
+
+        log.info("processUserAccountInfo: " + userAccountGoogleRequest.toString());
         UserAccountExistsResponse userAccountExistsResponse = new UserAccountExistsResponse();
-        String email = userAccountGoogleRequest.getGoogleUserInfoVO().getEmail();
+        String email = userAccountGoogleRequest.getUser().getEmail();
         Optional<UserEntity> userAccount = userAccountService.checkExistsEmail(email);
 
         if(userAccount.isPresent()) {
@@ -50,7 +50,7 @@ public class UserAccountController {
     }
 
     @PutMapping("/account/nickname")
-    public CommonNotificationResponse modifyUserAccountNickName(UserAccountNickNameRequest userAccountNickNameRequest) {
+    public CommonNotificationResponse modifyUserAccountNickName(@RequestBody UserAccountNickNameRequest userAccountNickNameRequest) {
 
         String email = userAccountNickNameRequest.getEmail();
         String nickName = userAccountNickNameRequest.getNickName();
