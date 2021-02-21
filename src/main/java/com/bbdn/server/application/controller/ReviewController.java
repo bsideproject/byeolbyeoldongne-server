@@ -29,14 +29,18 @@ public class ReviewController {
     }
 
     @PostMapping("/review/{id}")
-    public ResponseEntity postLocationReview(@PathVariable("id") String id,
+    public ResponseEntity postLocationReview(@PathVariable("id") String placeId,
                                              @RequestBody PlaceReviewModifyRequest placeReviewModifyRequest) {
 
         log.info("postLocationReview request : " + placeReviewModifyRequest);
-        if(StringUtils.isEmpty(id)) {
+        if(StringUtils.isEmpty(placeId)) {
             throw new IdNotFoundException("ID는 필수 입력 값 입니다.");
         }
-        CommonNotificationResponse commonNotificationResponse = reviewService.postLocationReview(placeReviewModifyRequest);
+
+        placeReviewModifyRequest.setPlaceId(placeId);
+
+        CommonNotificationResponse commonNotificationResponse =
+                reviewService.postLocationReview(placeReviewModifyRequest);
 
         return ResponseEntity.ok(commonNotificationResponse);
     }

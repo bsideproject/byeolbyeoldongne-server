@@ -27,6 +27,7 @@ public class ReviewInfoEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
+    String placeId; // 장소ID
     String addressName; // 전체 도로명
     String roadAddress; // 약식 도로명
 

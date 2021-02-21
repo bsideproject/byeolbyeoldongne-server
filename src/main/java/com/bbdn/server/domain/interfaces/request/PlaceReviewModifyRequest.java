@@ -13,7 +13,9 @@ import javax.validation.constraints.Email;
 @Builder
 public class PlaceReviewModifyRequest {
 
-//    private long id; // 장소ID 2021.01.24 - not use
+    // 카카오-장소 API response
+
+    private String placeId; // 장소ID
     private String addressName; // 전체도로명주소
     private String roadAddress; // 도로명주소
     private Long x; // x좌표

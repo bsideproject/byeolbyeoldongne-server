@@ -23,6 +23,7 @@ public class ReviewService {
     public CommonNotificationResponse postLocationReview(PlaceReviewModifyRequest placeReviewModifyRequest) {
 
         ReviewInfoEntity reviewInfoEntity = ReviewInfoEntity.builder()
+                .placeId(placeReviewModifyRequest.getPlaceId())
                 .addressName((placeReviewModifyRequest.getAddressName()))
                 .roadAddress(placeReviewModifyRequest.getRoadAddress())
                 .x(placeReviewModifyRequest.getX())
