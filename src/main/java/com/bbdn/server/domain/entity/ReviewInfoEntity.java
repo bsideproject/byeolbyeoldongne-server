@@ -48,10 +48,6 @@ public class ReviewInfoEntity {
     @CreatedBy
     private String createdBy;
 
-    private String setCreatedBy(String email) {
-        return email;
-    }
-
     @CreatedDate
     private LocalDateTime createdAt;
 

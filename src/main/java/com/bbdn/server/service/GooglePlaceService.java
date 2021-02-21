@@ -29,7 +29,7 @@ public class GooglePlaceService {
         for(GooglePlaceVO googlePlaceVO : googlePlaceVOList) {
             SearchPlaceResponse searchPlaceResponse = SearchPlaceResponse.builder()
                     .addressName(googlePlaceVO.getFormatted_address())
-                    .id(googlePlaceVO.getPlace_id())
+                    .placeId(googlePlaceVO.getPlace_id())
                     .x(googlePlaceVO.getGeometry().location.lat)
                     .y(googlePlaceVO.getGeometry().location.lng)
                     .roadAddress(googlePlaceVO.getFormatted_address())

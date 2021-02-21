@@ -3,11 +3,14 @@ package com.bbdn.server.service;
 import com.bbdn.server.domain.entity.ReviewInfoEntity;
 import com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest;
 import com.bbdn.server.domain.interfaces.response.CommonNotificationResponse;
+import com.bbdn.server.domain.interfaces.response.PlaceReviewResponse;
 import com.bbdn.server.repository.ReviewInfoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -57,6 +60,7 @@ public class ReviewService {
     public CommonNotificationResponse putLocationReview(PlaceReviewModifyRequest placeReviewModifyRequest) {
 
         ReviewInfoEntity reviewInfoEntity = ReviewInfoEntity.builder()
+                .placeId(placeReviewModifyRequest.getPlaceId())
                 .addressName((placeReviewModifyRequest.getAddressName()))
                 .roadAddress(placeReviewModifyRequest.getRoadAddress())
                 .x(placeReviewModifyRequest.getX())
@@ -86,5 +90,47 @@ public class ReviewService {
 
         return commonNotificationResponse;
 
+    }
+
+    public List<PlaceReviewResponse> getLocationReviewList(String placeId) {
+
+        List<ReviewInfoEntity> reviewInfoEntityList = reviewInfoRepository.findByPlaceId(placeId);
+
+        log.info("placeReviewList: " + reviewInfoEntityList.toString());
+
+        List<PlaceReviewResponse> placeReviewResponseList = new ArrayList<>();
+
+        reviewInfoEntityList.forEach(placeReview -> {
+            PlaceReviewResponse placeReviewResponse = PlaceReviewResponse.builder()
+                    .reviewSequence(placeReview.getId().toString())
+                    .reviewMainContent(placeReview.getReviewMainContent())
+                    .reviewGoodContent(placeReview.getReviewGoodContent())
+                    .reviewBadContent(placeReview.getReviewBadContent())
+                    .trafficPoint(placeReview.getTrafficPoint())
+                    .conveniencePoint(placeReview.getConveniencePoint())
+                    .noisePoint(placeReview.getNoisePoint())
+                    .safetyPoint(placeReview.getSafetyPoint())
+                    .createdBy(placeReview.getCreatedBy())
+                    .createdAt(placeReview.getCreatedAt())
+                    .modifiedBy(placeReview.getModifiedBy())
+                    .modifiedAt(placeReview.getModifiedAt())
+                    .build();
+
+            placeReviewResponseList.add(placeReviewResponse);
+        });
+
+        return placeReviewResponseList;
+    }
+
+    public int deleteLocationReview(String reviewId) {
+        int result;
+        try {
+            reviewInfoRepository.deleteById(Long.parseLong(reviewId));
+            result = 1;
+        } catch(Exception e) {
+            result = 0;
+            log.error(e.getMessage());
+        }
+        return result;
     }
 }

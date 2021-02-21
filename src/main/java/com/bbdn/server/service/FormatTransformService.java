@@ -28,7 +28,7 @@ public class FormatTransformService {
             Double y = place.getY();
 
             responseList.add(SearchPlaceResponse.builder()
-                    .id(id)
+                    .placeId(id)
                     .addressName(addressName)
                     .roadAddress(roadAddressName)
                     .placeName(placeName)

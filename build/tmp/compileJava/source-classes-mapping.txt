@@ -26,9 +26,8 @@ com/bbdn/server/domain/interfaces/vo/kakao/UserVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.UserVO$UserVOBuilder
 com/bbdn/server/repository/CommentReplyRepository.java
  com.bbdn.server.repository.CommentReplyRepository
-com/bbdn/server/domain/interfaces/response/SearchPlaceResponse.java
- com.bbdn.server.domain.interfaces.response.SearchPlaceResponse
- com.bbdn.server.domain.interfaces.response.SearchPlaceResponse$SearchPlaceResponseBuilder
+com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
+ com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
 com/bbdn/server/domain/enums/KakaoCategoryGroupEnums.java
  com.bbdn.server.domain.enums.KakaoCategoryGroupEnums
 com/bbdn/server/domain/interfaces/request/UserAccountNickNameRequest.java
@@ -43,16 +42,16 @@ com/bbdn/server/domain/interfaces/vo/kakao/CategoryGroupVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.CategoryGroupVO$CategoryGroupVOBuilder
 com/bbdn/server/domain/interfaces/vo/google/GoogleUserInfoVO.java
  com.bbdn.server.domain.interfaces.vo.google.GoogleUserInfoVO
-com/bbdn/server/domain/interfaces/response/PlaceReviewListResponse.java
- com.bbdn.server.domain.interfaces.response.PlaceReviewListResponse
- com.bbdn.server.domain.interfaces.response.PlaceReviewListResponse$PlaceReviewListResponseBuilder
+com/bbdn/server/application/controller/HelloController.java
+ com.bbdn.server.application.controller.HelloController
 com/bbdn/server/domain/interfaces/response/CommonPlaceReviewResponse.java
  com.bbdn.server.domain.interfaces.response.CommonPlaceReviewResponse
  com.bbdn.server.domain.interfaces.response.CommonPlaceReviewResponse$CommonPlaceReviewResponseBuilder
 com/bbdn/server/repository/CommentInfoRepository.java
  com.bbdn.server.repository.CommentInfoRepository
-com/bbdn/server/repository/ReviewInfoRepository.java
- com.bbdn.server.repository.ReviewInfoRepository
+com/bbdn/server/domain/entity/CommentInfoEntity.java
+ com.bbdn.server.domain.entity.CommentInfoEntity
+ com.bbdn.server.domain.entity.CommentInfoEntity$CommentInfoEntityBuilder
 com/bbdn/server/config/RestTemplateErrorHandler.java
  com.bbdn.server.config.RestTemplateErrorHandler
 com/bbdn/server/service/KakaoPlaceService.java
@@ -82,8 +81,9 @@ com/bbdn/server/domain/interfaces/resolver/QueryStringResolver.java
 com/bbdn/server/domain/interfaces/response/CommonNotificationResponse.java
  com.bbdn.server.domain.interfaces.response.CommonNotificationResponse
  com.bbdn.server.domain.interfaces.response.CommonNotificationResponse$CommonNotificationResponseBuilder
-com/bbdn/server/service/GooglePlaceService.java
- com.bbdn.server.service.GooglePlaceService
+com/bbdn/server/domain/interfaces/request/PlaceReviewModifyRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest$PlaceReviewModifyRequestBuilder
 com/bbdn/server/application/controller/TransactionRestDemoController.java
  com.bbdn.server.application.controller.TransactionRestDemoController
 com/bbdn/server/domain/interfaces/request/PlaceCommentUploadRequest.java
@@ -118,8 +118,9 @@ com/bbdn/server/BbdnServerApplication.java
  com.bbdn.server.BbdnServerApplication
 com/bbdn/server/application/client/GoogleClient.java
  com.bbdn.server.application.client.GoogleClient
-com/bbdn/server/service/FormatTransformService.java
- com.bbdn.server.service.FormatTransformService
+com/bbdn/server/application/common/SpringWebRestClient.java
+ com.bbdn.server.application.common.SpringWebRestClient
+ com.bbdn.server.application.common.SpringWebRestClient$1
 com/bbdn/server/domain/interfaces/request/CreateUserInfoRequest.java
  com.bbdn.server.domain.interfaces.request.CreateUserInfoRequest
  com.bbdn.server.domain.interfaces.request.CreateUserInfoRequest$CreateUserInfoRequestBuilder
@@ -185,25 +186,24 @@ com/bbdn/server/domain/interfaces/vo/google/GooglePlaceVO.java
  com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$Bounds
  com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$Geometry
  com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$Location
-com/bbdn/server/domain/entity/CommentInfoEntity.java
- com.bbdn.server.domain.entity.CommentInfoEntity
- com.bbdn.server.domain.entity.CommentInfoEntity$CommentInfoEntityBuilder
-com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
- com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
-com/bbdn/server/application/common/SpringWebRestClient.java
- com.bbdn.server.application.common.SpringWebRestClient
- com.bbdn.server.application.common.SpringWebRestClient$1
-com/bbdn/server/application/controller/HelloController.java
- com.bbdn.server.application.controller.HelloController
 com/bbdn/server/application/controller/LocationController.java
  com.bbdn.server.application.controller.LocationController
+com/bbdn/server/service/FormatTransformService.java
+ com.bbdn.server.service.FormatTransformService
+com/bbdn/server/domain/interfaces/response/PlaceReviewResponse.java
+ com.bbdn.server.domain.interfaces.response.PlaceReviewResponse
+ com.bbdn.server.domain.interfaces.response.PlaceReviewResponse$PlaceReviewResponseBuilder
+com/bbdn/server/domain/interfaces/response/SearchPlaceResponse.java
+ com.bbdn.server.domain.interfaces.response.SearchPlaceResponse
+ com.bbdn.server.domain.interfaces.response.SearchPlaceResponse$SearchPlaceResponseBuilder
+com/bbdn/server/service/GooglePlaceService.java
+ com.bbdn.server.service.GooglePlaceService
 com/bbdn/server/domain/entity/ReviewInfoEntity.java
  com.bbdn.server.domain.entity.ReviewInfoEntity
  com.bbdn.server.domain.entity.ReviewInfoEntity$ReviewInfoEntityBuilder
 com/bbdn/server/service/ReviewService.java
  com.bbdn.server.service.ReviewService
+com/bbdn/server/repository/ReviewInfoRepository.java
+ com.bbdn.server.repository.ReviewInfoRepository
 com/bbdn/server/application/controller/ReviewController.java
  com.bbdn.server.application.controller.ReviewController
-com/bbdn/server/domain/interfaces/request/PlaceReviewModifyRequest.java
- com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest
- com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest$PlaceReviewModifyRequestBuilder

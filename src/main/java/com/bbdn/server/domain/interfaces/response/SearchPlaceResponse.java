@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class SearchPlaceResponse {
 
-    private String id;
+    private String placeId;
     private String addressName;
     private String roadAddress;
 

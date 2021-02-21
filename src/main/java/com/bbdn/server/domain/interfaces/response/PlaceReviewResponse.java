@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @Builder
-public class PlaceReviewListResponse {
+public class PlaceReviewResponse {
 
     private String reviewSequence; // 리뷰 일련번호
     private String reviewMainContent; // 리뷰 개요
@@ -23,5 +23,7 @@ public class PlaceReviewListResponse {
     private int safetyPoint; // 치안 점수
     private String createdBy; // 작성자
     private LocalDateTime createdAt; // 작성시간
+    private String modifiedBy; // 수정자
+    private LocalDateTime modifiedAt; // 수정시간
 
 }
