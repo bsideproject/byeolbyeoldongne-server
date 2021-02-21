@@ -41,7 +41,6 @@ public class LocationController {
         return ResponseEntity.ok(searchPlaceResponseList);
     }
 
-    // kakao usage depreciated
     @GetMapping("/list/kakao")
     public ResponseEntity getKakaoLoadListByQuery(@RequestParam("query") String query) {
 
