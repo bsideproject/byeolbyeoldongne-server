@@ -51,8 +51,7 @@ public class ReviewController {
         return ResponseEntity.ok(commonNotificationResponse);
     }
 
-    @PutMapping("/place/sic" +
-            "review/{reviewSequence}")
+    @PutMapping("/place/review/{reviewSequence}")
     public ResponseEntity putLocationReview(
             @PathVariable("reviewSequence") Long reviewSequence,
             @RequestBody PlaceReviewModifyRequest placeReviewModifyRequest) {
