@@ -2,6 +2,7 @@ package com.bbdn.server.service;
 
 import com.bbdn.server.domain.entity.ReviewInfoEntity;
 import com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest;
+import com.bbdn.server.domain.interfaces.request.PlaceReviewUploadRequest;
 import com.bbdn.server.domain.interfaces.response.CommonNotificationResponse;
 import com.bbdn.server.domain.interfaces.response.PlaceReviewResponse;
 import com.bbdn.server.repository.ReviewInfoRepository;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -23,23 +25,23 @@ public class ReviewService {
         this.reviewInfoRepository = reviewInfoRepository;
     }
 
-    public CommonNotificationResponse postLocationReview(PlaceReviewModifyRequest placeReviewModifyRequest) {
+    public CommonNotificationResponse postLocationReview(PlaceReviewUploadRequest placeReviewUploadRequest) {
 
         ReviewInfoEntity reviewInfoEntity = ReviewInfoEntity.builder()
-                .placeId(placeReviewModifyRequest.getPlaceId())
-                .addressName((placeReviewModifyRequest.getAddressName()))
-                .roadAddress(placeReviewModifyRequest.getRoadAddress())
-                .x(placeReviewModifyRequest.getX())
-                .y(placeReviewModifyRequest.getY())
-                .reviewMainContent(placeReviewModifyRequest.getReviewMainContent())
-                .reviewGoodContent(placeReviewModifyRequest.getReviewGoodContent())
-                .reviewBadContent(placeReviewModifyRequest.getReviewBadContent())
-                .trafficPoint(placeReviewModifyRequest.getTrafficPoint())
-                .conveniencePoint(placeReviewModifyRequest.getConveniencePoint())
-                .noisePoint(placeReviewModifyRequest.getNoisePoint())
-                .safetyPoint(placeReviewModifyRequest.getSafetyPoint())
-                .email(placeReviewModifyRequest.getEmail())
-                .createdBy(placeReviewModifyRequest.getEmail())
+                .placeId(placeReviewUploadRequest.getPlaceId())
+                .addressName((placeReviewUploadRequest.getAddressName()))
+                .roadAddress(placeReviewUploadRequest.getRoadAddress())
+                .x(placeReviewUploadRequest.getX())
+                .y(placeReviewUploadRequest.getY())
+                .reviewMainContent(placeReviewUploadRequest.getReviewMainContent())
+                .reviewGoodContent(placeReviewUploadRequest.getReviewGoodContent())
+                .reviewBadContent(placeReviewUploadRequest.getReviewBadContent())
+                .trafficPoint(placeReviewUploadRequest.getTrafficPoint())
+                .conveniencePoint(placeReviewUploadRequest.getConveniencePoint())
+                .noisePoint(placeReviewUploadRequest.getNoisePoint())
+                .safetyPoint(placeReviewUploadRequest.getSafetyPoint())
+                .email(placeReviewUploadRequest.getEmail())
+                .createdBy(placeReviewUploadRequest.getEmail())
                 .createdAt(LocalDateTime.now())
                 .build();
 
@@ -57,42 +59,52 @@ public class ReviewService {
         return commonNotificationResponse;
     }
 
-    public CommonNotificationResponse putLocationReview(PlaceReviewModifyRequest placeReviewModifyRequest) {
+    public CommonNotificationResponse putLocationReview(Long reviewSequence,
+                                                        PlaceReviewModifyRequest placeReviewModifyRequest) {
 
-        ReviewInfoEntity reviewInfoEntity = ReviewInfoEntity.builder()
-                .placeId(placeReviewModifyRequest.getPlaceId())
-                .addressName((placeReviewModifyRequest.getAddressName()))
-                .roadAddress(placeReviewModifyRequest.getRoadAddress())
-                .x(placeReviewModifyRequest.getX())
-                .y(placeReviewModifyRequest.getY())
-                .reviewMainContent(placeReviewModifyRequest.getReviewMainContent())
-                .reviewGoodContent(placeReviewModifyRequest.getReviewGoodContent())
-                .reviewBadContent(placeReviewModifyRequest.getReviewBadContent())
-                .trafficPoint(placeReviewModifyRequest.getTrafficPoint())
-                .conveniencePoint(placeReviewModifyRequest.getConveniencePoint())
-                .noisePoint(placeReviewModifyRequest.getNoisePoint())
-                .safetyPoint(placeReviewModifyRequest.getSafetyPoint())
-                .email(placeReviewModifyRequest.getEmail())
-                .modifiedBy(placeReviewModifyRequest.getEmail())
-                .modifiedAt(LocalDateTime.now())
-                .build();
+        Optional<ReviewInfoEntity> reviewInfo =
+                reviewInfoRepository.findById(reviewSequence);
+
+        log.info("putLocationReview reviewInfo : " + reviewInfo.get().toString());
 
         CommonNotificationResponse commonNotificationResponse = new CommonNotificationResponse();
 
-        try {
-            reviewInfoRepository.save(reviewInfoEntity);
+        if(reviewInfo.isPresent()) {
+            try {
+                ReviewInfoEntity reviewInfoEntity = reviewInfo.get();
+
+                reviewInfoEntity.setId(reviewSequence);
+                reviewInfoEntity.setAddressName((placeReviewModifyRequest.getAddressName()));
+                reviewInfoEntity.setRoadAddress(placeReviewModifyRequest.getRoadAddress());
+                reviewInfoEntity.setX(placeReviewModifyRequest.getX());
+                reviewInfoEntity.setY(placeReviewModifyRequest.getY());
+                reviewInfoEntity.setReviewMainContent(placeReviewModifyRequest.getReviewMainContent());
+                reviewInfoEntity.setReviewGoodContent(placeReviewModifyRequest.getReviewGoodContent());
+                reviewInfoEntity.setReviewBadContent(placeReviewModifyRequest.getReviewBadContent());
+                reviewInfoEntity.setTrafficPoint(placeReviewModifyRequest.getTrafficPoint());
+                reviewInfoEntity.setConveniencePoint(placeReviewModifyRequest.getConveniencePoint());
+                reviewInfoEntity.setNoisePoint(placeReviewModifyRequest.getNoisePoint());
+                reviewInfoEntity.setSafetyPoint(placeReviewModifyRequest.getSafetyPoint());
+                reviewInfoEntity.setEmail(placeReviewModifyRequest.getEmail());
+                reviewInfoEntity.setModifiedBy(placeReviewModifyRequest.getEmail());
+                reviewInfoEntity.setModifiedAt(LocalDateTime.now());
+
+                log.info("putLocationReview reviewInfoEntity : " + reviewInfoEntity.toString());
+                reviewInfoRepository.save(reviewInfoEntity);
+
+            } catch (Exception e) {
+                commonNotificationResponse.setCode("1000");
+                commonNotificationResponse.setMessage("수정에 실패했습니다.");
+            }
+
             commonNotificationResponse.setCode("0000");
             commonNotificationResponse.setMessage("성공적으로 수정되었습니다.");
-        } catch (Exception e) {
-            commonNotificationResponse.setCode("1000");
-            commonNotificationResponse.setMessage("수정에 실패했습니다.");
         }
 
         return commonNotificationResponse;
-
     }
 
-    public List<PlaceReviewResponse> getLocationReviewList(String placeId) {
+    public List<PlaceReviewResponse> getLocationReviewList(Long placeId) {
 
         List<ReviewInfoEntity> reviewInfoEntityList = reviewInfoRepository.findByPlaceId(placeId);
 
@@ -122,10 +134,10 @@ public class ReviewService {
         return placeReviewResponseList;
     }
 
-    public int deleteLocationReview(String reviewId) {
+    public int deleteLocationReview(Long reviewId) {
         int result;
         try {
-            reviewInfoRepository.deleteById(Long.parseLong(reviewId));
+            reviewInfoRepository.deleteById(reviewId);
             result = 1;
         } catch(Exception e) {
             result = 0;

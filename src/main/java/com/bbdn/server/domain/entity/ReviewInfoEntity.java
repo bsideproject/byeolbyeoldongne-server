@@ -24,10 +24,10 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 public class ReviewInfoEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String placeId; // 장소ID
+    Long placeId; // 장소ID
     String addressName; // 전체 도로명
     String roadAddress; // 약식 도로명
 

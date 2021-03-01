@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 public class PlaceReviewUploadRequest {
 
-    private String id; // 장소ID
+    private Long placeId; // 장소ID
     private String addressName; // 전체도로명주소
     private String roadAddress; // 도로명주소
     private Long x; // x좌표
@@ -26,6 +26,6 @@ public class PlaceReviewUploadRequest {
     private int conveniencePoint; // 편의성 점수
     private int noisePoint; // 소음 점수
     private int safetyPoint; // 치안 점수
-    private String createdBy; // 작성자
+    private String email; // 작성자
 
 }

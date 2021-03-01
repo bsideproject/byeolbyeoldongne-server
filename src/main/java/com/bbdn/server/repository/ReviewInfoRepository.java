@@ -10,5 +10,5 @@ import java.util.List;
 
 @Repository
 public interface ReviewInfoRepository extends JpaRepository<ReviewInfoEntity, Long> {
-    List<ReviewInfoEntity> findByPlaceId(String placeId);
+    List<ReviewInfoEntity> findByPlaceId(Long placeId);
 }

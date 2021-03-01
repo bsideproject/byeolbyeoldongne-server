@@ -1,6 +1,7 @@
 package com.bbdn.server.application.controller;
 
 import com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest;
+import com.bbdn.server.domain.interfaces.request.PlaceReviewUploadRequest;
 import com.bbdn.server.domain.interfaces.response.CommonNotificationResponse;
 import com.bbdn.server.domain.interfaces.response.PlaceReviewResponse;
 import com.bbdn.server.handler.exception.IdNotFoundException;
@@ -31,44 +32,47 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
 
-    @PostMapping("/review/{placeId}")
-    public ResponseEntity postLocationReview(@PathVariable("placeId") String placeId,
-                                             @RequestBody PlaceReviewModifyRequest placeReviewModifyRequest) {
+    @PostMapping("/place/review/{placeId}")
+    public ResponseEntity postLocationReview(@PathVariable("placeId") Long placeId,
+                                             @RequestBody PlaceReviewUploadRequest placeReviewUploadRequest) {
 
-        log.info("postLocationReview request : " + placeReviewModifyRequest);
+        log.info("postLocationReview request : " + placeReviewUploadRequest);
         if (StringUtils.isEmpty(placeId)) {
             throw new IdNotFoundException("ID는 필수 입력 값 입니다.");
         }
 
         //TODO: timestamp 제대로 찍히는지 확인 필요
         //TODO: 작성자가 이미 등록한 후기인 경우 block 처리
-        placeReviewModifyRequest.setPlaceId(placeId);
+        placeReviewUploadRequest.setPlaceId(placeId);
 
         CommonNotificationResponse commonNotificationResponse =
-                reviewService.postLocationReview(placeReviewModifyRequest);
+                reviewService.postLocationReview(placeReviewUploadRequest);
 
         return ResponseEntity.ok(commonNotificationResponse);
     }
 
-    @PutMapping("/review/{placeId}")
-    public ResponseEntity putLocationReview(@PathVariable("placeId") String placeId,
-                                            @RequestBody PlaceReviewModifyRequest placeReviewModifyRequest) {
+    @PutMapping("/place/sic" +
+            "review/{reviewSequence}")
+    public ResponseEntity putLocationReview(
+            @PathVariable("reviewSequence") Long reviewSequence,
+            @RequestBody PlaceReviewModifyRequest placeReviewModifyRequest) {
 
-        log.info("putLocationReview request : " + placeReviewModifyRequest);
-        if (StringUtils.isEmpty(placeId)) {
+        log.info("putLocationReview reviewSequence : " + reviewSequence);
+
+        if (StringUtils.isEmpty(reviewSequence)) {
             throw new IdNotFoundException("ID는 필수 입력 값 입니다.");
         }
 
-        placeReviewModifyRequest.setPlaceId(placeId);
+        log.info("putLocationReview request : " + placeReviewModifyRequest);
 
         CommonNotificationResponse commonNotificationResponse =
-                reviewService.putLocationReview(placeReviewModifyRequest);
+                reviewService.putLocationReview(reviewSequence, placeReviewModifyRequest);
 
         return ResponseEntity.ok(commonNotificationResponse);
     }
 
     @GetMapping("/review")
-    public ResponseEntity getLocationReview(@RequestParam String placeId) {
+    public ResponseEntity getLocationReview(@RequestParam Long placeId) {
 
         if (StringUtils.isEmpty(placeId)) {
             throw new IdNotFoundException("ID는 필수 입력 값 입니다.");
@@ -80,7 +84,7 @@ public class ReviewController {
     }
 
     @DeleteMapping("/review")
-    public ResponseEntity deleteLocationReview(@RequestParam String reviewSequence) {
+    public ResponseEntity deleteLocationReview(@RequestParam Long reviewSequence) {
 
         if (StringUtils.isEmpty(reviewSequence)) {
             throw new IdNotFoundException("ID는 필수 입력 값 입니다.");
