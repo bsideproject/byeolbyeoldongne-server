@@ -53,15 +53,14 @@ public class KakaoPlaceService {
     public SearchPlaceResultDTO searchKeywordByQueryParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
         try {
             searchKakaoPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_KEYWORD_BY_V2);
-            searchKakaoPlaceRequest.setSize(30);
 
             KakaoPlaceVO kakaoPlaceVO = this.kakaoMapClient.searchPlaceByKeyword(this.initiateQueryParameter(searchKakaoPlaceRequest));
             log.info("searchKeywordByQueryParameter kakaoPlaceVO: " + kakaoPlaceVO.toString());
 
-//            SearchPlaceResultDTO searchKeywordResultDTO = this.kakaoPlaceToSearchResult(kakaoPlaceVO);
-//            log.info("searchKeywordByQueryParameter searchKeywordResultDTO: " + searchKeywordResultDTO.toString());
+            SearchPlaceResultDTO searchKeywordResultDTO = this.kakaoPlaceToSearchResult(kakaoPlaceVO);
+            log.info("searchKeywordByQueryParameter searchKeywordResultDTO: " + searchKeywordResultDTO.toString());
 
-            return null;
+            return searchKeywordResultDTO;
 
         } catch (KakaoMapClientException e) {
             throw new BadSearchRequestException(ErrorCodeEnums.BAD_REQUEST, e.getMessage());
@@ -99,6 +98,9 @@ public class KakaoPlaceService {
         }
         if (!Objects.isNull(searchKakaoPlaceRequest.getAddressName())) {
             queryParameter.setAddressName(searchKakaoPlaceRequest.getAddressName());
+        }
+        if (!Objects.isNull(searchKakaoPlaceRequest.getKakaoMapRestUrlEnums())) {
+            queryParameter.setKakaoMapRestUrlEnums(searchKakaoPlaceRequest.getKakaoMapRestUrlEnums());
         }
         return queryParameter;
     }

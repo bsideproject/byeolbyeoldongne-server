@@ -66,6 +66,6 @@ public class LocationController {
 
         log.info("getLoadListByQuery searchPlaceResultDTO : " + searchPlaceResultDTO.toString());
 
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(searchPlaceResultDTO);
     }
 }

@@ -26,6 +26,9 @@ public class KakaoMapClient implements KakaoMapRest {
 
     @Override
     public KakaoPlaceVO searchPlaceByKeyword(QueryParameterDTO queryParameterDTO) {
+
+        System.out.println("searchPlaceByKeyword: " + queryParameterDTO.toString());
+
         try {
             return webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO));
         } catch (HttpClientErrorException | HttpServerErrorException e) {
@@ -35,7 +38,7 @@ public class KakaoMapClient implements KakaoMapRest {
 
     private RequestBuilder createRequestBuilder(QueryParameterDTO queryParameterDTO) {
 
-        System.out.println(queryParameterDTO.toString());
+        System.out.println("createRequestBuilder: " + queryParameterDTO.toString());
 
         // TODO: URL common 모듈 개발 필요
          RequestBuilder requestBuilder = new RequestBuilder(queryParameterDTO.getKakaoMapRestUrlEnums());

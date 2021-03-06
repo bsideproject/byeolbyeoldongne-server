@@ -27,6 +27,7 @@ public class QueryParameterDTO {
   @Setter
   private String addressName;
 
+  @Setter
   private KakaoMapRestUrlEnums kakaoMapRestUrlEnums;
 
   public QueryParameterDTO(String query) {
@@ -76,8 +77,8 @@ public class QueryParameterDTO {
     if (Objects.isNull(size)) {
       this.size = 15;
     }
-    if (!(1 <= size && size <= 30)) {
-      throw new BadRequestException("size는 1 ~ 30 사이의 값만 가능 합니다.");
+    if (!(1 <= size && size <= 15)) {
+      throw new BadRequestException("size는 1 ~ 15 사이의 값만 가능 합니다.");
     }
     this.size = size;
   }
