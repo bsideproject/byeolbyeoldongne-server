@@ -1,7 +1,7 @@
 package com.bbdn.server.service;
 
 import com.bbdn.server.application.client.GoogleClient;
-import com.bbdn.server.domain.interfaces.request.SearchPlaceRequest;
+import com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest;
 import com.bbdn.server.domain.interfaces.response.SearchPlaceResponse;
 import com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO;
 import lombok.extern.slf4j.Slf4j;
@@ -20,9 +20,9 @@ public class GooglePlaceService {
         this.googleClient = googleClient;
     }
 
-    public List<SearchPlaceResponse> searchPlaceByQueryParameter(SearchPlaceRequest searchPlaceRequest) {
+    public List<SearchPlaceResponse> searchPlaceByQueryParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
 
-        List<GooglePlaceVO> googlePlaceVOList = googleClient.getGoogleGeocodeApi(searchPlaceRequest);
+        List<GooglePlaceVO> googlePlaceVOList = googleClient.getGoogleGeocodeApi(searchKakaoPlaceRequest);
         List<SearchPlaceResponse> searchPlaceResponseList = new ArrayList<>();
 
         log.info("googlePlaceVOList : " + googlePlaceVOList);

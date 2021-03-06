@@ -1,7 +1,7 @@
 package com.bbdn.server.application.controller;
 
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
-import com.bbdn.server.domain.interfaces.request.SearchPlaceRequest;
+import com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest;
 import com.bbdn.server.domain.interfaces.response.SearchPlaceResponse;
 import com.bbdn.server.service.FormatTransformService;
 import com.bbdn.server.service.GooglePlaceService;
@@ -32,27 +32,40 @@ public class LocationController {
 
         log.info("getLoadListByQuery query : " + query);
 
-        SearchPlaceRequest searchPlaceRequest = SearchPlaceRequest
+        SearchKakaoPlaceRequest searchKakaoPlaceRequest = SearchKakaoPlaceRequest
                 .builder()
                 .query(query)
                 .build();
 
-        List<SearchPlaceResponse> searchPlaceResponseList = googlePlaceService.searchPlaceByQueryParameter(searchPlaceRequest);
+        List<SearchPlaceResponse> searchPlaceResponseList = googlePlaceService.searchPlaceByQueryParameter(searchKakaoPlaceRequest);
         return ResponseEntity.ok(searchPlaceResponseList);
     }
 
-    @GetMapping("/list/kakao")
-    public ResponseEntity getKakaoLoadListByQuery(@RequestParam("query") String query) {
+    @GetMapping("/list/place")
+    public ResponseEntity getPlaceListByQuery(@RequestParam("query") String query) {
 
-        log.info("getLoadListByQuery query : " + query);
+        log.info("getPlaceListByQuery query : " + query);
 
-        SearchPlaceRequest searchPlaceRequest = SearchPlaceRequest.builder().query(query).build();
-        SearchPlaceResultDTO searchPlaceResultDTO = kakaoPlaceService.searchPlaceByQueryParameter(searchPlaceRequest);
+        SearchKakaoPlaceRequest searchKakaoPlaceRequest = SearchKakaoPlaceRequest.builder().query(query).build();
+        SearchPlaceResultDTO searchPlaceResultDTO = kakaoPlaceService.searchPlaceByQueryParameter(searchKakaoPlaceRequest);
 
-        log.info("getLoadListByQuery searchPlaceResultDTO : " + searchPlaceResultDTO.toString());
+        log.info("getPlaceListByQuery searchPlaceResultDTO : " + searchPlaceResultDTO.toString());
 
         List<SearchPlaceResponse> responseEntity = formatTransformService.retrieveLocationListByQuery(searchPlaceResultDTO);
 
         return ResponseEntity.ok(responseEntity);
+    }
+
+    @GetMapping("/list/keyword")
+    public ResponseEntity getKeywordListByAddressName(@RequestParam("addressName") String addressName) {
+
+        log.info("getKeywordListByAddressName addressName : " + addressName);
+
+        SearchKakaoPlaceRequest searchKakaoPlaceRequest = SearchKakaoPlaceRequest.builder().query(addressName).build();
+        SearchPlaceResultDTO searchPlaceResultDTO = kakaoPlaceService.searchKeywordByQueryParameter(searchKakaoPlaceRequest);
+
+        log.info("getLoadListByQuery searchPlaceResultDTO : " + searchPlaceResultDTO.toString());
+
+        return ResponseEntity.ok(null);
     }
 }

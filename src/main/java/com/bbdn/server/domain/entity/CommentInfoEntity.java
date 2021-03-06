@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import net.bytebuddy.implementation.bind.annotation.Default;
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -25,22 +27,17 @@ public class CommentInfoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    Long commentSequence;
 
-    String commentSequence; // 댓글 일련번호
+    Long placeId; // 장소 ID
+    Long reviewSequence; //리뷰 일련번호
 
-    String deleteYn; // 삭제 여부 TODO: Enum 으로 변경?
-
-    String roadName; // 도로명
-    String mainBuildingNo; // 건물본번
-    String zoneNo; // zone 번호
-    String reviewSequence; //리뷰 일련번호
-    String email; // email
-
+    String deleteYn;// 삭제 여부 TODO: Enum 으로 변경?
     String commentContent; // 댓글 내용
-    Long likeCount; // 좋아요 수
 
-    int reportCount; // 신고 횟수
+    long likeCount; // 좋아요 수
+
+    long reportCount; // 신고 횟수
 
     @CreatedBy
     private String createdBy;

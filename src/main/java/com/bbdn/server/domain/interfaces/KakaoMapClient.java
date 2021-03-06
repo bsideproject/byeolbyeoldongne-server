@@ -38,8 +38,8 @@ public class KakaoMapClient implements KakaoMapRest {
         System.out.println(queryParameterDTO.toString());
 
         // TODO: URL common 모듈 개발 필요
-        // RequestBuilder requestBuilder = new RequestBuilder(queryParameterDTO.getKakaoMapRestUrlEnums());
-        RequestBuilder requestBuilder = new RequestBuilder(KakaoMapRestUrlEnums.RETRIEVE_PLACE_BY_KEYWORD_V2);
+         RequestBuilder requestBuilder = new RequestBuilder(queryParameterDTO.getKakaoMapRestUrlEnums());
+//        RequestBuilder requestBuilder = new RequestBuilder(KakaoMapRestUrlEnums.RETRIEVE_PLACE_BY_V2);
         requestBuilder.addHeader("Authorization", this.adminKey);
         requestBuilder.addQueryParam("query", queryParameterDTO.getQuery());
         requestBuilder.setResponseType(KakaoPlaceVO.class);

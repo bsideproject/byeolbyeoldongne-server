@@ -1,6 +1,6 @@
 package com.bbdn.server.application.client;
 
-import com.bbdn.server.domain.interfaces.request.SearchPlaceRequest;
+import com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest;
 import com.bbdn.server.domain.interfaces.vo.google.GoogleGeoCodeVO;
 import com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO;
 import com.bbdn.server.handler.exception.BadRequestException;
@@ -32,11 +32,11 @@ public class GoogleClient {
         this.adminKey = adminKey;
     }
 
-    public List<GooglePlaceVO> getGoogleGeocodeApi(SearchPlaceRequest searchPlaceRequest) {
+    public List<GooglePlaceVO> getGoogleGeocodeApi(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
 
         URI uri = UriComponentsBuilder.fromHttpUrl(googleMapApiUrl + "/maps/api/geocode/json")
                 .queryParam("key", adminKey)
-                .queryParam("address", searchPlaceRequest.getQuery())
+                .queryParam("address", searchKakaoPlaceRequest.getQuery())
                 .queryParam("language", "ko")
                 .queryParam("region", "ko")
                 .build()

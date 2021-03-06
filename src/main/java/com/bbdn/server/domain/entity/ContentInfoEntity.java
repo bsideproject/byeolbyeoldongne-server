@@ -24,10 +24,8 @@ public class ContentInfoEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    String roadName; // 도로명
-    String mainBuildingNo; // 건물본번
-    String zoneNo; // zone 번호
-    String reviewSequence; //리뷰 일련번호
+    Long placeId; // 장소 ID
+    Long reviewSequence; //리뷰 일련번호
 
     String deleteYn; // 삭제 여부 TODO: Enum 으로 변경?
 
