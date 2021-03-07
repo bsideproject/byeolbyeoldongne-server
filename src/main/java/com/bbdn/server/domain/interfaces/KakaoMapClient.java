@@ -37,7 +37,7 @@ public class KakaoMapClient implements KakaoMapRest {
     @Override
     public KakaoPlaceVO searchPlaceByPosition(QueryParameterDTO queryParameterDTO) {
         try {
-            log.info("searchPlaceByKeyword: " + webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO)).toString());
+            log.info("searchPlaceByPosition: " + webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO)).toString());
             return webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO));
         } catch (HttpClientErrorException | HttpServerErrorException e) {
             throw new KakaoMapClientException(e.getMessage());

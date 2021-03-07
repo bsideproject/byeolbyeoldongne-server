@@ -65,11 +65,30 @@ public class LocationController {
                 .y(y)
                 .build();
 
-        // Kakao API 조회
-        SearchPlaceResultDTO searchPlaceResultDTO = kakaoPlaceService.searchPlaceByPositionParameter(searchKakaoPlaceRequest);
+        // 좌표를 이용해 Kakao API 조회
+        String roadName = kakaoPlaceService.searchPlaceByPositionParameter(searchKakaoPlaceRequest);
+
+        // 도로명주소를 이용한 조회
+        searchKakaoPlaceRequest.setQuery(roadName);
+        SearchPlaceResultDTO searchPlaceResultDTO = kakaoPlaceService.searchPlaceByQueryParameter(searchKakaoPlaceRequest);
+        log.info("getPlaceListByPosition searchPlaceResultDTO: " + searchPlaceResultDTO.toString());
 
         // response setting
+        LocationLineByAddressNameResponse locationLineByAddressNameResponse = new LocationLineByAddressNameResponse();
+
         SearchPlaceResponse searchPlaceResponse = formatTransformService.retrieveLocationListByPosition(searchPlaceResultDTO);
+        List<AddressLocationVO> addressLocationVOList = kakaoPlaceService.searchKeywordByQueryParameter(searchKakaoPlaceRequest);
+
+        if(addressLocationVOList.size() > 1) {
+            // roadAddressName 기준으로 sort
+            Collections.sort(addressLocationVOList);
+            AddressLocationVO firstAddressLocation = addressLocationVOList.get(0);
+            AddressLocationVO lastAddressLocation = addressLocationVOList.get(addressLocationVOList.size()-1);
+
+            locationLineByAddressNameResponse.setAddressName(roadName);
+            locationLineByAddressNameResponse.setStartLocation(firstAddressLocation);
+            locationLineByAddressNameResponse.setEndLocation(lastAddressLocation);
+        }
 
         return ResponseEntity.ok(searchPlaceResponse);
     }

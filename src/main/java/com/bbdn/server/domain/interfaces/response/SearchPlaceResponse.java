@@ -19,4 +19,6 @@ public class SearchPlaceResponse {
 
     private Double x;
     private Double y;
+
+    LocationLineByAddressNameResponse locationLineByAddressNameResponse;
 }

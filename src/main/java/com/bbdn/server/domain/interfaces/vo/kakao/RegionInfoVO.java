@@ -3,15 +3,17 @@ package com.bbdn.server.domain.interfaces.vo.kakao;
 import java.beans.ConstructorProperties;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 public class RegionInfoVO {
 
-  private final List<String> region;
-  private final String keyword;
-  private final String selectedRegion;
+  private List<String> region;
+  private String keyword;
+  private String selectedRegion;
 
   @Builder
   @ConstructorProperties({"region", "keyword", "selectedRegion"})
