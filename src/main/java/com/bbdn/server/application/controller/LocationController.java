@@ -29,6 +29,7 @@ public class LocationController {
         this.formatTransformService = formatTransformService;
     }
 
+    @Deprecated
     @GetMapping("/list/google")
     public ResponseEntity getGoogleLoadListByQuery(@RequestParam("query") String query) {
 
@@ -46,24 +47,31 @@ public class LocationController {
     @GetMapping("/list/place")
     public ResponseEntity getPlaceListByQuery(@RequestParam("query") String query) {
 
-        log.info("getPlaceListByQuery query : " + query);
+        Objects.requireNonNull(query, "@RequestParam query 질의어는 필수 입니다.");
 
         SearchKakaoPlaceRequest searchKakaoPlaceRequest = SearchKakaoPlaceRequest.builder().query(query).build();
         SearchPlaceResultDTO searchPlaceResultDTO = kakaoPlaceService.searchPlaceByQueryParameter(searchKakaoPlaceRequest);
+        List<SearchPlaceResponse> searchPlaceResponseList = formatTransformService.retrieveLocationListByQuery(searchPlaceResultDTO);
 
-        log.info("getPlaceListByQuery searchPlaceResultDTO : " + searchPlaceResultDTO.toString());
-
-        List<SearchPlaceResponse> responseEntity = formatTransformService.retrieveLocationListByQuery(searchPlaceResultDTO);
-
-        return ResponseEntity.ok(responseEntity);
+        return ResponseEntity.ok(searchPlaceResponseList);
     }
 
-    @GetMapping("/list/position")
-    public ResponseEntity getPlaceListByPosition(@RequestParam("lat") double x,
-                                                 @RequestParam("lng") double y) {
+    @GetMapping("/position")
+    public ResponseEntity getPlaceListByPosition(@RequestParam("lat") double y,
+                                                 @RequestParam("lng") double x) {
 
+        SearchKakaoPlaceRequest searchKakaoPlaceRequest = SearchKakaoPlaceRequest.builder()
+                .x(x)
+                .y(y)
+                .build();
 
-        return ResponseEntity.ok(null);
+        // Kakao API 조회
+        SearchPlaceResultDTO searchPlaceResultDTO = kakaoPlaceService.searchPlaceByPositionParameter(searchKakaoPlaceRequest);
+
+        // response setting
+        SearchPlaceResponse searchPlaceResponse = formatTransformService.retrieveLocationListByPosition(searchPlaceResultDTO);
+
+        return ResponseEntity.ok(searchPlaceResponse);
     }
 
     @GetMapping("/line")

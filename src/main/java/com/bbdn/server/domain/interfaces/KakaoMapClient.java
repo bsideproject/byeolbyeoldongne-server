@@ -26,10 +26,18 @@ public class KakaoMapClient implements KakaoMapRest {
 
     @Override
     public KakaoPlaceVO searchPlaceByKeyword(QueryParameterDTO queryParameterDTO) {
-
-        System.out.println("searchPlaceByKeyword: " + queryParameterDTO.toString());
-
         try {
+            log.info("searchPlaceByKeyword: " + webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO)).toString());
+            return webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO));
+        } catch (HttpClientErrorException | HttpServerErrorException e) {
+            throw new KakaoMapClientException(e.getMessage());
+        }
+    }
+
+    @Override
+    public KakaoPlaceVO searchPlaceByPosition(QueryParameterDTO queryParameterDTO) {
+        try {
+            log.info("searchPlaceByKeyword: " + webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO)).toString());
             return webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO));
         } catch (HttpClientErrorException | HttpServerErrorException e) {
             throw new KakaoMapClientException(e.getMessage());
@@ -40,16 +48,13 @@ public class KakaoMapClient implements KakaoMapRest {
 
         System.out.println("createRequestBuilder: " + queryParameterDTO.toString());
 
-        // TODO: URL common 모듈 개발 필요
-         RequestBuilder requestBuilder = new RequestBuilder(queryParameterDTO.getKakaoMapRestUrlEnums());
-//        RequestBuilder requestBuilder = new RequestBuilder(KakaoMapRestUrlEnums.RETRIEVE_PLACE_BY_V2);
+        RequestBuilder requestBuilder = new RequestBuilder(queryParameterDTO.getKakaoMapRestUrlEnums());
         requestBuilder.addHeader("Authorization", this.adminKey);
         requestBuilder.addQueryParam("query", queryParameterDTO.getQuery());
         requestBuilder.setResponseType(KakaoPlaceVO.class);
 
         if (!StringUtils.isEmpty(queryParameterDTO.getKakaoCategoryGroupEnums())) {
-            requestBuilder
-                    .addQueryParam("category_group_code", queryParameterDTO.getKakaoCategoryGroupEnums().getCode());
+            requestBuilder.addQueryParam("category_group_code", queryParameterDTO.getKakaoCategoryGroupEnums().getCode());
         }
         if (!Objects.isNull(queryParameterDTO.getX())) {
             requestBuilder.addQueryParam("x", queryParameterDTO.getX().toString());

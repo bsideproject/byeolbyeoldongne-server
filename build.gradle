@@ -27,18 +27,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation 'com.google.maps:google-maps-services:0.15.4'
 
 	compile 'org.springframework.boot:spring-boot-starter-webflux'
 	compile 'org.projectreactor:reactor-spring:1.0.1.RELEASE'
 	compile 'org.apache.httpcomponents:httpclient:4.5.12'
 	compile 'mysql:mysql-connector-java'
 
+	// swagger
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
+	implementation 'com.google.maps:google-maps-services:0.15.4'
+	
 	// h2 database
 	runtimeOnly 'com.h2database:h2'
 	// spring-data-redis

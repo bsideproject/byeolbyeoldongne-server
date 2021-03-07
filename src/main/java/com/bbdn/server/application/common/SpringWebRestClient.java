@@ -129,7 +129,7 @@ public class SpringWebRestClient implements AdapterRestClient {
         ResponseEntity responseEntity = restTemplate.exchange(httpUrl, HttpMethod.valueOf(httpMethod), requestEntity, clazz);
         HttpHeaders responseHeaders = responseEntity.getHeaders();
         requestBuilder.setRespHeaders(responseHeaders);
-        log.debug("[ResTemplateResult] status = {{}}, body = {{}}", responseEntity.getStatusCode(),
+        log.info("[ResTemplateResult] status = {{}}, body = {{}}", responseEntity.getStatusCode(),
                 responseEntity.getBody());
         return responseEntity;
     }

@@ -31,7 +31,6 @@ public class QueryParameterDTO {
   private KakaoMapRestUrlEnums kakaoMapRestUrlEnums;
 
   public QueryParameterDTO(String query) {
-    Objects.requireNonNull(query, "질의어는 필수 입니다.");
     this.query = query;
   }
 

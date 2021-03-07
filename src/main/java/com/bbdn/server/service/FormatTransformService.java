@@ -41,4 +41,23 @@ public class FormatTransformService {
 
         return responseList;
     }
+
+    public SearchPlaceResponse retrieveLocationListByPosition(SearchPlaceResultDTO searchPlaceResultDTO) {
+
+        String id = searchPlaceResultDTO.getPlaces().get(0).getId();
+        String addressName = searchPlaceResultDTO.getPlaces().get(0).getAddressName();
+        String roadAddressName = searchPlaceResultDTO.getPlaces().get(0).getRoadAddressName();
+        String placeName = searchPlaceResultDTO.getPlaces().get(0).getPlaceName();
+        Double x = searchPlaceResultDTO.getPlaces().get(0).getX();
+        Double y = searchPlaceResultDTO.getPlaces().get(0).getY();
+
+        return SearchPlaceResponse.builder()
+                .placeId(id)
+                .addressName(addressName)
+                .roadAddress(roadAddressName)
+                .placeName(placeName)
+                .x(x)
+                .y(y)
+                .build();
+    }
 }
