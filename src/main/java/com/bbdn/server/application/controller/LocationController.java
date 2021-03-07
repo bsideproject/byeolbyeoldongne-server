@@ -2,7 +2,9 @@ package com.bbdn.server.application.controller;
 
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
 import com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest;
+import com.bbdn.server.domain.interfaces.response.LocationLineByAddressNameResponse;
 import com.bbdn.server.domain.interfaces.response.SearchPlaceResponse;
+import com.bbdn.server.domain.interfaces.vo.AddressLocationVO;
 import com.bbdn.server.service.FormatTransformService;
 import com.bbdn.server.service.GooglePlaceService;
 import com.bbdn.server.service.KakaoPlaceService;
@@ -10,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.*;
 
 @RestController
 @Slf4j
@@ -56,16 +58,34 @@ public class LocationController {
         return ResponseEntity.ok(responseEntity);
     }
 
-    @GetMapping("/list/keyword")
-    public ResponseEntity getKeywordListByAddressName(@RequestParam("addressName") String addressName) {
+    @GetMapping("/list/position")
+    public ResponseEntity getPlaceListByPosition(@RequestParam("lat") double x,
+                                                 @RequestParam("lng") double y) {
 
-        log.info("getKeywordListByAddressName addressName : " + addressName);
+
+        return ResponseEntity.ok(null);
+    }
+
+    @GetMapping("/line")
+    public ResponseEntity getFromToLocationByAddressName(@RequestParam("addressName") String addressName) {
+
+        LocationLineByAddressNameResponse locationLineByAddressNameResponse = new LocationLineByAddressNameResponse();
 
         SearchKakaoPlaceRequest searchKakaoPlaceRequest = SearchKakaoPlaceRequest.builder().query(addressName).build();
-        SearchPlaceResultDTO searchPlaceResultDTO = kakaoPlaceService.searchKeywordByQueryParameter(searchKakaoPlaceRequest);
+        List<AddressLocationVO> addressLocationVOList = kakaoPlaceService.searchKeywordByQueryParameter(searchKakaoPlaceRequest);
 
-        log.info("getLoadListByQuery searchPlaceResultDTO : " + searchPlaceResultDTO.toString());
+        if(addressLocationVOList.size() > 1) {
+            // roadAddressName 기준으로 sort
+            Collections.sort(addressLocationVOList);
+            AddressLocationVO firstAddressLocation = addressLocationVOList.get(0);
+            AddressLocationVO lastAddressLocation = addressLocationVOList.get(addressLocationVOList.size()-1);
 
-        return ResponseEntity.ok(searchPlaceResultDTO);
+            locationLineByAddressNameResponse.setAddressName(addressName);
+            locationLineByAddressNameResponse.setStartLocation(firstAddressLocation);
+            locationLineByAddressNameResponse.setEndLocation(lastAddressLocation);
+        }
+
+        return ResponseEntity.ok(locationLineByAddressNameResponse);
     }
+
 }

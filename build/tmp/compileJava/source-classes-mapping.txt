@@ -72,8 +72,9 @@ com/bbdn/server/domain/interfaces/vo/kakao/DocumentVO.java
 com/bbdn/server/domain/entity/UserConcernInfoEntity.java
  com.bbdn.server.domain.entity.UserConcernInfoEntity
  com.bbdn.server.domain.entity.UserConcernInfoEntity$UserConcernInfoEntityBuilder
-com/bbdn/server/domain/interfaces/vo/kakao/MetaVO.java
- com.bbdn.server.domain.interfaces.vo.kakao.MetaVO
+com/bbdn/server/domain/interfaces/dto/QueryParameterDTO.java
+ com.bbdn.server.domain.interfaces.dto.QueryParameterDTO
+ com.bbdn.server.domain.interfaces.dto.QueryParameterDTO$QueryParameterDTOBuilder
 com/bbdn/server/domain/entity/UserEntity.java
  com.bbdn.server.domain.entity.UserEntity
  com.bbdn.server.domain.entity.UserEntity$UserEntityBuilder
@@ -149,8 +150,8 @@ com/bbdn/server/handler/GlobalExceptionHandler.java
  com.bbdn.server.handler.GlobalExceptionHandler
 com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
  com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
-com/bbdn/server/domain/interfaces/vo/kakao/KakaoPlaceVO.java
- com.bbdn.server.domain.interfaces.vo.kakao.KakaoPlaceVO
+com/bbdn/server/domain/interfaces/vo/kakao/MetaVO.java
+ com.bbdn.server.domain.interfaces.vo.kakao.MetaVO
 com/bbdn/server/repository/ContentInfoRepository.java
  com.bbdn.server.repository.ContentInfoRepository
 com/bbdn/server/repository/UserRepository.java
@@ -204,12 +205,16 @@ com/bbdn/server/domain/interfaces/KakaoMapClient.java
  com.bbdn.server.domain.interfaces.KakaoMapClient
 com/bbdn/server/domain/interfaces/KakaoMapRest.java
  com.bbdn.server.domain.interfaces.KakaoMapRest
-com/bbdn/server/domain/interfaces/dto/QueryParameterDTO.java
- com.bbdn.server.domain.interfaces.dto.QueryParameterDTO
- com.bbdn.server.domain.interfaces.dto.QueryParameterDTO$QueryParameterDTOBuilder
-com/bbdn/server/application/controller/LocationController.java
- com.bbdn.server.application.controller.LocationController
-com/bbdn/server/application/controller/ReviewController.java
- com.bbdn.server.application.controller.ReviewController
+com/bbdn/server/domain/interfaces/vo/kakao/KakaoPlaceVO.java
+ com.bbdn.server.domain.interfaces.vo.kakao.KakaoPlaceVO
+com/bbdn/server/domain/interfaces/vo/AddressLocationVO.java
+ com.bbdn.server.domain.interfaces.vo.AddressLocationVO
 com/bbdn/server/service/KakaoPlaceService.java
  com.bbdn.server.service.KakaoPlaceService
+com/bbdn/server/application/controller/ReviewController.java
+ com.bbdn.server.application.controller.ReviewController
+com/bbdn/server/domain/interfaces/response/LocationLineByAddressNameResponse.java
+ com.bbdn.server.domain.interfaces.response.LocationLineByAddressNameResponse
+ com.bbdn.server.domain.interfaces.response.LocationLineByAddressNameResponse$LocationLineByAddressNameResponseBuilder
+com/bbdn/server/application/controller/LocationController.java
+ com.bbdn.server.application.controller.LocationController

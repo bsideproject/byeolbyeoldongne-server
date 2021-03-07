@@ -3,8 +3,10 @@ package com.bbdn.server.domain.interfaces.vo.kakao;
 import java.beans.ConstructorProperties;
 
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString
 public class MetaVO {
     private final int total_count;
     private final int pageable_count;

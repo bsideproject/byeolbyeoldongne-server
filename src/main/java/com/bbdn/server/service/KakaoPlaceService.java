@@ -7,6 +7,7 @@ import com.bbdn.server.domain.enums.PlaceServiceTypeEnums;
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
 import com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest;
 import com.bbdn.server.domain.interfaces.spec.Place;
+import com.bbdn.server.domain.interfaces.vo.AddressLocationVO;
 import com.bbdn.server.domain.interfaces.vo.kakao.*;
 import com.bbdn.server.handler.exception.BadSearchRequestException;
 import com.bbdn.server.handler.exception.KakaoMapClientException;
@@ -18,9 +19,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.IntStream;
 
 @Service
 @Slf4j
@@ -50,21 +50,45 @@ public class KakaoPlaceService {
     }
 
     // 키워드 찾기 (from ~ to 좌표)
-    public SearchPlaceResultDTO searchKeywordByQueryParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
+    public List<AddressLocationVO> searchKeywordByQueryParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
+
+        List<AddressLocationVO> addressLocationVOList = new ArrayList<>();
+        int currentPage = 1;
+        searchKakaoPlaceRequest.setPage(currentPage);
+
         try {
             searchKakaoPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_KEYWORD_BY_V2);
 
             KakaoPlaceVO kakaoPlaceVO = this.kakaoMapClient.searchPlaceByKeyword(this.initiateQueryParameter(searchKakaoPlaceRequest));
-            log.info("searchKeywordByQueryParameter kakaoPlaceVO: " + kakaoPlaceVO.toString());
+            int pageableCount = kakaoPlaceVO.getMeta().getPageable_count();
 
-            SearchPlaceResultDTO searchKeywordResultDTO = this.kakaoPlaceToSearchResult(kakaoPlaceVO);
-            log.info("searchKeywordByQueryParameter searchKeywordResultDTO: " + searchKeywordResultDTO.toString());
+            if(pageableCount > 1) {
+                addAddressLocation(addressLocationVOList, kakaoPlaceVO);
+                ++currentPage;
 
-            return searchKeywordResultDTO;
+                for(int i = currentPage; i<pageableCount; i++) {
+                    searchKakaoPlaceRequest.setPage(currentPage);
+                    kakaoPlaceVO = this.kakaoMapClient.searchPlaceByKeyword(this.initiateQueryParameter(searchKakaoPlaceRequest));
+                    addAddressLocation(addressLocationVOList, kakaoPlaceVO);
+                }
+            }
+            return addressLocationVOList;
 
         } catch (KakaoMapClientException e) {
             throw new BadSearchRequestException(ErrorCodeEnums.BAD_REQUEST, e.getMessage());
         }
+    }
+
+    private void addAddressLocation(List<AddressLocationVO> addressLocationVOList, KakaoPlaceVO kakaoPlaceVO) {
+        // response max size = 15
+        IntStream.range(0, 15).forEach(i -> {
+            Long placeId = Long.parseLong(kakaoPlaceVO.getDocuments().get(i).getId());
+            String addressName = kakaoPlaceVO.getDocuments().get(i).getRoad_address_name();
+            Double x = kakaoPlaceVO.getDocuments().get(i).getX();
+            Double y = kakaoPlaceVO.getDocuments().get(i).getY();
+            AddressLocationVO addressLocationVO = new AddressLocationVO(placeId, addressName, x, y);
+            addressLocationVOList.add(addressLocationVO);
+        });
     }
 
     private QueryParameterDTO initiateQueryParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
