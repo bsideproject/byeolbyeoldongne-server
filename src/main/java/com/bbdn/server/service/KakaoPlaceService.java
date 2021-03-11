@@ -37,9 +37,11 @@ public class KakaoPlaceService {
     // 검색어로 장소 찾기
     public SearchPlaceResultDTO searchPlaceByQueryParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
         try {
-            searchKakaoPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_PLACE_BY_V2);
+            searchKakaoPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_KEYWORD_BY_V2);
 
-            KakaoPlaceVO kakaoPlaceVO = this.kakaoMapClient.searchPlaceByKeyword(this.initiateQueryParameter(searchKakaoPlaceRequest));
+            QueryParameterDTO queryParameterDTO = this.initiateQueryParameter(searchKakaoPlaceRequest);
+            KakaoPlaceVO kakaoPlaceVO = this.kakaoMapClient.searchPlaceByKeyword(queryParameterDTO);
+
             log.info("searchPlaceByQueryParameter kakaoPlaceVO: " + kakaoPlaceVO.toString());
 
             return this.kakaoPlaceToSearchResult(kakaoPlaceVO);
@@ -142,6 +144,7 @@ public class KakaoPlaceService {
         if (!Objects.isNull(searchKakaoPlaceRequest.getKakaoMapRestUrlEnums())) {
             queryParameter.setKakaoMapRestUrlEnums(searchKakaoPlaceRequest.getKakaoMapRestUrlEnums());
         }
+        log.info("queryParameter: " + queryParameter.toString());
         return queryParameter;
     }
 
@@ -169,6 +172,7 @@ public class KakaoPlaceService {
     // RETRIEVE_PLACE_BY_V2
     private SearchPlaceResultDTO kakaoPlaceToSearchResult(KakaoPlaceVO kakaoPlace) {
         List<Place> places = new ArrayList<>();
+        log.info("kakaoPlaceToSearchResult: " + kakaoPlace.toString());
         for (DocumentVO document : kakaoPlace.getDocuments()) {
             places.add(this.documentToDefaultPlace(document));
         }
@@ -177,10 +181,10 @@ public class KakaoPlaceService {
                         .totalCount(kakaoPlace.getMeta().getTotal_count())
                         .pageableCount(kakaoPlace.getMeta().getPageable_count())
                         .end(kakaoPlace.getMeta().is_end()).build())
-//                .region(RegionInfoVO.builder()
-//                        .keyword(kakaoPlace.getMeta().getSame_name().getKeyword())
-//                        .region(kakaoPlace.getMeta().getSame_name().getRegion())
-//                        .selectedRegion(kakaoPlace.getMeta().getSame_name().getSelectedRegion()).build())
+                .region(RegionInfoVO.builder()
+                        .keyword(kakaoPlace.getMeta().getSame_name().getKeyword())
+                        .region(kakaoPlace.getMeta().getSame_name().getRegion())
+                        .selectedRegion(kakaoPlace.getMeta().getSame_name().getSelectedRegion()).build())
                 .places(places)
                 .build();
     }

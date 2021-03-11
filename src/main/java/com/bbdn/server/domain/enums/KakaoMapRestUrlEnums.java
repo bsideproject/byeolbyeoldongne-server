@@ -5,8 +5,10 @@ import org.springframework.http.HttpMethod;
 
 public enum KakaoMapRestUrlEnums implements AdapterRestUrl {
     RETRIEVE_KEYWORD_BY_V2("v2/local/search/keyword.json", HttpMethod.GET),
-    RETRIEVE_PLACE_BY_V2("/v2/local/search/address.json", HttpMethod.GET),
-    RETRIEVE_COORD_ADDRESS_BY_V2("/v2/local/geo/coord2address.json", HttpMethod.GET);
+    RETRIEVE_COORD_ADDRESS_BY_V2("/v2/local/geo/coord2address.json", HttpMethod.GET),
+
+    @Deprecated
+    RETRIEVE_PLACE_BY_V2("/v2/local/search/address.json", HttpMethod.GET);
 
     private final String url;
     private final HttpMethod httpMethod;

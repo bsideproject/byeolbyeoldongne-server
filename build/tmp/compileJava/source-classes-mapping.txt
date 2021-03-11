@@ -203,22 +203,22 @@ com/bbdn/server/domain/entity/CommentInfoEntity.java
 com/bbdn/server/domain/interfaces/vo/kakao/RegionInfoVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO
  com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO$RegionInfoVOBuilder
-com/bbdn/server/application/controller/LocationController.java
- com.bbdn.server.application.controller.LocationController
-com/bbdn/server/domain/interfaces/dto/SearchPlaceResultDTO.java
- com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO
- com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO$SearchPlaceResultDTOBuilder
+com/bbdn/server/domain/interfaces/KakaoMapClient.java
+ com.bbdn.server.domain.interfaces.KakaoMapClient
+com/bbdn/server/domain/interfaces/vo/kakao/MetaVO.java
+ com.bbdn.server.domain.interfaces.vo.kakao.MetaVO
 com/bbdn/server/domain/interfaces/KakaoMapRest.java
  com.bbdn.server.domain.interfaces.KakaoMapRest
 com/bbdn/server/domain/interfaces/vo/kakao/KakaoPlaceVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.KakaoPlaceVO
-com/bbdn/server/application/controller/ReviewController.java
- com.bbdn.server.application.controller.ReviewController
 com/bbdn/server/service/FormatTransformService.java
  com.bbdn.server.service.FormatTransformService
-com/bbdn/server/domain/interfaces/vo/kakao/MetaVO.java
- com.bbdn.server.domain.interfaces.vo.kakao.MetaVO
+com/bbdn/server/domain/interfaces/dto/SearchPlaceResultDTO.java
+ com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO
+ com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO$SearchPlaceResultDTOBuilder
+com/bbdn/server/application/controller/LocationController.java
+ com.bbdn.server.application.controller.LocationController
+com/bbdn/server/application/controller/ReviewController.java
+ com.bbdn.server.application.controller.ReviewController
 com/bbdn/server/service/KakaoPlaceService.java
  com.bbdn.server.service.KakaoPlaceService
-com/bbdn/server/domain/interfaces/KakaoMapClient.java
- com.bbdn.server.domain.interfaces.KakaoMapClient

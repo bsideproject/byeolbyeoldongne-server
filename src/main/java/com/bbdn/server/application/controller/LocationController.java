@@ -90,6 +90,7 @@ public class LocationController {
             locationLineByAddressNameResponse.setEndLocation(lastAddressLocation);
         }
 
+        searchPlaceResponse.setLocationLineByAddressNameResponse(locationLineByAddressNameResponse);
         return ResponseEntity.ok(searchPlaceResponse);
     }
 

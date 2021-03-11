@@ -21,7 +21,8 @@ public class SearchPlaceResultDTO {
     @Builder
     @ConstructorProperties({"pagination", "places", "region"})
     public SearchPlaceResultDTO(PaginationVO pagination,
-                                List<Place> places, RegionInfoVO region) {
+                                List<Place> places,
+                                RegionInfoVO region) {
         this.pagination = pagination;
         this.places = places;
         this.region = region;
