@@ -70,6 +70,8 @@ public class KakaoPlaceService {
     // 키워드 찾기 (from ~ to 좌표)
     public List<AddressLocationVO> searchKeywordByQueryParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
 
+        log.info("searchKakaoPlaceRequest: {} ", searchKakaoPlaceRequest);
+
         List<AddressLocationVO> addressLocationVOList = new ArrayList<>();
         int currentPage = 1;
         searchKakaoPlaceRequest.setPage(currentPage);
@@ -98,8 +100,8 @@ public class KakaoPlaceService {
     }
 
     private void addAddressLocation(List<AddressLocationVO> addressLocationVOList, KakaoPlaceVO kakaoPlaceVO) {
-        // response max size = 15
-        IntStream.range(0, 15).forEach(i -> {
+
+        IntStream.range(0, kakaoPlaceVO.getDocuments().size()).forEach(i -> {
             Long placeId = Long.parseLong(kakaoPlaceVO.getDocuments().get(i).getId());
             String addressName = kakaoPlaceVO.getDocuments().get(i).getRoad_address_name();
             Double x = kakaoPlaceVO.getDocuments().get(i).getX();

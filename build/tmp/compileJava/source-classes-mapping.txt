@@ -6,11 +6,11 @@ com/bbdn/server/domain/interfaces/vo/kakao/CategoryVO.java
 com/bbdn/server/application/common/SpringWebRestClient.java
  com.bbdn.server.application.common.SpringWebRestClient
  com.bbdn.server.application.common.SpringWebRestClient$1
-com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
- com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
-com/bbdn/server/domain/interfaces/request/SearchKakaoPlaceRequest.java
- com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest
- com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest$SearchKakaoPlaceRequestBuilder
+com/bbdn/server/domain/entity/CommentInfoEntity.java
+ com.bbdn.server.domain.entity.CommentInfoEntity
+ com.bbdn.server.domain.entity.CommentInfoEntity$CommentInfoEntityBuilder
+com/bbdn/server/domain/interfaces/vo/kakao/MetaVO.java
+ com.bbdn.server.domain.interfaces.vo.kakao.MetaVO
 com/bbdn/server/service/ReviewService.java
  com.bbdn.server.service.ReviewService
 com/bbdn/server/domain/interfaces/response/SearchPlaceResponse.java
@@ -121,8 +121,8 @@ com/bbdn/server/application/controller/TransactionWebDemoController.java
  com.bbdn.server.application.controller.TransactionWebDemoController
 com/bbdn/server/BbdnServerApplication.java
  com.bbdn.server.BbdnServerApplication
-com/bbdn/server/application/client/GoogleClient.java
- com.bbdn.server.application.client.GoogleClient
+com/bbdn/server/domain/interfaces/vo/kakao/KakaoPlaceVO.java
+ com.bbdn.server.domain.interfaces.vo.kakao.KakaoPlaceVO
 com/bbdn/server/service/ReviewCommentService.java
  com.bbdn.server.service.ReviewCommentService
 com/bbdn/server/domain/interfaces/request/CreateUserInfoRequest.java
@@ -157,8 +157,9 @@ com/bbdn/server/domain/interfaces/vo/kakao/DocumentVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.DocumentVO
  com.bbdn.server.domain.interfaces.vo.kakao.DocumentVO$AddressVO
  com.bbdn.server.domain.interfaces.vo.kakao.DocumentVO$RoadAddressVO
-com/bbdn/server/service/GooglePlaceService.java
- com.bbdn.server.service.GooglePlaceService
+com/bbdn/server/domain/interfaces/dto/SearchPlaceResultDTO.java
+ com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO
+ com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO$SearchPlaceResultDTOBuilder
 com/bbdn/server/repository/ContentInfoRepository.java
  com.bbdn.server.repository.ContentInfoRepository
 com/bbdn/server/repository/UserRepository.java
@@ -173,9 +174,9 @@ com/bbdn/server/application/constant/ErrorConstant.java
 com/bbdn/server/domain/interfaces/request/PlaceCommentReplyUploadRequest.java
  com.bbdn.server.domain.interfaces.request.PlaceCommentReplyUploadRequest
  com.bbdn.server.domain.interfaces.request.PlaceCommentReplyUploadRequest$PlaceCommentReplyUploadRequestBuilder
-com/bbdn/server/domain/interfaces/dto/QueryParameterDTO.java
- com.bbdn.server.domain.interfaces.dto.QueryParameterDTO
- com.bbdn.server.domain.interfaces.dto.QueryParameterDTO$QueryParameterDTOBuilder
+com/bbdn/server/domain/interfaces/vo/kakao/RegionInfoVO.java
+ com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO
+ com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO$RegionInfoVOBuilder
 com/bbdn/server/config/RestTemplateConfig.java
  com.bbdn.server.config.RestTemplateConfig
 com/bbdn/server/application/controller/CommentController.java
@@ -197,28 +198,27 @@ com/bbdn/server/domain/interfaces/vo/google/GooglePlaceVO.java
  com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$Bounds
  com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$Geometry
  com.bbdn.server.domain.interfaces.vo.google.GooglePlaceVO$Location
-com/bbdn/server/domain/entity/CommentInfoEntity.java
- com.bbdn.server.domain.entity.CommentInfoEntity
- com.bbdn.server.domain.entity.CommentInfoEntity$CommentInfoEntityBuilder
-com/bbdn/server/domain/interfaces/vo/kakao/RegionInfoVO.java
- com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO
- com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO$RegionInfoVOBuilder
-com/bbdn/server/domain/interfaces/KakaoMapClient.java
- com.bbdn.server.domain.interfaces.KakaoMapClient
-com/bbdn/server/domain/interfaces/vo/kakao/MetaVO.java
- com.bbdn.server.domain.interfaces.vo.kakao.MetaVO
+com/bbdn/server/domain/interfaces/request/SearchKakaoPlaceRequest.java
+ com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest
+ com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest$SearchKakaoPlaceRequestBuilder
+com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
+ com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
+com/bbdn/server/application/client/GoogleClient.java
+ com.bbdn.server.application.client.GoogleClient
 com/bbdn/server/domain/interfaces/KakaoMapRest.java
  com.bbdn.server.domain.interfaces.KakaoMapRest
-com/bbdn/server/domain/interfaces/vo/kakao/KakaoPlaceVO.java
- com.bbdn.server.domain.interfaces.vo.kakao.KakaoPlaceVO
-com/bbdn/server/service/FormatTransformService.java
- com.bbdn.server.service.FormatTransformService
-com/bbdn/server/domain/interfaces/dto/SearchPlaceResultDTO.java
- com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO
- com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO$SearchPlaceResultDTOBuilder
+com/bbdn/server/service/GooglePlaceService.java
+ com.bbdn.server.service.GooglePlaceService
+com/bbdn/server/domain/interfaces/KakaoMapClient.java
+ com.bbdn.server.domain.interfaces.KakaoMapClient
+com/bbdn/server/domain/interfaces/dto/QueryParameterDTO.java
+ com.bbdn.server.domain.interfaces.dto.QueryParameterDTO
+ com.bbdn.server.domain.interfaces.dto.QueryParameterDTO$QueryParameterDTOBuilder
 com/bbdn/server/application/controller/LocationController.java
  com.bbdn.server.application.controller.LocationController
 com/bbdn/server/application/controller/ReviewController.java
  com.bbdn.server.application.controller.ReviewController
+com/bbdn/server/service/FormatTransformService.java
+ com.bbdn.server.service.FormatTransformService
 com/bbdn/server/service/KakaoPlaceService.java
  com.bbdn.server.service.KakaoPlaceService
