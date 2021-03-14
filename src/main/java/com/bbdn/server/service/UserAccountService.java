@@ -50,4 +50,9 @@ public class UserAccountService {
             return new UserEntity();
         }
     }
+
+    @Transactional(readOnly = true)
+    public boolean checkNickNameAlreadyExsits(String nickName) {
+        return userRepository.findByNickname(nickName);
+    }
 }

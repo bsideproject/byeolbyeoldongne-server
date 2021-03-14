@@ -3,6 +3,7 @@ package com.bbdn.server.application.controller;
 import com.bbdn.server.domain.entity.UserEntity;
 import com.bbdn.server.domain.interfaces.request.UserAccountNickNameRequest;
 import com.bbdn.server.domain.interfaces.response.CommonNotificationResponse;
+import com.bbdn.server.domain.interfaces.response.NickNameProcessResponse;
 import com.bbdn.server.service.UserAccountService;
 import com.bbdn.server.domain.interfaces.request.UserAccountGoogleRequest;
 import com.bbdn.server.domain.interfaces.response.UserAccountExistsResponse;
@@ -50,22 +51,32 @@ public class UserAccountController {
     }
 
     @PutMapping("/account/nickname")
-    public CommonNotificationResponse modifyUserAccountNickName(@RequestBody UserAccountNickNameRequest userAccountNickNameRequest) {
+    public NickNameProcessResponse modifyUserAccountNickName(@RequestBody UserAccountNickNameRequest userAccountNickNameRequest) {
 
         String email = userAccountNickNameRequest.getEmail();
         String nickName = userAccountNickNameRequest.getNickName();
 
-        UserEntity userEntity = userAccountService.modifyUserAccountNickName(email, nickName);
+        NickNameProcessResponse nickNameProcessResponse = new NickNameProcessResponse();
 
-        CommonNotificationResponse commonNotificationResponse = new CommonNotificationResponse();
+        boolean isExistNickName = userAccountService.checkNickNameAlreadyExsits(nickName);
 
-        if(userEntity.getNickname().equals(nickName)) {
-            commonNotificationResponse.setCode("01");
-            commonNotificationResponse.setMessage("닉네임 수정에 성공했습니다.");
+        if(isExistNickName) {
+            nickNameProcessResponse.setCode("02");
+            nickNameProcessResponse.setExistsNickName(true);
+            nickNameProcessResponse.setMessage("기존에 사용중인 닉네임 입니다.");
+
         } else {
-            commonNotificationResponse.setCode("99");
-            commonNotificationResponse.setMessage("닉네임 수정에 실패했습니다.");
+            UserEntity userEntity = userAccountService.modifyUserAccountNickName(email, nickName);
+
+            if(userEntity.getNickname().equals(nickName)) {
+                nickNameProcessResponse.setCode("01");
+                nickNameProcessResponse.setMessage("닉네임 수정에 성공했습니다.");
+            } else {
+                nickNameProcessResponse.setCode("99");
+                nickNameProcessResponse.setMessage("닉네임 수정에 실패했습니다.");
+            }
+            nickNameProcessResponse.setExistsNickName(false);
         }
-        return commonNotificationResponse;
+        return nickNameProcessResponse;
     }
 }
