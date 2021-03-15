@@ -2,7 +2,6 @@ package com.bbdn.server.application.controller;
 
 import com.bbdn.server.domain.entity.UserEntity;
 import com.bbdn.server.domain.interfaces.request.UserAccountNickNameRequest;
-import com.bbdn.server.domain.interfaces.response.CommonNotificationResponse;
 import com.bbdn.server.domain.interfaces.response.NickNameProcessResponse;
 import com.bbdn.server.service.UserAccountService;
 import com.bbdn.server.domain.interfaces.request.UserAccountGoogleRequest;
@@ -58,9 +57,9 @@ public class UserAccountController {
 
         NickNameProcessResponse nickNameProcessResponse = new NickNameProcessResponse();
 
-        boolean isExistNickName = userAccountService.checkNickNameAlreadyExsits(nickName);
+        Optional<UserEntity> isExistNickName = userAccountService.checkNickNameAlreadyExists(nickName);
 
-        if(isExistNickName) {
+        if(isExistNickName.isPresent()) {
             nickNameProcessResponse.setCode("02");
             nickNameProcessResponse.setExistsNickName(true);
             nickNameProcessResponse.setMessage("기존에 사용중인 닉네임 입니다.");
@@ -68,6 +67,7 @@ public class UserAccountController {
         } else {
             UserEntity userEntity = userAccountService.modifyUserAccountNickName(email, nickName);
 
+            // TODO: check 필요
             if(userEntity.getNickname().equals(nickName)) {
                 nickNameProcessResponse.setCode("01");
                 nickNameProcessResponse.setMessage("닉네임 수정에 성공했습니다.");

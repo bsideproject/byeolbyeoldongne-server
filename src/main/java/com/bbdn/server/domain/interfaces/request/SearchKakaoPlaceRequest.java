@@ -15,7 +15,7 @@ public class SearchKakaoPlaceRequest {
 
     private String query; // /v2/local/search/address
     private String addressName; // /v2/local/search/keyword
-    private KakaoCategoryGroupEnums kakaoCategoryGroupEnums;
+    private String kakaoCategoryGroupEnums;
 
     private Double x;
     private Double y;

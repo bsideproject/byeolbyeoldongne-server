@@ -1,9 +1,12 @@
 package com.bbdn.server.domain.interfaces.response;
 
+import com.bbdn.server.domain.enums.KakaoCategoryGroupEnums;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,6 +22,8 @@ public class SearchPlaceResponse {
 
     private Double x;
     private Double y;
+
+    private List<KakaoCategoryGroupEnums> categoryGroupEnumsList;
 
     LocationLineByAddressNameResponse locationLineByAddressNameResponse;
 }

@@ -52,7 +52,7 @@ public class UserAccountService {
     }
 
     @Transactional(readOnly = true)
-    public boolean checkNickNameAlreadyExsits(String nickName) {
+    public Optional<UserEntity> checkNickNameAlreadyExists(String nickName) {
         return userRepository.findByNickname(nickName);
     }
 }

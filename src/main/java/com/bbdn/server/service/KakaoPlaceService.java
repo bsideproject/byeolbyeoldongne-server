@@ -67,10 +67,30 @@ public class KakaoPlaceService {
         }
     }
 
+    // 주변 X세권 찾기
+    public List<KakaoCategoryGroupEnums> searchCategoryGroupListByParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
+
+        List<KakaoCategoryGroupEnums> kakaoCategoryGroupEnumsList = new ArrayList<>();
+
+        searchKakaoPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_CATEGORY_BY_V2);
+        searchKakaoPlaceRequest.setRadius(500);
+
+        for(KakaoCategoryGroupEnums kakaoCategoryGroup : KakaoCategoryGroupEnums.values()) {
+            searchKakaoPlaceRequest.setKakaoCategoryGroupEnums(kakaoCategoryGroup.getCode());
+            log.info("searchCategoryGroupListByParameter searchKakaoPlaceRequest: {}:", searchKakaoPlaceRequest.toString());
+
+            KakaoPlaceVO kakaoPlaceVO = this.kakaoMapClient.searchPlaceByCategoryGroup(this.initiateQueryParameter(searchKakaoPlaceRequest));
+            log.info("searchCategoryGroupListByParameter kakaoPlaceVO: {}:", kakaoPlaceVO.toString());
+
+            if(kakaoPlaceVO.getMeta().getPageable_count() > 0) {
+                kakaoCategoryGroupEnumsList.add(kakaoCategoryGroup);
+            }
+        }
+        return kakaoCategoryGroupEnumsList;
+    }
+
     // 키워드 찾기 (from ~ to 좌표)
     public List<AddressLocationVO> searchKeywordByQueryParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
-
-        log.info("searchKakaoPlaceRequest: {} ", searchKakaoPlaceRequest);
 
         List<AddressLocationVO> addressLocationVOList = new ArrayList<>();
         int currentPage = 1;
@@ -80,6 +100,8 @@ public class KakaoPlaceService {
             searchKakaoPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_KEYWORD_BY_V2);
 
             KakaoPlaceVO kakaoPlaceVO = this.kakaoMapClient.searchPlaceByKeyword(this.initiateQueryParameter(searchKakaoPlaceRequest));
+
+            log.info("kakaoPlaceVO: {} ", kakaoPlaceVO.toString());
             int pageableCount = kakaoPlaceVO.getMeta().getPageable_count();
 
             if(pageableCount > 1) {
@@ -116,7 +138,7 @@ public class KakaoPlaceService {
         if (!StringUtils.isEmpty(searchKakaoPlaceRequest.getKakaoCategoryGroupEnums())) {
             try{
                 queryParameter.setCategoryGroupCodeEnums(
-                        KakaoCategoryGroupEnums.valueOf(searchKakaoPlaceRequest.getKakaoCategoryGroupEnums().getName()));
+                        KakaoCategoryGroupEnums.valueOf(searchKakaoPlaceRequest.getKakaoCategoryGroupEnums()));
             } catch(IllegalArgumentException e) {
                 throw new BadSearchRequestException(ErrorCodeEnums.BAD_REQUEST, errorConstant.VALIDATOR_NOT_SUPPORT_CATEGORY_GROUP_CODE);
             }
@@ -174,7 +196,6 @@ public class KakaoPlaceService {
     // RETRIEVE_PLACE_BY_V2
     private SearchPlaceResultDTO kakaoPlaceToSearchResult(KakaoPlaceVO kakaoPlace) {
         List<Place> places = new ArrayList<>();
-        log.info("kakaoPlaceToSearchResult: " + kakaoPlace.toString());
         for (DocumentVO document : kakaoPlace.getDocuments()) {
             places.add(this.documentToDefaultPlace(document));
         }
@@ -191,19 +212,4 @@ public class KakaoPlaceService {
                 .build();
     }
 
-    // RETRIEVE_COORD_ADDRESS_BY_V2
-    private SearchPlaceResultDTO kakaoAddressToSearchResult(KakaoPlaceVO kakaoPlace) {
-        List<Place> places = new ArrayList<>();
-        for (DocumentVO document : kakaoPlace.getDocuments()) {
-            places.add(this.documentToDefaultPlace(document));
-        }
-
-        return SearchPlaceResultDTO.builder()
-                .pagination(PaginationVO.builder()
-                        .totalCount(kakaoPlace.getMeta().getTotal_count())
-                        .pageableCount(kakaoPlace.getMeta().getPageable_count())
-                        .end(kakaoPlace.getMeta().is_end()).build())
-                .places(places)
-                .build();
-    }
 }

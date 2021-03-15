@@ -1,5 +1,6 @@
 package com.bbdn.server.service;
 
+import com.bbdn.server.domain.enums.KakaoCategoryGroupEnums;
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
 import com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest;
 import com.bbdn.server.domain.interfaces.response.LocationLineByAddressNameResponse;
@@ -45,6 +46,7 @@ public class FormatTransformService {
             List<AddressLocationVO> addressLocationVOList =
                     kakaoPlaceService.searchKeywordByQueryParameter(searchKakaoPlaceRequest);
 
+            log.info("retrieveLocationListByQuery addressLocationVOList: {}", addressLocationVOList.toString());
             if (addressLocationVOList.size() > 1) {
                 // roadAddressName 기준으로 sort
                 Collections.sort(addressLocationVOList);
@@ -57,6 +59,13 @@ public class FormatTransformService {
                         .addressName(roadAddressName)
                         .build();
 
+                // 카테고리 그룹 조회
+                searchKakaoPlaceRequest.setX(x);
+                searchKakaoPlaceRequest.setY(y);
+                searchKakaoPlaceRequest.setRadius(500);
+
+                List<KakaoCategoryGroupEnums> kakaoCategoryGroupEnumsList = kakaoPlaceService.searchCategoryGroupListByParameter(searchKakaoPlaceRequest);
+
                 responseList.add(SearchPlaceResponse.builder()
                         .placeId(id)
                         .addressName(addressName)
@@ -64,22 +73,26 @@ public class FormatTransformService {
                         .placeName(placeName)
                         .x(x)
                         .y(y)
+                        .categoryGroupEnumsList(kakaoCategoryGroupEnumsList)
                         .locationLineByAddressNameResponse(locationLineByAddressNameResponse)
                         .build());
             }
         });
 
+        log.info("responseList: {}", responseList.toString());
         return responseList;
     }
 
     public SearchPlaceResponse retrieveLocationListByPosition(SearchPlaceResultDTO searchPlaceResultDTO) {
 
-        String id = searchPlaceResultDTO.getPlaces().get(0).getId();
-        String addressName = searchPlaceResultDTO.getPlaces().get(0).getAddressName();
-        String roadAddressName = searchPlaceResultDTO.getPlaces().get(0).getRoadAddressName();
-        String placeName = searchPlaceResultDTO.getPlaces().get(0).getPlaceName();
-        Double x = searchPlaceResultDTO.getPlaces().get(0).getX();
-        Double y = searchPlaceResultDTO.getPlaces().get(0).getY();
+        Place place = searchPlaceResultDTO.getPlaces().get(0);
+
+        String id = place.getId();
+        String addressName = place.getAddressName();
+        String roadAddressName = place.getRoadAddressName();
+        String placeName = place.getPlaceName();
+        Double x = place.getX();
+        Double y = place.getY();
 
         return SearchPlaceResponse.builder()
                 .placeId(id)

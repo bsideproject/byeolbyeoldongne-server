@@ -44,9 +44,16 @@ public class KakaoMapClient implements KakaoMapRest {
         }
     }
 
-    private RequestBuilder createRequestBuilder(QueryParameterDTO queryParameterDTO) {
+    public KakaoPlaceVO searchPlaceByCategoryGroup(QueryParameterDTO queryParameterDTO) {
+        try {
+            log.info("searchPlaceByCategoryGroup: " + webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO)).toString());
+            return webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO));
+        } catch (HttpClientErrorException | HttpServerErrorException e) {
+            throw new KakaoMapClientException(e.getMessage());
+        }
+    }
 
-        System.out.println("createRequestBuilder: " + queryParameterDTO.toString());
+    private RequestBuilder createRequestBuilder(QueryParameterDTO queryParameterDTO) {
 
         RequestBuilder requestBuilder = new RequestBuilder(queryParameterDTO.getKakaoMapRestUrlEnums());
         requestBuilder.addHeader("Authorization", this.adminKey);

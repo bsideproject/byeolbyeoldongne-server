@@ -71,7 +71,6 @@ public class LocationController {
         // 도로명주소를 이용한 조회
         searchKakaoPlaceRequest.setQuery(roadName);
         SearchPlaceResultDTO searchPlaceResultDTO = kakaoPlaceService.searchPlaceByQueryParameter(searchKakaoPlaceRequest);
-        log.info("getPlaceListByPosition searchPlaceResultDTO: " + searchPlaceResultDTO.toString());
 
         // response setting
         LocationLineByAddressNameResponse locationLineByAddressNameResponse = new LocationLineByAddressNameResponse();
