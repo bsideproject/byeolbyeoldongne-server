@@ -1,9 +1,7 @@
 package com.bbdn.server.service;
 
 import com.bbdn.server.application.constant.ErrorConstant;
-import com.bbdn.server.domain.enums.ErrorCodeEnums;
-import com.bbdn.server.domain.enums.KakaoMapRestUrlEnums;
-import com.bbdn.server.domain.enums.PlaceServiceTypeEnums;
+import com.bbdn.server.domain.enums.*;
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
 import com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest;
 import com.bbdn.server.domain.interfaces.spec.Place;
@@ -11,7 +9,6 @@ import com.bbdn.server.domain.interfaces.vo.AddressLocationVO;
 import com.bbdn.server.domain.interfaces.vo.kakao.*;
 import com.bbdn.server.handler.exception.BadSearchRequestException;
 import com.bbdn.server.handler.exception.KakaoMapClientException;
-import com.bbdn.server.domain.enums.KakaoCategoryGroupEnums;
 import com.bbdn.server.domain.interfaces.KakaoMapClient;
 import com.bbdn.server.domain.interfaces.dto.QueryParameterDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -68,24 +65,26 @@ public class KakaoPlaceService {
     }
 
     // 주변 X세권 찾기
-    public List<KakaoCategoryGroupEnums> searchCategoryGroupListByParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
+    public Set<String> searchCategoryGroupListByParameter(SearchKakaoPlaceRequest searchKakaoPlaceRequest) {
 
-        List<KakaoCategoryGroupEnums> kakaoCategoryGroupEnumsList = new ArrayList<>();
+        Set<String> kakaoCategoryGroupEnumsList = new HashSet<>();
 
-        searchKakaoPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_CATEGORY_BY_V2);
+        searchKakaoPlaceRequest.setKakaoMapRestUrlEnums(KakaoMapRestUrlEnums.RETRIEVE_KEYWORD_BY_V2);
         searchKakaoPlaceRequest.setRadius(500);
 
+        // 카카오로컬에 정의된 카테고리 그룹 조회
         for(KakaoCategoryGroupEnums kakaoCategoryGroup : KakaoCategoryGroupEnums.values()) {
-            searchKakaoPlaceRequest.setKakaoCategoryGroupEnums(kakaoCategoryGroup.getCode());
+            searchKakaoPlaceRequest.setQuery(kakaoCategoryGroup.getName());
             log.info("searchCategoryGroupListByParameter searchKakaoPlaceRequest: {}:", searchKakaoPlaceRequest.toString());
 
-            KakaoPlaceVO kakaoPlaceVO = this.kakaoMapClient.searchPlaceByCategoryGroup(this.initiateQueryParameter(searchKakaoPlaceRequest));
+            KakaoPlaceVO kakaoPlaceVO = this.kakaoMapClient.searchPlaceByKeyword(this.initiateQueryParameter(searchKakaoPlaceRequest));
             log.info("searchCategoryGroupListByParameter kakaoPlaceVO: {}:", kakaoPlaceVO.toString());
 
             if(kakaoPlaceVO.getMeta().getPageable_count() > 0) {
-                kakaoCategoryGroupEnumsList.add(kakaoCategoryGroup);
+                kakaoCategoryGroupEnumsList.add(kakaoCategoryGroup.getBbdnGroupCode());
             }
         }
+
         return kakaoCategoryGroupEnumsList;
     }
 

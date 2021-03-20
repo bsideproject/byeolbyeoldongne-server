@@ -97,7 +97,7 @@ public class LocationController {
             searchKakaoPlaceRequest.setLat(lat);
             searchKakaoPlaceRequest.setRadius(500);
 
-            List<KakaoCategoryGroupEnums> kakaoCategoryGroupEnumsList = kakaoPlaceService.searchCategoryGroupListByParameter(searchKakaoPlaceRequest);
+            Set<String> kakaoCategoryGroupEnumsList = kakaoPlaceService.searchCategoryGroupListByParameter(searchKakaoPlaceRequest);
 
             searchPlaceResponse.setCategoryGroupEnumsList(kakaoCategoryGroupEnumsList);
 

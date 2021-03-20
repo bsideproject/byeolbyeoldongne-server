@@ -44,6 +44,7 @@ public class KakaoMapClient implements KakaoMapRest {
         }
     }
 
+    @Deprecated
     public KakaoPlaceVO searchPlaceByCategoryGroup(QueryParameterDTO queryParameterDTO) {
         try {
             log.info("searchPlaceByCategoryGroup: " + webRestClient.sendAndReceive(this.createRequestBuilder(queryParameterDTO)).toString());
@@ -61,7 +62,7 @@ public class KakaoMapClient implements KakaoMapRest {
         requestBuilder.setResponseType(KakaoPlaceVO.class);
 
         if (!StringUtils.isEmpty(queryParameterDTO.getKakaoCategoryGroupEnums())) {
-            requestBuilder.addQueryParam("category_group_code", queryParameterDTO.getKakaoCategoryGroupEnums().getCode());
+            requestBuilder.addQueryParam("category_group_code", queryParameterDTO.getKakaoCategoryGroupEnums().getKakaoGroupCode());
         }
         if (!Objects.isNull(queryParameterDTO.getX())) {
             requestBuilder.addQueryParam("x", queryParameterDTO.getX().toString());

@@ -1,11 +1,31 @@
 package com.bbdn.server.domain.enums;
 
-import lombok.Builder;
+import lombok.Getter;
 
+@Getter
 public enum KakaoCategoryGroupEnums {
 
-    MT1("대형마트"), // 몰세권
-    CS2("편의점"), // 편세권
+    MART("대형마트", "MART", "MT1"), // 몰세권
+    CONVENIENCE_STORE("편의점", "CONVENIENCE_STORE", "CS2"), // 편세권
+
+    CAFE("카페", "CAFE", "CE7"), // 카세권
+    HOSPITAL("병원", "MEDICAL", "HP8"), // 의세권
+    PHARMACY("약국", "MEDICAL", "PM9"), // 의세권
+
+    // 숲세권
+    FOREST("숲", "FOREST", ""),
+    PARK("공원", "FOREST", ""),
+
+    // 운세권
+    GYM("헬스장", "GYM", ""),
+    PILATES("필라테스", "GYM", ""),
+
+    // 햄세권
+    BURGERKING("버거킹", "HAMBURGER", ""),
+    MCDONALD("맥도날드", "HAMBURGER", ""),
+    LOTTELIA("롯데리아", "HAMBURGER", ""),
+    MOMSTOUCH("맘스터치", "HAMBURGER", "");
+
 //    PS3("어린이집,유치원"),
 //    SC4("학교"),
 //    AC5("학원"),
@@ -19,20 +39,14 @@ public enum KakaoCategoryGroupEnums {
 //    AT4("관광명소"),
 //    AD5("숙박"),
 //    FD6("음식점"),
-    CE7("카페"), // 카세권
-    HP8("병원"), // 의세권
-    PM9("약국"); // 의세권
 
     private final String name;
+    private final String bbdnGroupCode;
+    private final String kakaoGroupCode;
 
-    KakaoCategoryGroupEnums(String name) {
+    KakaoCategoryGroupEnums(String name, String bbdnGroupCode, String kakaoGroupCode) {
         this.name = name;
-    }
-
-    public String getCode() {
-        return this.name();
-    }
-    public String getName() {
-        return this.name;
+        this.bbdnGroupCode = bbdnGroupCode;
+        this.kakaoGroupCode = kakaoGroupCode;
     }
 }

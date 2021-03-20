@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,7 +24,7 @@ public class SearchPlaceResponse {
     private Double lng;
     private Double lat;
 
-    private List<KakaoCategoryGroupEnums> categoryGroupEnumsList;
+    private Set<String> categoryGroupEnumsList;
 
     LocationLineByAddressNameResponse locationLineByAddressNameResponse;
 }
