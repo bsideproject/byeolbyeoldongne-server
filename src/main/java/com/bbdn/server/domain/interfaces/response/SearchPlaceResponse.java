@@ -20,8 +20,8 @@ public class SearchPlaceResponse {
 
     private String placeName;
 
-    private Double x;
-    private Double y;
+    private Double lng;
+    private Double lat;
 
     private List<KakaoCategoryGroupEnums> categoryGroupEnumsList;
 

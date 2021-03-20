@@ -30,8 +30,8 @@ public class GooglePlaceService {
             SearchPlaceResponse searchPlaceResponse = SearchPlaceResponse.builder()
                     .addressName(googlePlaceVO.getFormatted_address())
                     .placeId(googlePlaceVO.getPlace_id())
-                    .x(googlePlaceVO.getGeometry().location.lat)
-                    .y(googlePlaceVO.getGeometry().location.lng)
+                    .lng(googlePlaceVO.getGeometry().location.lat)
+                    .lat(googlePlaceVO.getGeometry().location.lng)
                     .roadAddress(googlePlaceVO.getFormatted_address())
                     .build();
 

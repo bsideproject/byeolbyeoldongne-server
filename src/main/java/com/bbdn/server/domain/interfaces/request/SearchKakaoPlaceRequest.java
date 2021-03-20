@@ -17,8 +17,8 @@ public class SearchKakaoPlaceRequest {
     private String addressName; // /v2/local/search/keyword
     private String kakaoCategoryGroupEnums;
 
-    private Double x;
-    private Double y;
+    private Double lng;
+    private Double lat;
     private Integer radius;
     private String rect;
     private Integer page;

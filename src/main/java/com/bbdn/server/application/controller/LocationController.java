@@ -1,5 +1,6 @@
 package com.bbdn.server.application.controller;
 
+import com.bbdn.server.domain.enums.KakaoCategoryGroupEnums;
 import com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO;
 import com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest;
 import com.bbdn.server.domain.interfaces.response.LocationLineByAddressNameResponse;
@@ -57,12 +58,12 @@ public class LocationController {
     }
 
     @GetMapping("/position")
-    public ResponseEntity getPlaceListByPosition(@RequestParam("lat") double y,
-                                                 @RequestParam("lng") double x) {
+    public ResponseEntity getPlaceListByPosition(@RequestParam("lat") double lat,
+                                                 @RequestParam("lng") double lng) {
 
         SearchKakaoPlaceRequest searchKakaoPlaceRequest = SearchKakaoPlaceRequest.builder()
-                .x(x)
-                .y(y)
+                .lng(lng)
+                .lat(lat)
                 .build();
 
         // 좌표를 이용해 Kakao API 조회
@@ -79,6 +80,7 @@ public class LocationController {
         List<AddressLocationVO> addressLocationVOList = kakaoPlaceService.searchKeywordByQueryParameter(searchKakaoPlaceRequest);
 
         if(addressLocationVOList.size() > 1) {
+
             // roadAddressName 기준으로 sort
             Collections.sort(addressLocationVOList);
             AddressLocationVO firstAddressLocation = addressLocationVOList.get(0);
@@ -87,9 +89,20 @@ public class LocationController {
             locationLineByAddressNameResponse.setAddressName(roadName);
             locationLineByAddressNameResponse.setStartLocation(firstAddressLocation);
             locationLineByAddressNameResponse.setEndLocation(lastAddressLocation);
+
+            searchPlaceResponse.setLocationLineByAddressNameResponse(locationLineByAddressNameResponse);
+
+            // 카테고리 그룹 조회
+            searchKakaoPlaceRequest.setLng(lng);
+            searchKakaoPlaceRequest.setLat(lat);
+            searchKakaoPlaceRequest.setRadius(500);
+
+            List<KakaoCategoryGroupEnums> kakaoCategoryGroupEnumsList = kakaoPlaceService.searchCategoryGroupListByParameter(searchKakaoPlaceRequest);
+
+            searchPlaceResponse.setCategoryGroupEnumsList(kakaoCategoryGroupEnumsList);
+
         }
 
-        searchPlaceResponse.setLocationLineByAddressNameResponse(locationLineByAddressNameResponse);
         return ResponseEntity.ok(searchPlaceResponse);
     }
 

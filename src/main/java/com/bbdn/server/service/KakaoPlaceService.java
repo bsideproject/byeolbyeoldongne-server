@@ -153,11 +153,11 @@ public class KakaoPlaceService {
         if (!StringUtils.isEmpty(searchKakaoPlaceRequest.getRect())) {
             queryParameter.setRect(searchKakaoPlaceRequest.getRect());
         }
-        if (!Objects.isNull(searchKakaoPlaceRequest.getY())) {
-            queryParameter.setY(searchKakaoPlaceRequest.getY());
+        if (!Objects.isNull(searchKakaoPlaceRequest.getLat())) {
+            queryParameter.setY(searchKakaoPlaceRequest.getLat());
         }
-        if (!Objects.isNull(searchKakaoPlaceRequest.getX())) {
-            queryParameter.setX(searchKakaoPlaceRequest.getX());
+        if (!Objects.isNull(searchKakaoPlaceRequest.getLng())) {
+            queryParameter.setX(searchKakaoPlaceRequest.getLng());
         }
         if (!Objects.isNull(searchKakaoPlaceRequest.getSize())) {
             queryParameter.setSize(searchKakaoPlaceRequest.getSize());
