@@ -6,8 +6,8 @@ com/bbdn/server/domain/interfaces/vo/kakao/CategoryVO.java
 com/bbdn/server/domain/interfaces/vo/kakao/RegionInfoVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO
  com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO$RegionInfoVOBuilder
-com/bbdn/server/config/SwaggerConfig.java
- com.bbdn.server.config.SwaggerConfig
+com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
+ com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
 com/bbdn/server/domain/interfaces/request/SearchKakaoPlaceRequest.java
  com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest
  com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest$SearchKakaoPlaceRequestBuilder
@@ -16,8 +16,8 @@ com/bbdn/server/service/ReviewService.java
 com/bbdn/server/domain/interfaces/dto/SearchPlaceResultDTO.java
  com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO
  com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO$SearchPlaceResultDTOBuilder
-com/bbdn/server/service/GooglePlaceService.java
- com.bbdn.server.service.GooglePlaceService
+com/bbdn/server/application/controller/ReviewController.java
+ com.bbdn.server.application.controller.ReviewController
 com/bbdn/server/domain/interfaces/request/UserAccountGoogleRequest.java
  com.bbdn.server.domain.interfaces.request.UserAccountGoogleRequest
  com.bbdn.server.domain.interfaces.request.UserAccountGoogleRequest$UserAccountGoogleRequestBuilder
@@ -32,11 +32,8 @@ com/bbdn/server/repository/CommentReplyRepository.java
 com/bbdn/server/domain/interfaces/response/SearchPlaceResponse.java
  com.bbdn.server.domain.interfaces.response.SearchPlaceResponse
  com.bbdn.server.domain.interfaces.response.SearchPlaceResponse$SearchPlaceResponseBuilder
-com/bbdn/server/domain/interfaces/response/PlaceCommentResponse.java
- com.bbdn.server.domain.interfaces.response.PlaceCommentResponse
- com.bbdn.server.domain.interfaces.response.PlaceCommentResponse$CommentInfo
- com.bbdn.server.domain.interfaces.response.PlaceCommentResponse$CommentInfo$CommentInfoBuilder
- com.bbdn.server.domain.interfaces.response.PlaceCommentResponse$PlaceCommentResponseBuilder
+com/bbdn/server/domain/enums/KakaoCategoryGroupEnums.java
+ com.bbdn.server.domain.enums.KakaoCategoryGroupEnums
 com/bbdn/server/domain/interfaces/request/UserAccountNickNameRequest.java
  com.bbdn.server.domain.interfaces.request.UserAccountNickNameRequest
  com.bbdn.server.domain.interfaces.request.UserAccountNickNameRequest$UserAccountNickNameRequestBuilder
@@ -61,9 +58,8 @@ com/bbdn/server/repository/ReviewInfoRepository.java
  com.bbdn.server.repository.ReviewInfoRepository
 com/bbdn/server/config/RestTemplateErrorHandler.java
  com.bbdn.server.config.RestTemplateErrorHandler
-com/bbdn/server/domain/interfaces/response/CommonNotificationResponse.java
- com.bbdn.server.domain.interfaces.response.CommonNotificationResponse
- com.bbdn.server.domain.interfaces.response.CommonNotificationResponse$CommonNotificationResponseBuilder
+com/bbdn/server/service/KakaoPlaceService.java
+ com.bbdn.server.service.KakaoPlaceService
 com/bbdn/server/domain/interfaces/response/NickNameProcessResponse.java
  com.bbdn.server.domain.interfaces.response.NickNameProcessResponse
 com/bbdn/server/domain/interfaces/vo/kakao/DefaultPlaceVO.java
@@ -127,8 +123,8 @@ com/bbdn/server/BbdnServerApplication.java
  com.bbdn.server.BbdnServerApplication
 com/bbdn/server/application/client/GoogleClient.java
  com.bbdn.server.application.client.GoogleClient
-com/bbdn/server/service/ReviewCommentService.java
- com.bbdn.server.service.ReviewCommentService
+com/bbdn/server/service/FormatTransformService.java
+ com.bbdn.server.service.FormatTransformService
 com/bbdn/server/domain/interfaces/request/CreateUserInfoRequest.java
  com.bbdn.server.domain.interfaces.request.CreateUserInfoRequest
  com.bbdn.server.domain.interfaces.request.CreateUserInfoRequest$CreateUserInfoRequestBuilder
@@ -157,9 +153,8 @@ com/bbdn/server/domain/interfaces/spec/SearchQueryParameter.java
  com.bbdn.server.domain.interfaces.spec.SearchQueryParameter
 com/bbdn/server/handler/GlobalExceptionHandler.java
  com.bbdn.server.handler.GlobalExceptionHandler
-com/bbdn/server/domain/interfaces/request/PlaceReviewDeleteRequest.java
- com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest
- com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest$PlaceReviewDeleteRequestBuilder
+com/bbdn/server/domain/interfaces/KakaoMapRest.java
+ com.bbdn.server.domain.interfaces.KakaoMapRest
 com/bbdn/server/domain/interfaces/vo/kakao/KakaoPlaceVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.KakaoPlaceVO
 com/bbdn/server/repository/ContentInfoRepository.java
@@ -176,8 +171,8 @@ com/bbdn/server/application/constant/ErrorConstant.java
 com/bbdn/server/domain/interfaces/request/PlaceCommentReplyUploadRequest.java
  com.bbdn.server.domain.interfaces.request.PlaceCommentReplyUploadRequest
  com.bbdn.server.domain.interfaces.request.PlaceCommentReplyUploadRequest$PlaceCommentReplyUploadRequestBuilder
-com/bbdn/server/application/controller/HelloController.java
- com.bbdn.server.application.controller.HelloController
+com/bbdn/server/domain/interfaces/KakaoMapClient.java
+ com.bbdn.server.domain.interfaces.KakaoMapClient
 com/bbdn/server/config/RestTemplateConfig.java
  com.bbdn.server.config.RestTemplateConfig
 com/bbdn/server/application/controller/CommentController.java
@@ -202,25 +197,30 @@ com/bbdn/server/domain/interfaces/vo/google/GooglePlaceVO.java
 com/bbdn/server/domain/entity/CommentInfoEntity.java
  com.bbdn.server.domain.entity.CommentInfoEntity
  com.bbdn.server.domain.entity.CommentInfoEntity$CommentInfoEntityBuilder
-com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
- com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
+com/bbdn/server/application/controller/LocationController.java
+ com.bbdn.server.application.controller.LocationController
 com/bbdn/server/application/common/SpringWebRestClient.java
  com.bbdn.server.application.common.SpringWebRestClient
  com.bbdn.server.application.common.SpringWebRestClient$1
-com/bbdn/server/domain/enums/KakaoCategoryGroupEnums.java
- com.bbdn.server.domain.enums.KakaoCategoryGroupEnums
-com/bbdn/server/domain/interfaces/KakaoMapRest.java
- com.bbdn.server.domain.interfaces.KakaoMapRest
+com/bbdn/server/domain/interfaces/response/PlaceCommentResponse.java
+ com.bbdn.server.domain.interfaces.response.PlaceCommentResponse
+ com.bbdn.server.domain.interfaces.response.PlaceCommentResponse$CommentInfo
+ com.bbdn.server.domain.interfaces.response.PlaceCommentResponse$CommentInfo$CommentInfoBuilder
+ com.bbdn.server.domain.interfaces.response.PlaceCommentResponse$PlaceCommentResponseBuilder
+com/bbdn/server/application/controller/HelloController.java
+ com.bbdn.server.application.controller.HelloController
+com/bbdn/server/service/GooglePlaceService.java
+ com.bbdn.server.service.GooglePlaceService
+com/bbdn/server/domain/interfaces/response/CommonNotificationResponse.java
+ com.bbdn.server.domain.interfaces.response.CommonNotificationResponse
+ com.bbdn.server.domain.interfaces.response.CommonNotificationResponse$CommonNotificationResponseBuilder
+com/bbdn/server/service/ReviewCommentService.java
+ com.bbdn.server.service.ReviewCommentService
 com/bbdn/server/domain/interfaces/dto/QueryParameterDTO.java
  com.bbdn.server.domain.interfaces.dto.QueryParameterDTO
  com.bbdn.server.domain.interfaces.dto.QueryParameterDTO$QueryParameterDTOBuilder
-com/bbdn/server/application/controller/LocationController.java
- com.bbdn.server.application.controller.LocationController
-com/bbdn/server/application/controller/ReviewController.java
- com.bbdn.server.application.controller.ReviewController
-com/bbdn/server/service/FormatTransformService.java
- com.bbdn.server.service.FormatTransformService
-com/bbdn/server/service/KakaoPlaceService.java
- com.bbdn.server.service.KakaoPlaceService
-com/bbdn/server/domain/interfaces/KakaoMapClient.java
- com.bbdn.server.domain.interfaces.KakaoMapClient
+com/bbdn/server/domain/interfaces/request/PlaceReviewDeleteRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest$PlaceReviewDeleteRequestBuilder
+com/bbdn/server/config/SwaggerConfig.java
+ com.bbdn.server.config.SwaggerConfig

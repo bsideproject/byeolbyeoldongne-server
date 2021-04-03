@@ -5,12 +5,18 @@ import lombok.Getter;
 @Getter
 public enum KakaoCategoryGroupEnums {
 
-    MART("대형마트", "MART", "MT1"), // 몰세권
-    CONVENIENCE_STORE("편의점", "CONVENIENCE_STORE", "CS2"), // 편세권
+    // 몰세권
+    MART("대형마트", "MART", "MT1"),
 
-    CAFE("카페", "CAFE", "CE7"), // 카세권
-    HOSPITAL("병원", "MEDICAL", "HP8"), // 의세권
-    PHARMACY("약국", "MEDICAL", "PM9"), // 의세권
+    // 편세권
+    CONVENIENCE_STORE("편의점", "CONVENIENCE_STORE", "CS2"),
+
+    // 카세권
+    CAFE("카페", "CAFE", "CE7"),
+
+    // 의세권
+    HOSPITAL("병원", "MEDICAL", "HP8"),
+    PHARMACY("약국", "MEDICAL", "PM9"),
 
     // 숲세권
     FOREST("숲", "FOREST", ""),
