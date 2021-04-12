@@ -21,11 +21,18 @@
           <element id="library" level="project" name="Gradle: org.projectreactor:reactor-spring:1.0.1.RELEASE" />
           <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpclient:4.5.12" />
           <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.19" />
+          <element id="library" level="project" name="Gradle: io.springfox:springfox-swagger2:2.9.2" />
+          <element id="library" level="project" name="Gradle: io.springfox:springfox-swagger-ui:2.9.2" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-data-redis:2.2.6.RELEASE" />
           <element id="library" level="project" name="Gradle: it.ozimov:embedded-redis:0.7.2" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-data-jpa:2.2.6.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.2.6.RELEASE" />
           <element id="library" level="project" name="Gradle: org.mariadb.jdbc:mariadb-java-client:2.1.2" />
+          <element id="library" level="project" name="Gradle: io.springfox:springfox-swagger-common:2.9.2" />
+          <element id="library" level="project" name="Gradle: io.springfox:springfox-spring-web:2.9.2" />
+          <element id="library" level="project" name="Gradle: io.springfox:springfox-schema:2.9.2" />
+          <element id="library" level="project" name="Gradle: io.springfox:springfox-spi:2.9.2" />
+          <element id="library" level="project" name="Gradle: io.springfox:springfox-core:2.9.2" />
           <element id="library" level="project" name="Gradle: com.google.guava:guava:22.0" />
           <element id="library" level="project" name="Gradle: com.google.maps:google-maps-services:0.15.4" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.2.6.RELEASE" />
@@ -42,6 +49,8 @@
           <element id="library" level="project" name="Gradle: com.jayway.jsonpath:json-path:2.4.0" />
           <element id="library" level="project" name="Gradle: org.projectreactor:reactor-core:1.0.1.RELEASE" />
           <element id="library" level="project" name="Gradle: io.swagger:swagger-models:1.5.20" />
+          <element id="library" level="project" name="Gradle: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-redis:2.2.6.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-jpa:2.2.6.RELEASE" />
           <element id="library" level="project" name="Gradle: org.synchronoss.cloud:nio-stream-storage:1.1.3" />
@@ -67,10 +76,11 @@
           <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.2.5.RELEASE" />
           <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.4.13" />
           <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.13" />
+          <element id="library" level="project" name="Gradle: io.swagger:swagger-annotations:1.5.20" />
           <element id="library" level="project" name="Gradle: org.hibernate:hibernate-core:5.4.12.Final" />
           <element id="library" level="project" name="Gradle: org.hibernate.validator:hibernate-validator:6.0.18.Final" />
           <element id="library" level="project" name="Gradle: com.fasterxml:classmate:1.5.1" />
-          <element id="library" level="project" name="Gradle: io.swagger:swagger-annotations:1.5.20" />
+          <element id="library" level="project" name="Gradle: org.mapstruct:mapstruct:1.2.0.Final" />
           <element id="library" level="project" name="Gradle: io.lettuce:lettuce-core:5.2.2.RELEASE" />
           <element id="library" level="project" name="Gradle: commons-io:commons-io:2.5" />
           <element id="library" level="project" name="Gradle: org.glassfish.jaxb:jaxb-runtime:2.3.2" />
@@ -94,8 +104,8 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.10.3" />
           <element id="library" level="project" name="Gradle: io.projectreactor.netty:reactor-netty:0.9.6.RELEASE" />
           <element id="library" level="project" name="Gradle: org.glassfish:jakarta.el:3.0.3" />
-          <element id="library" level="project" name="Gradle: jakarta.validation:jakarta.validation-api:2.0.2" />
           <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.25" />
+          <element id="library" level="project" name="Gradle: jakarta.validation:jakarta.validation-api:2.0.2" />
           <element id="library" level="project" name="Gradle: io.projectreactor:reactor-core:3.3.4.RELEASE" />
           <element id="library" level="project" name="Gradle: net.minidev:json-smart:2.3" />
           <element id="library" level="project" name="Gradle: com.lmax:disruptor:3.2.0" />
@@ -131,16 +141,9 @@
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.2.3" />
           <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-api:2.12.1" />
           <element id="library" level="project" name="Gradle: org.ow2.asm:asm:5.0.4" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-swagger2/2.9.2/362676bc7f4c6f9f1d568741becab0dfc198c898/springfox-swagger2-2.9.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-swagger-ui/2.9.2/d542382a88ff3ea8d4032c28b2b0325797fada7d/springfox-swagger-ui-2.9.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-swagger-common/2.9.2/b38a41b3044af80cb7f41f67be5d158c9f6491ec/springfox-swagger-common-2.9.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-schema/2.9.2/e268f38774b16bb51a92ccaef0dcf3dc651c0cee/springfox-schema-2.9.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spi/2.9.2/6ac686190a6ceaccdae8b50d03b0501d144a6666/springfox-spi-2.9.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-core/2.9.2/2e26f58939c594fb5c958c3a1c7bedf83d2f2702/springfox-core-2.9.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.plugin/spring-plugin-metadata/1.2.0.RELEASE/97223fc496b6cab31602eedbd4202aa4fff0d44f/spring-plugin-metadata-1.2.0.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.plugin/spring-plugin-core/1.2.0.RELEASE/f380e7760032e7d929184f8ad8a33716b75c0657/spring-plugin-core-1.2.0.RELEASE.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct/1.2.0.Final/8609d6eb044e9f6c73cb24c8f2f4ed5c72a249c7/mapstruct-1.2.0.Final.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.2.16/a9ee12f737bd5dc7d046e4c065e391d38d6a3cfc/postgresql-42.2.16.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4.1/1.16/ce7cd831b2e3e5d428e659a6fdae0fb6b89f3cc7/log4jdbc-log4j2-jdbc4.1-1.16.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.5.0/2f50520c8abea66fbd8d26e481d3aef5c673b510/checker-qual-3.5.0.jar" />
         </element>
       </element>
     </root>
