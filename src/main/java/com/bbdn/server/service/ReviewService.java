@@ -33,6 +33,7 @@ public class ReviewService {
                 .roadAddress(placeReviewUploadRequest.getRoadAddress())
                 .x(placeReviewUploadRequest.getX())
                 .y(placeReviewUploadRequest.getY())
+                .likeCount(placeReviewUploadRequest.getLikeCount())
                 .reviewMainContent(placeReviewUploadRequest.getReviewMainContent())
                 .reviewGoodContent(placeReviewUploadRequest.getReviewGoodContent())
                 .reviewBadContent(placeReviewUploadRequest.getReviewBadContent())
@@ -65,51 +66,55 @@ public class ReviewService {
         Optional<ReviewInfoEntity> reviewInfo =
                 reviewInfoRepository.findById(reviewSequence);
 
-        log.info("putLocationReview reviewInfo : " + reviewInfo.get().toString());
-
         CommonNotificationResponse commonNotificationResponse = new CommonNotificationResponse();
 
-        if(reviewInfo.isPresent()) {
-            try {
-                ReviewInfoEntity reviewInfoEntity = reviewInfo.get();
+        try {
+            ReviewInfoEntity reviewInfoEntity = reviewInfo.get();
 
-                reviewInfoEntity.setId(reviewSequence);
-                reviewInfoEntity.setAddressName((placeReviewModifyRequest.getAddressName()));
-                reviewInfoEntity.setRoadAddress(placeReviewModifyRequest.getRoadAddress());
-                reviewInfoEntity.setX(placeReviewModifyRequest.getX());
-                reviewInfoEntity.setY(placeReviewModifyRequest.getY());
-                reviewInfoEntity.setReviewMainContent(placeReviewModifyRequest.getReviewMainContent());
-                reviewInfoEntity.setReviewGoodContent(placeReviewModifyRequest.getReviewGoodContent());
-                reviewInfoEntity.setReviewBadContent(placeReviewModifyRequest.getReviewBadContent());
-                reviewInfoEntity.setTrafficPoint(placeReviewModifyRequest.getTrafficPoint());
-                reviewInfoEntity.setConveniencePoint(placeReviewModifyRequest.getConveniencePoint());
-                reviewInfoEntity.setNoisePoint(placeReviewModifyRequest.getNoisePoint());
-                reviewInfoEntity.setSafetyPoint(placeReviewModifyRequest.getSafetyPoint());
-                reviewInfoEntity.setEmail(placeReviewModifyRequest.getEmail());
-                reviewInfoEntity.setModifiedBy(placeReviewModifyRequest.getEmail());
-                reviewInfoEntity.setModifiedAt(LocalDateTime.now());
+            reviewInfoEntity.setId(reviewSequence);
+            reviewInfoEntity.setAddressName((placeReviewModifyRequest.getAddressName()));
+            reviewInfoEntity.setRoadAddress(placeReviewModifyRequest.getRoadAddress());
+            reviewInfoEntity.setX(placeReviewModifyRequest.getX());
+            reviewInfoEntity.setY(placeReviewModifyRequest.getY());
+            reviewInfoEntity.setLikeCount(placeReviewModifyRequest.getLikeCount());
+            reviewInfoEntity.setReviewMainContent(placeReviewModifyRequest.getReviewMainContent());
+            reviewInfoEntity.setReviewGoodContent(placeReviewModifyRequest.getReviewGoodContent());
+            reviewInfoEntity.setReviewBadContent(placeReviewModifyRequest.getReviewBadContent());
+            reviewInfoEntity.setTrafficPoint(placeReviewModifyRequest.getTrafficPoint());
+            reviewInfoEntity.setConveniencePoint(placeReviewModifyRequest.getConveniencePoint());
+            reviewInfoEntity.setNoisePoint(placeReviewModifyRequest.getNoisePoint());
+            reviewInfoEntity.setSafetyPoint(placeReviewModifyRequest.getSafetyPoint());
+            reviewInfoEntity.setEmail(placeReviewModifyRequest.getEmail());
+            reviewInfoEntity.setModifiedBy(placeReviewModifyRequest.getEmail());
+            reviewInfoEntity.setModifiedAt(LocalDateTime.now());
 
-                log.info("putLocationReview reviewInfoEntity : " + reviewInfoEntity.toString());
-                reviewInfoRepository.save(reviewInfoEntity);
+            log.info("putLocationReview reviewInfoEntity : " + reviewInfoEntity.toString());
+            reviewInfoRepository.save(reviewInfoEntity);
 
-            } catch (Exception e) {
-                commonNotificationResponse.setCode("1000");
-                commonNotificationResponse.setMessage("수정에 실패했습니다.");
-            }
-
-            commonNotificationResponse.setCode("0000");
-            commonNotificationResponse.setMessage("성공적으로 수정되었습니다.");
+        } catch (Exception e) {
+            commonNotificationResponse.setCode("1000");
+            commonNotificationResponse.setMessage("수정에 실패했습니다.");
         }
+
+        commonNotificationResponse.setCode("0000");
+        commonNotificationResponse.setMessage("성공적으로 수정되었습니다.");
 
         return commonNotificationResponse;
     }
 
-    public List<PlaceReviewResponse> getLocationReviewList(Long placeId) {
+    public List<PlaceReviewResponse> getLocationReviewListByPlaceId(Long placeId) {
 
         List<ReviewInfoEntity> reviewInfoEntityList = reviewInfoRepository.findByPlaceId(placeId);
+        return getPlaceReviewResponses(reviewInfoEntityList);
+    }
 
-        log.info("placeReviewList: " + reviewInfoEntityList.toString());
+    public List<PlaceReviewResponse> getLocationReviewListByEmail(String email) {
 
+        List<ReviewInfoEntity> reviewInfoEntityList = reviewInfoRepository.findByEmail(email);
+        return getPlaceReviewResponses(reviewInfoEntityList);
+    }
+
+    private List<PlaceReviewResponse> getPlaceReviewResponses(List<ReviewInfoEntity> reviewInfoEntityList) {
         List<PlaceReviewResponse> placeReviewResponseList = new ArrayList<>();
 
         reviewInfoEntityList.forEach(placeReview -> {
@@ -118,6 +123,7 @@ public class ReviewService {
                     .reviewMainContent(placeReview.getReviewMainContent())
                     .reviewGoodContent(placeReview.getReviewGoodContent())
                     .reviewBadContent(placeReview.getReviewBadContent())
+                    .likeCount(placeReview.getLikeCount())
                     .trafficPoint(placeReview.getTrafficPoint())
                     .conveniencePoint(placeReview.getConveniencePoint())
                     .noisePoint(placeReview.getNoisePoint())

@@ -77,7 +77,7 @@ public class ReviewController {
             throw new IdNotFoundException("ID는 필수 입력 값 입니다.");
         }
 
-        List<PlaceReviewResponse> placeReviewResponseList = reviewService.getLocationReviewList(placeId);
+        List<PlaceReviewResponse> placeReviewResponseList = reviewService.getLocationReviewListByPlaceId(placeId);
 
         return ResponseEntity.ok(placeReviewResponseList);
     }

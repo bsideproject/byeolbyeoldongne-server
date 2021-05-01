@@ -20,6 +20,7 @@ public class PlaceReviewModifyRequest {
     private Long x; // x좌표
     private Long y; // y좌표
 
+    private int likeCount; // 좋아요 개수
     private String reviewMainContent; // 리뷰 개요
     private String reviewGoodContent; // 장점 리뷰 내용
     private String reviewBadContent; // 단점 리뷰 내용

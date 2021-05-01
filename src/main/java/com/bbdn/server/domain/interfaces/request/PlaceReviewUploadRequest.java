@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
+import org.springframework.beans.factory.annotation.Value;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,6 +17,9 @@ public class PlaceReviewUploadRequest {
     private String roadAddress; // 도로명주소
     private double x; // x좌표
     private double y; // y좌표
+
+    @Value("0")
+    private int likeCount; // 좋아요 개수
 
     private String reviewMainContent; // 리뷰 개요
     private String reviewGoodContent; // 장점 리뷰 내용

@@ -52,11 +52,11 @@ com/bbdn/server/repository/CommentInfoRepository.java
 com/bbdn/server/domain/interfaces/response/CommonPlaceReviewResponse.java
  com.bbdn.server.domain.interfaces.response.CommonPlaceReviewResponse
  com.bbdn.server.domain.interfaces.response.CommonPlaceReviewResponse$CommonPlaceReviewResponseBuilder
-com/bbdn/server/domain/interfaces/response/PlaceReviewResponse.java
- com.bbdn.server.domain.interfaces.response.PlaceReviewResponse
- com.bbdn.server.domain.interfaces.response.PlaceReviewResponse$PlaceReviewResponseBuilder
-com/bbdn/server/repository/ReviewInfoRepository.java
- com.bbdn.server.repository.ReviewInfoRepository
+com/bbdn/server/service/ReviewCommentService.java
+ com.bbdn.server.service.ReviewCommentService
+com/bbdn/server/domain/interfaces/request/PlaceReviewModifyRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest$PlaceReviewModifyRequestBuilder
 com/bbdn/server/config/RestTemplateErrorHandler.java
  com.bbdn.server.config.RestTemplateErrorHandler
 com/bbdn/server/service/KakaoPlaceService.java
@@ -87,12 +87,12 @@ com/bbdn/server/domain/interfaces/dto/PaginationDTO.java
  com.bbdn.server.domain.interfaces.dto.PaginationDTO$PaginationDTOBuilder
 com/bbdn/server/domain/interfaces/resolver/QueryStringResolver.java
  com.bbdn.server.domain.interfaces.resolver.QueryStringResolver
-com/bbdn/server/domain/entity/ReviewInfoEntity.java
- com.bbdn.server.domain.entity.ReviewInfoEntity
- com.bbdn.server.domain.entity.ReviewInfoEntity$ReviewInfoEntityBuilder
-com/bbdn/server/domain/interfaces/request/PlaceReviewModifyRequest.java
- com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest
- com.bbdn.server.domain.interfaces.request.PlaceReviewModifyRequest$PlaceReviewModifyRequestBuilder
+com/bbdn/server/domain/interfaces/response/CommonNotificationResponse.java
+ com.bbdn.server.domain.interfaces.response.CommonNotificationResponse
+ com.bbdn.server.domain.interfaces.response.CommonNotificationResponse$CommonNotificationResponseBuilder
+com/bbdn/server/domain/interfaces/response/PlaceReviewResponse.java
+ com.bbdn.server.domain.interfaces.response.PlaceReviewResponse
+ com.bbdn.server.domain.interfaces.response.PlaceReviewResponse$PlaceReviewResponseBuilder
 com/bbdn/server/domain/interfaces/request/PlaceCommentUploadRequest.java
  com.bbdn.server.domain.interfaces.request.PlaceCommentUploadRequest
  com.bbdn.server.domain.interfaces.request.PlaceCommentUploadRequest$PlaceCommentUploadRequestBuilder
@@ -212,11 +212,13 @@ com/bbdn/server/application/controller/HelloController.java
  com.bbdn.server.application.controller.HelloController
 com/bbdn/server/service/GooglePlaceService.java
  com.bbdn.server.service.GooglePlaceService
-com/bbdn/server/domain/interfaces/response/CommonNotificationResponse.java
- com.bbdn.server.domain.interfaces.response.CommonNotificationResponse
- com.bbdn.server.domain.interfaces.response.CommonNotificationResponse$CommonNotificationResponseBuilder
-com/bbdn/server/service/ReviewCommentService.java
- com.bbdn.server.service.ReviewCommentService
+com/bbdn/server/domain/entity/ReviewInfoEntity.java
+ com.bbdn.server.domain.entity.ReviewInfoEntity
+ com.bbdn.server.domain.entity.ReviewInfoEntity$ReviewInfoEntityBuilder
+com/bbdn/server/repository/ReviewInfoRepository.java
+ com.bbdn.server.repository.ReviewInfoRepository
+com/bbdn/server/application/controller/MyPageController.java
+ com.bbdn.server.application.controller.MyPageController
 com/bbdn/server/service/ReviewService.java
  com.bbdn.server.service.ReviewService
 com/bbdn/server/application/controller/ReviewController.java

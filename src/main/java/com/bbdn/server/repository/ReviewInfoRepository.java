@@ -11,4 +11,5 @@ import java.util.List;
 @Repository
 public interface ReviewInfoRepository extends JpaRepository<ReviewInfoEntity, Long> {
     List<ReviewInfoEntity> findByPlaceId(Long placeId);
+    List<ReviewInfoEntity> findByEmail(String email);
 }

@@ -21,6 +21,7 @@ public class PlaceReviewResponse {
     private int conveniencePoint; // 편의성 점수
     private int noisePoint; // 소음 점수
     private int safetyPoint; // 치안 점수
+    private int likeCount; // 좋아요 개수
     private String createdBy; // 작성자
     private LocalDateTime createdAt; // 작성시간
     private String modifiedBy; // 수정자

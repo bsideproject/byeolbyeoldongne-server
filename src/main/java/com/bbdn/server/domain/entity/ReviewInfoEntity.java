@@ -37,10 +37,12 @@ public class ReviewInfoEntity {
     String reviewGoodContent;
     String reviewBadContent;
 
+    int likeCount;
     int trafficPoint;
     int conveniencePoint;
     int noisePoint;
     int safetyPoint;
+
 
     @Email
     String email;
