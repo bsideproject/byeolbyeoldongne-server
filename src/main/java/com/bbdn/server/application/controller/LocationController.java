@@ -82,7 +82,7 @@ public class LocationController {
         if(addressLocationVOList.size() > 1) {
 
             // roadAddressName 기준으로 sort
-            Collections.sort(addressLocationVOList);
+            Collections.sort(addressLocationVOList, Comparator.comparing(AddressLocationVO::getRoadAddressName));
             AddressLocationVO firstAddressLocation = addressLocationVOList.get(0);
             AddressLocationVO lastAddressLocation = addressLocationVOList.get(addressLocationVOList.size()-1);
 

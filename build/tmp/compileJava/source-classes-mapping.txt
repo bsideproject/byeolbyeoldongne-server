@@ -6,8 +6,8 @@ com/bbdn/server/domain/interfaces/vo/kakao/CategoryVO.java
 com/bbdn/server/domain/interfaces/vo/kakao/RegionInfoVO.java
  com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO
  com.bbdn.server.domain.interfaces.vo.kakao.RegionInfoVO$RegionInfoVOBuilder
-com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
- com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
+com/bbdn/server/config/SwaggerConfig.java
+ com.bbdn.server.config.SwaggerConfig
 com/bbdn/server/domain/interfaces/request/SearchKakaoPlaceRequest.java
  com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest
  com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest$SearchKakaoPlaceRequestBuilder
@@ -222,5 +222,5 @@ com/bbdn/server/domain/interfaces/dto/QueryParameterDTO.java
 com/bbdn/server/domain/interfaces/request/PlaceReviewDeleteRequest.java
  com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest
  com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest$PlaceReviewDeleteRequestBuilder
-com/bbdn/server/config/SwaggerConfig.java
- com.bbdn.server.config.SwaggerConfig
+com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
+ com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
