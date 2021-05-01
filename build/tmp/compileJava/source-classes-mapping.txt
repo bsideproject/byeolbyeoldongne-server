@@ -11,13 +11,14 @@ com/bbdn/server/config/SwaggerConfig.java
 com/bbdn/server/domain/interfaces/request/SearchKakaoPlaceRequest.java
  com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest
  com.bbdn.server.domain.interfaces.request.SearchKakaoPlaceRequest$SearchKakaoPlaceRequestBuilder
-com/bbdn/server/service/ReviewService.java
- com.bbdn.server.service.ReviewService
+com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
+ com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
 com/bbdn/server/domain/interfaces/dto/SearchPlaceResultDTO.java
  com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO
  com.bbdn.server.domain.interfaces.dto.SearchPlaceResultDTO$SearchPlaceResultDTOBuilder
-com/bbdn/server/application/controller/ReviewController.java
- com.bbdn.server.application.controller.ReviewController
+com/bbdn/server/domain/interfaces/request/PlaceReviewDeleteRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest$PlaceReviewDeleteRequestBuilder
 com/bbdn/server/domain/interfaces/request/UserAccountGoogleRequest.java
  com.bbdn.server.domain.interfaces.request.UserAccountGoogleRequest
  com.bbdn.server.domain.interfaces.request.UserAccountGoogleRequest$UserAccountGoogleRequestBuilder
@@ -177,9 +178,9 @@ com/bbdn/server/config/RestTemplateConfig.java
  com.bbdn.server.config.RestTemplateConfig
 com/bbdn/server/application/controller/CommentController.java
  com.bbdn.server.application.controller.CommentController
-com/bbdn/server/domain/interfaces/request/PlaceReviewUploadRequest.java
- com.bbdn.server.domain.interfaces.request.PlaceReviewUploadRequest
- com.bbdn.server.domain.interfaces.request.PlaceReviewUploadRequest$PlaceReviewUploadRequestBuilder
+com/bbdn/server/domain/interfaces/dto/QueryParameterDTO.java
+ com.bbdn.server.domain.interfaces.dto.QueryParameterDTO
+ com.bbdn.server.domain.interfaces.dto.QueryParameterDTO$QueryParameterDTOBuilder
 com/bbdn/server/domain/interfaces/request/PlaceCommentListRequest.java
  com.bbdn.server.domain.interfaces.request.PlaceCommentListRequest
  com.bbdn.server.domain.interfaces.request.PlaceCommentListRequest$PlaceCommentListRequestBuilder
@@ -216,11 +217,10 @@ com/bbdn/server/domain/interfaces/response/CommonNotificationResponse.java
  com.bbdn.server.domain.interfaces.response.CommonNotificationResponse$CommonNotificationResponseBuilder
 com/bbdn/server/service/ReviewCommentService.java
  com.bbdn.server.service.ReviewCommentService
-com/bbdn/server/domain/interfaces/dto/QueryParameterDTO.java
- com.bbdn.server.domain.interfaces.dto.QueryParameterDTO
- com.bbdn.server.domain.interfaces.dto.QueryParameterDTO$QueryParameterDTOBuilder
-com/bbdn/server/domain/interfaces/request/PlaceReviewDeleteRequest.java
- com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest
- com.bbdn.server.domain.interfaces.request.PlaceReviewDeleteRequest$PlaceReviewDeleteRequestBuilder
-com/bbdn/server/domain/enums/KakaoMapRestUrlEnums.java
- com.bbdn.server.domain.enums.KakaoMapRestUrlEnums
+com/bbdn/server/service/ReviewService.java
+ com.bbdn.server.service.ReviewService
+com/bbdn/server/application/controller/ReviewController.java
+ com.bbdn.server.application.controller.ReviewController
+com/bbdn/server/domain/interfaces/request/PlaceReviewUploadRequest.java
+ com.bbdn.server.domain.interfaces.request.PlaceReviewUploadRequest
+ com.bbdn.server.domain.interfaces.request.PlaceReviewUploadRequest$PlaceReviewUploadRequestBuilder
